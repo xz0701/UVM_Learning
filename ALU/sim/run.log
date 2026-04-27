@@ -1,0 +1,247 @@
+Command: /home/xz974/UVM_Learning/UVM_Learning/ALU/sim/./simv +UVM_TESTNAME=alu_test -l run.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  Apr 27 02:46 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test alu_test...
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 5000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x5 b=0x63 op=ALU_OR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 5000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x5 b=0x63 op=ALU_OR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 5001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x5 b=0x63 op=ALU_OR out=067
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 5001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x5 b=0x63 op=ALU_OR expected=0x67 actual=0x67
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 15000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xe6 b=0x72 op=ALU_ADD
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 15000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xe6 b=0x72 op=ALU_ADD
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 15001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xe6 b=0x72 op=ALU_ADD out=058
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 15001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xe6 b=0x72 op=ALU_ADD expected=0x58 actual=0x58
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 25000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xc2 b=0x2d op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 25000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xc2 b=0x2d op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 25001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xc2 b=0x2d op=ALU_AND out=00
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 25001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xc2 b=0x2d op=ALU_AND expected=0x0 actual=0x0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 35000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xb6 b=0x37 op=ALU_XOR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 35000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xb6 b=0x37 op=ALU_XOR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 35001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xb6 b=0x37 op=ALU_XOR out=081
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 35001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xb6 b=0x37 op=ALU_XOR expected=0x81 actual=0x81
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 45000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xb9 b=0x72 op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 45000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xb9 b=0x72 op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 45001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xb9 b=0x72 op=ALU_AND out=030
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 45001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xb9 b=0x72 op=ALU_AND expected=0x30 actual=0x30
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 55000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x92 b=0x99 op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 55000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x92 b=0x99 op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 55001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x92 b=0x99 op=ALU_AND out=090
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 55001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x92 b=0x99 op=ALU_AND expected=0x90 actual=0x90
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 65000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x5 b=0x2e op=ALU_SRL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 65000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x5 b=0x2e op=ALU_SRL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 65001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x5 b=0x2e op=ALU_SRL out=00
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 65001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x5 b=0x2e op=ALU_SRL expected=0x0 actual=0x0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 75000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xac b=0xef op=ALU_SLT
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 75000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xac b=0xef op=ALU_SLT
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 75001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xac b=0xef op=ALU_SLT out=01
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 75001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xac b=0xef op=ALU_SLT expected=0x1 actual=0x1
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 85000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xb0 b=0xa6 op=ALU_SLL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 85000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xb0 b=0xa6 op=ALU_SLL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 85001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xb0 b=0xa6 op=ALU_SLL out=00
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 85001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xb0 b=0xa6 op=ALU_SLL expected=0x0 actual=0x0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 95000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x23 b=0xa5 op=ALU_SUB
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 95000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x23 b=0xa5 op=ALU_SUB
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 95001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x23 b=0xa5 op=ALU_SUB out=07e
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 95001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x23 b=0xa5 op=ALU_SUB expected=0x7e actual=0x7e
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 105000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x6 b=0x35 op=ALU_ADD
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 105000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x6 b=0x35 op=ALU_ADD
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 105001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x6 b=0x35 op=ALU_ADD out=03b
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 105001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x6 b=0x35 op=ALU_ADD expected=0x3b actual=0x3b
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 115000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x65 b=0x8e op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 115000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x65 b=0x8e op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 115001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x65 b=0x8e op=ALU_AND out=04
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 115001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x65 b=0x8e op=ALU_AND expected=0x4 actual=0x4
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 125000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xc2 b=0xf2 op=ALU_XOR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 125000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xc2 b=0xf2 op=ALU_XOR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 125001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xc2 b=0xf2 op=ALU_XOR out=030
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 125001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xc2 b=0xf2 op=ALU_XOR expected=0x30 actual=0x30
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 135000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x13 b=0x3d op=ALU_OR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 135000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x13 b=0x3d op=ALU_OR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 135001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x13 b=0x3d op=ALU_OR out=03f
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 135001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x13 b=0x3d op=ALU_OR expected=0x3f actual=0x3f
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 145000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xf8 b=0x65 op=ALU_ADD
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 145000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xf8 b=0x65 op=ALU_ADD
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 145001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xf8 b=0x65 op=ALU_ADD out=05d
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 145001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xf8 b=0x65 op=ALU_ADD expected=0x5d actual=0x5d
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 155000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x2a b=0x7 op=ALU_SLL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 155000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x2a b=0x7 op=ALU_SLL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 155001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x2a b=0x7 op=ALU_SLL out=00
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 155001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x2a b=0x7 op=ALU_SLL expected=0x0 actual=0x0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 165000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xe9 b=0x30 op=ALU_SLT
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 165000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xe9 b=0x30 op=ALU_SLT
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 165001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xe9 b=0x30 op=ALU_SLT out=00
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 165001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xe9 b=0x30 op=ALU_SLT expected=0x0 actual=0x0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 175000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xac b=0x45 op=ALU_SRL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 175000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xac b=0x45 op=ALU_SRL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 175001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xac b=0x45 op=ALU_SRL out=05
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 175001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xac b=0x45 op=ALU_SRL expected=0x5 actual=0x5
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 185000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xc6 b=0x39 op=ALU_XOR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 185000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xc6 b=0x39 op=ALU_XOR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 185001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xc6 b=0x39 op=ALU_XOR out=0ff
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 185001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xc6 b=0x39 op=ALU_XOR expected=0xff actual=0xff
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 195000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x6c b=0x5a op=ALU_SLL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 195000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x6c b=0x5a op=ALU_SLL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 195001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x6c b=0x5a op=ALU_SLL out=0b0
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 195001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x6c b=0x5a op=ALU_SLL expected=0xb0 actual=0xb0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 205000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x51 b=0xd5 op=ALU_SRL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 205000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x51 b=0xd5 op=ALU_SRL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 205001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x51 b=0xd5 op=ALU_SRL out=02
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 205001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x51 b=0xd5 op=ALU_SRL expected=0x2 actual=0x2
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 215000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xc8 b=0x11 op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 215000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xc8 b=0x11 op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 215001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xc8 b=0x11 op=ALU_AND out=00
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 215001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xc8 b=0x11 op=ALU_AND expected=0x0 actual=0x0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 225000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x32 b=0x73 op=ALU_SLT
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 225000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x32 b=0x73 op=ALU_SLT
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 225001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x32 b=0x73 op=ALU_SLT out=01
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 225001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x32 b=0x73 op=ALU_SLT expected=0x1 actual=0x1
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 235000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x17 b=0xc7 op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 235000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x17 b=0xc7 op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 235001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x17 b=0xc7 op=ALU_AND out=07
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 235001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x17 b=0xc7 op=ALU_AND expected=0x7 actual=0x7
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 245000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xf b=0xaf op=ALU_SRL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 245000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xf b=0xaf op=ALU_SRL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 245001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xf b=0xaf op=ALU_SRL out=00
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 245001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xf b=0xaf op=ALU_SRL expected=0x0 actual=0x0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 255000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x5d b=0xa1 op=ALU_SRL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 255000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x5d b=0xa1 op=ALU_SRL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 255001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x5d b=0xa1 op=ALU_SRL out=02e
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 255001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x5d b=0xa1 op=ALU_SRL expected=0x2e actual=0x2e
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 265000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x9 b=0x7a op=ALU_XOR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 265000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x9 b=0x7a op=ALU_XOR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 265001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x9 b=0x7a op=ALU_XOR out=073
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 265001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x9 b=0x7a op=ALU_XOR expected=0x73 actual=0x73
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 275000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xa b=0x16 op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 275000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xa b=0x16 op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 275001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xa b=0x16 op=ALU_AND out=02
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 275001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xa b=0x16 op=ALU_AND expected=0x2 actual=0x2
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 285000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xa9 b=0x6a op=ALU_SLT
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 285000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xa9 b=0x6a op=ALU_SLT
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 285001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xa9 b=0x6a op=ALU_SLT out=00
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 285001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xa9 b=0x6a op=ALU_SLT expected=0x0 actual=0x0
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 295000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x75 b=0x9e op=ALU_SUB
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 295000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x75 b=0x9e op=ALU_SUB
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 295001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x75 b=0x9e op=ALU_SUB out=0d7
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 295001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x75 b=0x9e op=ALU_SUB expected=0xd7 actual=0xd7
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 305000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x7d b=0xd5 op=ALU_SRL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 305000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x7d b=0xd5 op=ALU_SRL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 305001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x7d b=0xd5 op=ALU_SRL out=03
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 305001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x7d b=0xd5 op=ALU_SRL expected=0x3 actual=0x3
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 315000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xd7 b=0x73 op=ALU_SRL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 315000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xd7 b=0x73 op=ALU_SRL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 315001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xd7 b=0x73 op=ALU_SRL out=01a
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 315001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xd7 b=0x73 op=ALU_SRL expected=0x1a actual=0x1a
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 325000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xc2 b=0x1 op=ALU_ADD
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 325000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xc2 b=0x1 op=ALU_ADD
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 325001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xc2 b=0x1 op=ALU_ADD out=0c3
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 325001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xc2 b=0x1 op=ALU_ADD expected=0xc3 actual=0xc3
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 335000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x7d b=0x68 op=ALU_OR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 335000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x7d b=0x68 op=ALU_OR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 335001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x7d b=0x68 op=ALU_OR out=07d
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 335001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x7d b=0x68 op=ALU_OR expected=0x7d actual=0x7d
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 345000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x99 b=0x3e op=ALU_SLL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 345000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x99 b=0x3e op=ALU_SLL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 345001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x99 b=0x3e op=ALU_SLL out=040
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 345001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x99 b=0x3e op=ALU_SLL expected=0x40 actual=0x40
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 355000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xcd b=0x6 op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 355000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xcd b=0x6 op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 355001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xcd b=0x6 op=ALU_AND out=04
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 355001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xcd b=0x6 op=ALU_AND expected=0x4 actual=0x4
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 365000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x13 b=0x2d op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 365000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x13 b=0x2d op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 365001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x13 b=0x2d op=ALU_AND out=01
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 365001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x13 b=0x2d op=ALU_AND expected=0x1 actual=0x1
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 375000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x54 b=0x5f op=ALU_XOR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 375000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x54 b=0x5f op=ALU_XOR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 375001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x54 b=0x5f op=ALU_XOR out=0b
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 375001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x54 b=0x5f op=ALU_XOR expected=0xb actual=0xb
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 385000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x67 b=0xfa op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 385000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x67 b=0xfa op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 385001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x67 b=0xfa op=ALU_AND out=062
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 385001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x67 b=0xfa op=ALU_AND expected=0x62 actual=0x62
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 395000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x5e b=0xc op=ALU_XOR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 395000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x5e b=0xc op=ALU_XOR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 395001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x5e b=0xc op=ALU_XOR out=052
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 395001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x5e b=0xc op=ALU_XOR expected=0x52 actual=0x52
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 405000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x63 b=0x5b op=ALU_ADD
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 405000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x63 b=0x5b op=ALU_ADD
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 405001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x63 b=0x5b op=ALU_ADD out=0be
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 405001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x63 b=0x5b op=ALU_ADD expected=0xbe actual=0xbe
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 415000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xa4 b=0xef op=ALU_OR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 415000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xa4 b=0xef op=ALU_OR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 415001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xa4 b=0xef op=ALU_OR out=0ef
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 415001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xa4 b=0xef op=ALU_OR expected=0xef actual=0xef
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 425000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x44 b=0x96 op=ALU_SLT
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 425000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x44 b=0x96 op=ALU_SLT
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 425001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x44 b=0x96 op=ALU_SLT out=01
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 425001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x44 b=0x96 op=ALU_SLT expected=0x1 actual=0x1
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 435000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x49 b=0x95 op=ALU_OR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 435000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x49 b=0x95 op=ALU_OR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 435001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x49 b=0x95 op=ALU_OR out=0dd
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 435001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x49 b=0x95 op=ALU_OR expected=0xdd actual=0xdd
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 445000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x5f b=0xfd op=ALU_AND
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 445000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x5f b=0xfd op=ALU_AND
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 445001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x5f b=0xfd op=ALU_AND out=05d
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 445001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x5f b=0xfd op=ALU_AND expected=0x5d actual=0x5d
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 455000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xca b=0x7b op=ALU_SLL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 455000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xca b=0x7b op=ALU_SLL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 455001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xca b=0x7b op=ALU_SLL out=050
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 455001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xca b=0x7b op=ALU_SLL expected=0x50 actual=0x50
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 465000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x6b b=0x7a op=ALU_SLT
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 465000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x6b b=0x7a op=ALU_SLT
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 465001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x6b b=0x7a op=ALU_SLT out=01
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 465001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x6b b=0x7a op=ALU_SLT expected=0x1 actual=0x1
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 475000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x48 b=0x1b op=ALU_SLL
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 475000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x48 b=0x1b op=ALU_SLL
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 475001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x48 b=0x1b op=ALU_SLL out=040
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 475001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x48 b=0x1b op=ALU_SLL expected=0x40 actual=0x40
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 485000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0xc0 b=0x36 op=ALU_OR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 485000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0xc0 b=0x36 op=ALU_OR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 485001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0xc0 b=0x36 op=ALU_OR out=0f6
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 485001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0xc0 b=0x36 op=ALU_OR expected=0xf6 actual=0xf6
+UVM_INFO ../tb/agent/alu_driver.sv(35) @ 495000: uvm_test_top.env.agent.driver [ALU_DRV] Drive item: a=0x4c b=0x94 op=ALU_OR
+UVM_INFO ../tb/seq/alu_sequence.sv(25) @ 495000: uvm_test_top.env.agent.sequencer@@seq [ALU_SEQ] Generated item: a=0x4c b=0x94 op=ALU_OR
+UVM_INFO ../tb/agent/alu_monitor.sv(41) @ 495001: uvm_test_top.env.agent.monitor [ALU_MON] Sample item: a=0x4c b=0x94 op=ALU_OR out=0dc
+UVM_INFO ../tb/env/alu_scoreboard.sv(55) @ 495001: uvm_test_top.env.scb [ALU_SCB] PASS: a=0x4c b=0x94 op=ALU_OR expected=0xdc actual=0xdc
+UVM_INFO /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_objection.svh(1274) @ 505000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  202
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[ALU_DRV]    50
+[ALU_MON]    50
+[ALU_SCB]    50
+[ALU_SEQ]    50
+[RNTST]     1
+[TEST_DONE]     1
+$finish called from file "/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time               505000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 505000 ps
+CPU Time:      0.240 seconds;       Data structure size:   0.5Mb
+Mon Apr 27 02:46:14 2026
