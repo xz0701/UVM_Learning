@@ -44,12 +44,13 @@ UVM_Projects/
 
 ## 🔬 Current Progress
 
-#### 🔹 ALU Verification
+#### 🔹 ALU Verification (04/27/2026)
 
-* Directed tests
-* Random stimulus
-* Functional checking
-* (Next) UVM environment
+* UVM-based verification environment (driver, monitor, scoreboard)
+* Constrained random stimulus generation
+* Directed corner-case tesing (zero/one/max)
+* Functional checking with scoreboard
+* Coverage closure achieved 100%
 
 #### 🔜Stage 2: FIFO Verification
 
