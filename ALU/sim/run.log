@@ -1,7 +1,7 @@
 Command: /home/xz974/UVM_Learning/UVM_Learning/ALU/sim/./simv +UVM_TESTNAME=alu_test -l run.log
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  Apr 28 01:37 2026
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  Apr 30 01:13 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -589,5 +589,5 @@ $finish called from file "/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_roo
 $finish at simulation time              1485000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 1485000 ps
-CPU Time:      0.420 seconds;       Data structure size:   0.5Mb
-Tue Apr 28 01:37:17 2026
+CPU Time:      0.270 seconds;       Data structure size:   0.5Mb
+Thu Apr 30 01:13:36 2026
