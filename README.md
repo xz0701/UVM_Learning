@@ -36,7 +36,7 @@ UVM_Projects/
 │   ├── rtl/        # DUT design
 │   ├── tb/         # Testbench (SV/UVM)
 │   ├── sim/        # Simulation scripts
-│   └── doc/        # Notes & diagrams
+│   └── scripts/        # VCS Sripts
 
 ```
 
@@ -52,26 +52,18 @@ UVM_Projects/
 * Functional checking with scoreboard
 * Coverage closure achieved 100%
 
-#### 🔜Stage 2: FIFO Verification
+#### (Ongoing) Stage 2: Sync FIFO Verification
 
-* Async FIFO corner cases
+* Sync FIFO corner cases
 * Overflow / Underflow detection
 * Data integrity checking
 * Multi-channel support
 
 ---
 
-### 🔜 Stage 3: UVM Methodology
-
-* UVM components (agent, driver, monitor, scoreboard)
-* Sequences & transactions
-* Virtual interface
-* Factory & configuration
-* Reusable testbench architecture
-
 ---
 
-### 🔜 Stage 4: Protocol Verification
+### 🔜 Stage 3: Protocol Verification
 
 * AXI-Lite
 * MIPI
