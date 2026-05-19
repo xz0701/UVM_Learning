@@ -36,7 +36,7 @@ UVM_Projects/
 │   ├── rtl/        # DUT design
 │   ├── tb/         # Testbench (SV/UVM)
 │   ├── sim/        # Simulation scripts
-│   └── scripts/        # VCS Sripts
+│   └── scripts/    # VCS Sripts
 
 ```
 

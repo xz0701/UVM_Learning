@@ -43,7 +43,7 @@ Main features of the DUT include:
 - Counter and pointer update correctness
 
 ### Read
-- Sequential read ordering
+- Read data matches the oldest accepted write transaction
 - Read behavior when FIFO is empty
 - Counter and poinger update correctness
 
@@ -96,6 +96,7 @@ Main features of the DUT include:
 - `wr_en` x `rd_en`
 - `full` x `wr_en`
 - `empty` x `rd_en`
+- `wr_en` x `empty` x `rd_en`
 - `wr_en` x `full` x `rd_en`
 
 ---
