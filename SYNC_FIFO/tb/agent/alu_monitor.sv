@@ -1,51 +1,49 @@
-`ifndef ALU_MONITOR_SV
-`define ALU_MONITOR_SV
+`ifndef SYNC_FIFO_MONITOR_SV
+`define SYNC_FIFO_MONITOR_SV
 
-class alu_monitor extends uvm_component;
+class sync_fifo_monitor extends uvm_component;
 
-    `uvm_component_utils(alu_monitor)
+    `uvm_component_utils(sync_fifo_monitor)
     
-    alu_item cov_item;
+    sync_fifo_transaction cov_tr;
     
+    virtual sync_fifo_if vif;
+
+    uvm_analysis_port #(sync_fifo_transaction) ap;
+
     covergroup cg;
 
         option.per_instance = 1;
 
-        op_cp: coverpoint cov_item.op {
-            bins add    = {ALU_ADD};
-            bins sub    = {ALU_SUB};
-            bins and_op = {ALU_AND};
-            bins or_op  = {ALU_OR};
-            bins xor_op = {ALU_XOR};
-            bins sll    = {ALU_SLL};
-            bins srl    = {ALU_SRL};
-            bins slt    = {ALU_SLT};
+        rd_cp: coverpoint cov_tr.rd_en {
+            bins rd_off = {0};
+            bins rd_on  = {1};
         }
 
-        a_cp: coverpoint cov_item.a{
-            bins zero = {8'h00};
-            bins one = {8'h01};
-            bins max = {8'hff};
-            bins others = default;
+        wr_cp: coverpoint cov_tr.wr_en {
+            bins wr_off = {0};
+            bins wr_on  = {1};
         }
 
-         b_cp: coverpoint cov_item.b{
-            bins zero = {8'h00};
-            bins one = {8'h01};
-            bins max = {8'hff};
-            bins others = default;
+        full_cp: coverpoint cov_tr.full {
+            bins not_full = {0};
+            bins full     = {1};
         }
 
-        op_a_cross: cross op_cp, a_cp;
-        op_b_cross: cross op_cp, b_cp;
+        empty_cp: coverpoint cov_tr.empty {
+            bins not_empty = {0};
+            bins empty     = {1};
+        }
+
+        wr_rd_cross:    cross wr_cp, rd_cp;
+        full_wr_cross:  cross wr_cp, full_cp;
+        empty_rd_cross: cross rd_cp, empty_cp;
+        boundary_cross: cross rd_cp, wr_cp, full_cp, empty_cp;
 
     endgroup
 
-    virtual alu_if vif;
 
-    uvm_analysis_port #(alu_item) ap;
-
-    function new(string name = "alu_monitor", uvm_component parent);
+    function new(string name = "sync_fifo_monitor", uvm_component parent);
         super.new(name, parent);
         cg = new();
     endfunction
@@ -56,34 +54,40 @@ class alu_monitor extends uvm_component;
         ap = new("ap", this);
 
         if (!uvm_config_db#(virtual alu_if)::get(this, "", "vif", vif)) begin
-            `uvm_fatal("ALU_MON", "Failed to get virtual interface")
+            `uvm_fatal("SYNC_FIFO_MON", "Failed to get virtual interface")
         end
 
     endfunction
 
     virtual task run_phase(uvm_phase phase);
-        alu_item item;
+        
+        sync_fifo_transaction tr;
 
         forever begin
             @(posedge vif.clk);
             #1step;
 
-            item = alu_item::type_id::create("item");
+            tr = sync_fifo_transaction::type_id::create("tr");
 
-            item.a = vif.a;
-            item.b = vif.b;
-            item.op = vif.op;
-            item.out = vif.out;
+            tr.rd_en   = vif.rd_en;
+            tr.wr_en   = vif.wr_en;
+            tr.wr_data = vif.wr_data;
+            tr.rd_data = vif.rd_data;
+            tr.full    = vif.full;
+            tr.empty   = vif.empty;
 
-            cov_item = item;
+            cov_tr = tr;
             cg.sample();
 
-            `uvm_info("ALU_MON",
-                    $sformatf("Sample item: a=0x%0h b=0x%0h op=%s out=0x%0h",
-                        item.a, item.b, item.op.name(), item.out),
-                        UVM_MEDIUM);
+            `uvm_info("SYNC_FIFO_MON",
+                    $sformatf("Sample item: 
+                            rd_en=%0b rd_data=0x%0h empty=%0b 
+                            wr_en=%0b wr_data=0x%0h full=%0b",
+                            tr.rd_en, tr.rd_data, tr.empty, 
+                            tr.wr_en, tr.wr_data, tr.full),
+                            UVM_MEDIUM);
 
-            ap.write(item);
+            ap.write(tr);
         end
 
     endtask
@@ -91,7 +95,7 @@ class alu_monitor extends uvm_component;
     virtual function void report_phase(uvm_phase phase);
         super.report_phase(phase);
 
-        `uvm_info("ALU_COV",
+        `uvm_info("SYNC_FIFO_COV",
                 $sformatf("ALU functional coverage = %.2f%%", cg.get_coverage()),
                 UVM_LOW)
     endfunction

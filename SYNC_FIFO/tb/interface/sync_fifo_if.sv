@@ -1,7 +1,7 @@
 `ifndef SYNC_FIFO_IF_SV
 `define SYNC_FIFO_IF_SV
 
-interface fifo_if #(
+interface sync_fifo_if #(
     parameter int WIDTH = 8,
     parameter int DEPTH = 64
 )(
