@@ -1,21 +1,21 @@
-`ifndef ALU_ENV_SV
-`define ALU_ENV_SV
+`ifndef SYNC_FIFO_ENV_SV
+`define SYNC_FIFO_ENV_SV
 
-class alu_env extends uvm_env;
-    `uvm_component_utils(alu_env);
+class sync_fifo_env extends uvm_env;
+    `uvm_component_utils(sync_fifo_env);
 
-    alu_agent agent;
-    alu_scoreboard scb;
+    sync_fifo_agent      agent;
+    sync_fifo_scoreboard scb;
 
-    function new(string name = "alu_env", uvm_component parent);
+    function new(string name = "sync_fifo_env", uvm_component parent);
         super.new(name, parent);
     endfunction
 
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
 
-        agent = alu_agent::type_id::create("agent", this);
-        scb = alu_scoreboard::type_id::create("scb", this);
+        agent = sync_fifo_agent::type_id::create("agent", this);
+        scb   = sync_fifo_scoreboard::type_id::create("scb", this);
 
     endfunction
     

@@ -1,65 +1,62 @@
-`ifndef ALU_SCOREBOARD_SV
-`define ALU_SCOREBOARD_SV
+`ifndef SYNC_FIFO_SCOREBOARD_SV
+`define SYNC_FIFO_SCOREBOARD_SV
 
-class alu_scoreboard extends uvm_component;
+class sync_fifo_scoreboard extends uvm_component;
 
-    `uvm_component_utils(alu_scoreboard)
+    `uvm_component_utils(sync_fifo_scoreboard)
 
-    uvm_analysis_imp #(alu_item, alu_scoreboard) item_collected_export;
+    uvm_analysis_imp #(sync_fifo_transaction, sync_fifo_scoreboard) imp;
 
-    function new(string name = "alu_scoreboard", uvm_component parent);
+    bit [DATA_WIDTH-1:0] model_q[$];
+
+    function new(string name = "sync_fifo_scoreboard", uvm_component parent);
         super.new(name, parent);
     endfunction
 
     virtual function void build_phase(uvm_phase phase);
         super.build_phase(phase);
-
-        item_collected_export = new("item_collected_export", this);
+        imp = new("imp", this);
     endfunction
 
-    virtual function logic [7:0] calc_expected(alu_item item);
+    virtual function void write(sync_fifo_transaction tr);
 
-        logic [7 : 0] expected;
-        logic [7 : 0] shift_amt;
+        bit [DATA_WIDTH-1:0] exp_data;
 
-        shift_amt = item.b[2 : 0];
+        // Write accepted if wr_en is high and FIFO is not full.
+        // For full + simultaneous read/write, allow write because read frees space.
+        if (tr.wr_en && (!tr.full || tr.rd_en)) begin
+            model_q.push_back(tr.wr_data);
 
-        unique case (item.op)
-            ALU_ADD: expected = item.a + item.b;
-            ALU_SUB: expected = item.a - item.b;
-            ALU_AND: expected = item.a & item.b;
-            ALU_OR : expected = item.a | item.b;
-            ALU_XOR: expected = item.a ^ item.b;
-            ALU_SLL: expected = item.a << shift_amt;
-            ALU_SRL: expected = item.a >> shift_amt;
-            ALU_SLT: expected = (item.a < item.b);
-            default: expected = '0; 
-        endcase
-
-        return expected;
-
-    endfunction
-    
-    virtual function void write(alu_item item);
-
-        logic [7:0] expected;
-
-        expected = calc_expected(item);
-
-        if (item.out != expected) begin
-            `uvm_error("ALU_SCB",
-                        $sformatf("Mismatch: a=0x%0h b=0%0h op=%s out=0x%0h",
-                                    item.a, item.b, item.op.name(), item.out))
+            `uvm_info("FIFO_SCB",
+                $sformatf("Model push: 0x%0h, depth=%0d",
+                          tr.wr_data, model_q.size()),
+                UVM_MEDIUM)
         end
-        else begin
-            `uvm_info("ALU_SCB",
-                        $sformatf("PASS: a=0x%0h b=0x%0h op=%s expected=0x%0h actual=0x%0h",
-                                    item.a, item.b, item.op.name(), expected, item.out),
-                                    UVM_LOW)
-end
-    
+
+        // Read accepted if rd_en is high and FIFO is not empty.
+        // Empty + simultaneous read/write is treated as read fail, write only.
+        if (tr.rd_en && !tr.empty) begin
+            if (model_q.size() == 0) begin
+                `uvm_error("FIFO_SCB", "Model queue underflow")
+            end
+            else begin
+                exp_data = model_q.pop_front();
+
+                if (tr.rd_data !== exp_data) begin
+                    `uvm_error("FIFO_SCB",
+                        $sformatf("Data mismatch: expected=0x%0h actual=0x%0h",
+                                  exp_data, tr.rd_data))
+                end
+                else begin
+                    `uvm_info("FIFO_SCB",
+                        $sformatf("Data match: 0x%0h", tr.rd_data),
+                        UVM_MEDIUM)
+                end
+            end
+        end
+
     endfunction
-    
+
 endclass
 
 `endif
