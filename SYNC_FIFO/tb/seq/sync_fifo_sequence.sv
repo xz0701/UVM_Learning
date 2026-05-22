@@ -1,65 +1,93 @@
-`ifndef ALU_SEQUENCE_SV
-`define ALU_SEQUENCE_SV
+`ifndef SYNC_FIFO_SEQUENCE_SV
+`define SYNC_FIFO_SEQUENCE_SV
 
-class alu_sequence extends uvm_sequence #(alu_item);
-    `uvm_object_utils(alu_sequence)
+class sync_fifo_sequence extends uvm_sequence #(sync_fifo_transaction);
+    `uvm_object_utils(sync_fifo_sequence)
 
-    function new(string name = "alu_sequence");
+    function new(string name = "sync_fifo_sequence");
         super.new(name);
     endfunction
 
     virtual task body ();
-        alu_item req;
-        alu_op_e ops[$] = '{ALU_ADD, ALU_SUB, ALU_AND, ALU_OR, 
-                            ALU_XOR, ALU_SLL, ALU_SRL, ALU_SLT};
-        logic [7:0] vals[$] = '{8'h00, 8'h01, 8'hff};
+        sync_fifo req;
 
-        // 1. Random Test
+        // 1. Random Traffic
         repeat(100) begin
-            req = alu_item::type_id::create("req");
+            req = sync_fifo_transaction::type_id::create("req");
 
             start_item(req);
 
             if (!req.randomize()) begin
-                `uvm_error("ALU_SEQ", "Randomization Failed")
+                `uvm_error("SYNC_FIFO_SEQ", "Randomization Failed")
             end
 
             finish_item(req);
 
-            `uvm_info("ALU_SEQ",
-                $sformatf("Generated item: a=0x%0h b=0x%0h op=%s",
-                            req.a, req.b, req.op.name()), UVM_MEDIUM);
         end
 
-        // 2. Directed corner test: op x a corner
-        foreach (ops[i]) begin
-            foreach (vals[j]) begin
-                req = alu_item::type_id::create("req");
-
-                start_item(req);
-
-                req.a  = vals[j];
-                req.b  = 8'h55;
-                req.op = ops[i];
-
-                finish_item(req);
-            end
+        // 2. Fill FIFO to full
+        repeat (DEPTH) begin 
+            req = sync_fifo_transaction::type_id::create("req");
+            start_item(req);
+            req.wr_en = 1'b1;
+            req.rd_en = 1'b0;
+            req.wr_data = $urandom();
+            finish_item(req);
         end
 
-        // 3. Directed corner test: op x b corner
-        foreach (ops[i]) begin
-            foreach (vals[j]) begin
-                req = alu_item::type_id::create("req");
+        // 3. Write when full
+        req = sync_fifo_transaction::type_id::create("req");
+        start_item(req);
 
-                start_item(req);
+        req.wr_en = 1'b1;
+        req.rd_en = 1'b0;
+        req.wr_data = $urandom();
 
-                req.a  = 8'haa;
-                req.b  = vals[j];
-                req.op = ops[i];
+        finish_item(req);
 
-                finish_item(req);
-            end
+        // 4. Simulatenous read/write when full
+        req = sync_fifo_transaction::type_id::create("req");
+        start_item(req);
+
+        req.wr_en = 1'b1;
+        req.rd_en = 1'b1;
+        req.wr_data = $urandom();
+
+        finish_item(req);
+
+        // 5. Drain FIFO to empty
+        repeat (DEPTH) begin
+            req = sync_fifo_transaction::type_id::create("req");
+            start_item(req);
+
+            req.wr_en = 1'b0;
+            req.rd_en = 1'b1;
+            req.wr_data = '0;
+
+            finish_item(req);
+
         end
+
+        // 6. Read when empty
+        req = sync_fifo_transaction::type_id::create("req");
+        start_item(req);
+
+        req.wr_en = 1'b0;
+        req.rd_en = 1'b1;
+        req.wr_data = '0;
+
+        finish_item(req);
+
+        // 7. Simulatenous read/write when empty
+        req = sync_fifo_transaction::type_id::create("req");
+        start_item(req);
+
+        req.wr_en = 1'b1;
+        req.rd_en = 1'b1;
+        req.wr_data = $urandom();
+
+        finish_item(req);
+
 
     endtask
 

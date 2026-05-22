@@ -22,7 +22,7 @@ class sync_fifo_env extends uvm_env;
     virtual function void connect_phase(uvm_phase phase);
         super.connect_phase(phase);
 
-        agent.monitor.ap.connect(scb.item_collected_export);
+        agent.monitor.ap.connect(scb.imp);
 
     endfunction
 
