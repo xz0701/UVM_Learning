@@ -1,5 +1,3 @@
-import sync_fifo_pkg::*;
-
 module sync_fifo #(
     parameter WIDTH = 8,
     parameter DEPTH = 16

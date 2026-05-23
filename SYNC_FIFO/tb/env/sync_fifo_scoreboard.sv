@@ -7,7 +7,7 @@ class sync_fifo_scoreboard extends uvm_component;
 
     uvm_analysis_imp #(sync_fifo_transaction, sync_fifo_scoreboard) imp;
 
-    bit [DATA_WIDTH-1:0] model_q[$];
+    bit [WIDTH-1:0] model_q[$];
 
     function new(string name = "sync_fifo_scoreboard", uvm_component parent);
         super.new(name, parent);
@@ -20,7 +20,7 @@ class sync_fifo_scoreboard extends uvm_component;
 
     virtual function void write(sync_fifo_transaction tr);
 
-        bit [DATA_WIDTH-1:0] exp_data;
+        bit [WIDTH-1:0] exp_data;
 
         // Write accepted if wr_en is high and FIFO is not full.
         // For full + simultaneous read/write, allow write because read frees space.

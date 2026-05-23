@@ -19,7 +19,7 @@ class sync_fifo_agent extends uvm_agent;
         super.build_phase(phase);
 
         monitor   = sync_fifo_monitor::type_id::create("monitor", this);
-        if (!uvm_config_db(uvm_active_passive_enum)::get(this, "", "is_active", is_active))
+        if (!uvm_config_db#(uvm_active_passive_enum)::get(this, "", "is_active", is_active))
             is_active = UVM_ACTIVE;
         
         if (is_active == UVM_ACTIVE) begin

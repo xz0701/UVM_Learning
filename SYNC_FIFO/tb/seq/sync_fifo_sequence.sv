@@ -9,7 +9,7 @@ class sync_fifo_sequence extends uvm_sequence #(sync_fifo_transaction);
     endfunction
 
     virtual task body ();
-        sync_fifo req;
+        sync_fifo_transaction req;
 
         // 1. Random Traffic
         repeat(100) begin

@@ -53,7 +53,7 @@ class sync_fifo_monitor extends uvm_component;
 
         ap = new("ap", this);
 
-        if (!uvm_config_db#(virtual alu_if)::get(this, "", "vif", vif)) begin
+        if (!uvm_config_db#(virtual sync_fifo_if)::get(this, "", "vif", vif)) begin
             `uvm_fatal("SYNC_FIFO_MON", "Failed to get virtual interface")
         end
 
@@ -80,9 +80,7 @@ class sync_fifo_monitor extends uvm_component;
             cg.sample();
 
             `uvm_info("SYNC_FIFO_MON",
-                    $sformatf("Sample item: 
-                            rd_en=%0b rd_data=0x%0h empty=%0b 
-                            wr_en=%0b wr_data=0x%0h full=%0b",
+                    $sformatf("Sample item: rd_en=%0b rd_data=0x%0h empty=%0b wr_en=%0b wr_data=0x%0h full=%0b",
                             tr.rd_en, tr.rd_data, tr.empty, 
                             tr.wr_en, tr.wr_data, tr.full),
                             UVM_MEDIUM);
