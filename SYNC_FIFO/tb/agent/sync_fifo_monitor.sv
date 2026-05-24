@@ -72,6 +72,7 @@ class sync_fifo_monitor extends uvm_component;
             tr.rd_en   = vif.rd_en;
             tr.wr_en   = vif.wr_en;
             tr.wr_data = vif.wr_data;
+            tr.rst_n   = tr.rst_n;
             tr.rd_data = vif.rd_data;
             tr.full    = vif.full;
             tr.empty   = vif.empty;

@@ -1,7 +1,7 @@
 Command: /home/xz974/UVM_Learning/UVM_Learning/SYNC_FIFO/sim/./simv +UVM_TESTNAME=sync_fifo_test -l run.log
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  May 23 01:50 2026
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  May 24 00:44 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -23,442 +23,317 @@ UVM-1.1d.Synopsys
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
 UVM_INFO @ 0: reporter [RNTST] Running test sync_fifo_test...
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 5000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x94
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 5001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x0 empty=1 wr_en=1 wr_data=0x94 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 5001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x94, depth=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 15000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 15001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=1 wr_data=0xf0 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 15001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xf0, depth=2
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 25000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x18
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 25001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=1 wr_data=0x18 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 25001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x18, depth=3
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 35000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xa2
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 35001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x0 empty=1 wr_en=1 wr_data=0xa2 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 35001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xa2, depth=4
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 45000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xbc
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 45001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=1 wr_data=0xbc full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 45001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xbc, depth=5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 55000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x89
-"../tb/interface/sync_fifo_if.sv", 90: tb_top.sync_fifo_vif.a_empty_rw_behavior: started at 45000ps failed at 55000ps
-	Offending '(!empty)'
-Error: "../tb/interface/sync_fifo_if.sv", 90: tb_top.sync_fifo_vif.a_empty_rw_behavior: at time 55000 ps
-Empty + read/write should leave one item in FIFO
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 55001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x0 empty=0 wr_en=0 wr_data=0x89 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 55001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x94 actual=0x0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 65000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xe1
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 65001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xbc empty=1 wr_en=1 wr_data=0xe1 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 65001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xe1, depth=5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 75000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x8f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 75001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xbc empty=0 wr_en=0 wr_data=0x8f full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 75001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xf0 actual=0xbc
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 85000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x3f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 85001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xe1 empty=1 wr_en=0 wr_data=0x3f full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 95000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xc7
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 95001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe1 empty=1 wr_en=1 wr_data=0xc7 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 95001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xc7, depth=5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 105000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x1f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 105001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xe1 empty=0 wr_en=1 wr_data=0x1f full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 105001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x1f, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 115000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xc7
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 115001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xe1 empty=0 wr_en=0 wr_data=0xc7 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 125000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xa0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 125001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xe1 empty=0 wr_en=0 wr_data=0xa0 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 135000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x67
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 135001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe1 empty=0 wr_en=0 wr_data=0x67 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 135001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x18 actual=0xe1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 145000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x78
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 145001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xc7 empty=0 wr_en=1 wr_data=0x78 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 145001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x78, depth=6
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 145001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xa2 actual=0xc7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 155000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x96
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 155001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x1f empty=0 wr_en=0 wr_data=0x96 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 165000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x15
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 165001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x1f empty=0 wr_en=1 wr_data=0x15 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 165001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x15, depth=6
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 165001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xbc actual=0x1f
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 175000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xc6
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 175001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x78 empty=0 wr_en=0 wr_data=0xc6 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 175001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xe1 actual=0x78
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 185000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x80
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 185001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x15 empty=1 wr_en=0 wr_data=0x80 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 195000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x2e
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 195001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x15 empty=1 wr_en=0 wr_data=0x2e full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 205000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xf6
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 205001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x15 empty=1 wr_en=0 wr_data=0xf6 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 215000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x63
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 215001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x15 empty=1 wr_en=1 wr_data=0x63 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 215001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x63, depth=5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 225000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x19
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 225001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x15 empty=0 wr_en=1 wr_data=0x19 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 225001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x19, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 235000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf3
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 235001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x15 empty=0 wr_en=1 wr_data=0xf3 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 235001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xf3, depth=7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 245000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xd1
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 245001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x15 empty=0 wr_en=1 wr_data=0xd1 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 245001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xd1, depth=8
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 245001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xc7 actual=0x15
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 255000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x2c
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 255001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x63 empty=0 wr_en=1 wr_data=0x2c full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 255001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x2c, depth=8
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 255001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x1f actual=0x63
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 265000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xc0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 265001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x19 empty=0 wr_en=1 wr_data=0xc0 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 265001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xc0, depth=8
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 275000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x77
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 275001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x19 empty=0 wr_en=1 wr_data=0x77 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 275001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x77, depth=9
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 275001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x78 actual=0x19
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 285000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x23
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 285001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xf3 empty=0 wr_en=0 wr_data=0x23 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 295000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xc4
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 295001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xf3 empty=0 wr_en=0 wr_data=0xc4 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 295001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x15 actual=0xf3
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 305000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x8
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 305001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xd1 empty=0 wr_en=1 wr_data=0x8 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 305001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x8, depth=8
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 305001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x63 actual=0xd1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 315000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x5c
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 315001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x2c empty=0 wr_en=1 wr_data=0x5c full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 315001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x5c, depth=8
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 325000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x1c
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 325001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x2c empty=0 wr_en=1 wr_data=0x1c full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 325001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x1c, depth=9
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 325001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x19 actual=0x2c
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 335000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xb
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 335001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xc0 empty=0 wr_en=0 wr_data=0xb full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 345000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x74
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 345001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xc0 empty=0 wr_en=0 wr_data=0x74 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 345001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xf3 actual=0xc0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 355000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xec
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 355001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x77 empty=0 wr_en=1 wr_data=0xec full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 355001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xec, depth=8
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 355001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xd1 actual=0x77
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 365000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x64
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 365001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x8 empty=0 wr_en=0 wr_data=0x64 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 375000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x3b
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 375001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x8 empty=0 wr_en=0 wr_data=0x3b full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 385000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xd4
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 385001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x8 empty=0 wr_en=0 wr_data=0xd4 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 385001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x2c actual=0x8
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 395000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x4
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 395001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x5c empty=0 wr_en=0 wr_data=0x4 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 395001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xc0 actual=0x5c
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 405000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xc9
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 405001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x1c empty=0 wr_en=1 wr_data=0xc9 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 405001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xc9, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 415000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x4
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 415001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x1c empty=0 wr_en=1 wr_data=0x4 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 415001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x4, depth=7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 425000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x23
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 425001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x1c empty=0 wr_en=0 wr_data=0x23 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 425001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x77 actual=0x1c
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 435000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xdc
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 435001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xec empty=0 wr_en=1 wr_data=0xdc full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 435001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xdc, depth=7
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 435001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x8 actual=0xec
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 445000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xe2
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 445001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xc9 empty=0 wr_en=0 wr_data=0xe2 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 455000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x95
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 455001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xc9 empty=0 wr_en=1 wr_data=0x95 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 455001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x95, depth=7
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 455001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x5c actual=0xc9
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 465000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x19
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 465001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x4 empty=0 wr_en=0 wr_data=0x19 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 475000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x18
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 475001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x4 empty=0 wr_en=1 wr_data=0x18 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 475001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x18, depth=7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 485000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xd8
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 485001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x4 empty=0 wr_en=0 wr_data=0xd8 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 495000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xf0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 495001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x4 empty=0 wr_en=0 wr_data=0xf0 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 505000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x9
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 505001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x4 empty=0 wr_en=0 wr_data=0x9 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 505001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x1c actual=0x4
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 515000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x9f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 515001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xdc empty=0 wr_en=0 wr_data=0x9f full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 515001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xec actual=0xdc
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 525000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x38
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 525001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x95 empty=0 wr_en=1 wr_data=0x38 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 525001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x38, depth=6
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 525001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xc9 actual=0x95
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 535000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x17
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 535001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x18 empty=0 wr_en=1 wr_data=0x17 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 535001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x17, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 545000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x7f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 545001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x18 empty=0 wr_en=1 wr_data=0x7f full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 545001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x7f, depth=7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 555000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x39
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 555001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x18 empty=0 wr_en=1 wr_data=0x39 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 555001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x39, depth=8
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 565000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xd6
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 565001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x18 empty=0 wr_en=0 wr_data=0xd6 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 565001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x4 actual=0x18
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 575000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x1f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 575001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x38 empty=0 wr_en=0 wr_data=0x1f full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 575001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xdc actual=0x38
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 585000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x5f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 585001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x17 empty=0 wr_en=0 wr_data=0x5f full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 585001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x95 actual=0x17
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 595000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x16
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 595001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x7f empty=0 wr_en=0 wr_data=0x16 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 595001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x18 actual=0x7f
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 605000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x31
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 605001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x39 empty=1 wr_en=1 wr_data=0x31 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 605001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x31, depth=5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 615000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x8a
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 615001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x39 empty=0 wr_en=1 wr_data=0x8a full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 615001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x8a, depth=6
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 615001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x38 actual=0x39
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 625000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x13
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 625001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x31 empty=0 wr_en=1 wr_data=0x13 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 625001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x13, depth=6
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 625001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x17 actual=0x31
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 635000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xf1
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 635001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x8a empty=0 wr_en=0 wr_data=0xf1 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 635001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x7f actual=0x8a
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 645000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xa3
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 645001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x13 empty=1 wr_en=1 wr_data=0xa3 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 645001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xa3, depth=5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 655000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x6f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 655001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x13 empty=0 wr_en=0 wr_data=0x6f full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 655001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x39 actual=0x13
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 665000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x60
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 665001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xa3 empty=1 wr_en=1 wr_data=0x60 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 665001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x60, depth=5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 675000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x16
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 675001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xa3 empty=0 wr_en=1 wr_data=0x16 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 675001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x16, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 685000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x88
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 685001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xa3 empty=0 wr_en=0 wr_data=0x88 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 685001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x31 actual=0xa3
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 695000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x79
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 695001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x60 empty=0 wr_en=1 wr_data=0x79 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 695001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x79, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 705000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xa7
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 705001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x60 empty=0 wr_en=1 wr_data=0xa7 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 705001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xa7, depth=7
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 705001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x8a actual=0x60
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 715000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xc7
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 715001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x16 empty=0 wr_en=1 wr_data=0xc7 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 715001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xc7, depth=7
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 715001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x13 actual=0x16
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 725000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x6
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 725001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x79 empty=0 wr_en=0 wr_data=0x6 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 725001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xa3 actual=0x79
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 735000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xee
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 735001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xa7 empty=0 wr_en=1 wr_data=0xee full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 735001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xee, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 745000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x5e
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 745001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xa7 empty=0 wr_en=1 wr_data=0x5e full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 745001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x5e, depth=7
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 745001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x60 actual=0xa7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 755000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xac
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 755001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xc7 empty=0 wr_en=0 wr_data=0xac full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 755001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x16 actual=0xc7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 765000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x29
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 765001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xee empty=0 wr_en=1 wr_data=0x29 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 765001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x29, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 775000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x83
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 775001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xee empty=0 wr_en=0 wr_data=0x83 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 785000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x54
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 785001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xee empty=0 wr_en=1 wr_data=0x54 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 785001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x54, depth=7
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 785001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x79 actual=0xee
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 795000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xb3
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 795001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x5e empty=0 wr_en=0 wr_data=0xb3 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 805000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xf9
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 805001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x5e empty=0 wr_en=0 wr_data=0xf9 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 805001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xa7 actual=0x5e
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 815000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x46
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 815001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x29 empty=0 wr_en=0 wr_data=0x46 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 825000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x6d
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 825001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x29 empty=0 wr_en=1 wr_data=0x6d full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 825001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x6d, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 835000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x2e
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 835001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x29 empty=0 wr_en=0 wr_data=0x2e full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 845000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x48
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 845001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x29 empty=0 wr_en=1 wr_data=0x48 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 845001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x48, depth=7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 855000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xe8
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 855001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x29 empty=0 wr_en=0 wr_data=0xe8 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 855001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xc7 actual=0x29
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 865000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x51
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 865001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x54 empty=0 wr_en=1 wr_data=0x51 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 865001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x51, depth=7
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 865001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xee actual=0x54
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 875000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x82
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 875001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x6d empty=0 wr_en=0 wr_data=0x82 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 875001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x5e actual=0x6d
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 885000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xb1
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 885001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x48 empty=0 wr_en=0 wr_data=0xb1 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 885001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x29 actual=0x48
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 895000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x32
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 895001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=1 wr_en=1 wr_data=0x32 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 895001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x32, depth=5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 905000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x39
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 905001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=0 wr_data=0x39 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 915000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xdd
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 915001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=0 wr_data=0xdd full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 925000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xe1
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 925001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0xe1 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 925001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xe1, depth=6
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 935000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xe3
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 935001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0xe3 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 935001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xe3, depth=7
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 945000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xed
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 945001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0xed full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 945001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xed, depth=8
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 955000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x6d
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 955001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0x6d full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 955001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x6d, depth=9
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 965000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x99
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 965001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0x99 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 965001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x99, depth=10
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 975000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x6d
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 975001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x51 empty=0 wr_en=1 wr_data=0x6d full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 975001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x6d, depth=11
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 975001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x54 actual=0x51
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 985000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x7f
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 985001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x7f full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 985001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x7f, depth=11
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 995000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x70
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 995001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x70 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 995001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x70, depth=12
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1005000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x24
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1005001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x24 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1005001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x24, depth=13
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1015000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xaf
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1015001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xaf full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1015001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xaf, depth=14
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1025000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf5
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1025001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xf5 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1025001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xf5, depth=15
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1035000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xce
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1035001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xce full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1035001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xce, depth=16
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1045000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x68
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1045001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x68 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1045001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x68, depth=17
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1055000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x71
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1055001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x71 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1055001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x71, depth=18
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1065000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x9c
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1065001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x9c full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1065001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x9c, depth=19
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1075000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x40
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1075001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x40 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1075001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x40, depth=20
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1085000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xc6
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1085001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xc6 full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1095000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x55
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1095001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x55 full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1105000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1105001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xf0 full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1115000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x45
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1115001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x45 full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1125000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xba
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1125001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xba full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1135000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xa7
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1135001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xa7 full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1145000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf1
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1145001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xf1 full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1155000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x33
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1155001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x33 full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1165000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x81
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1165001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x81 full=1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1175000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xe3
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1175001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x32 empty=0 wr_en=1 wr_data=0xe3 full=1
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1175001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0xe3, depth=21
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1175001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x6d actual=0x32
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1185000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1185001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe1 empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1185001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x48 actual=0xe1
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1195000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-"../tb/interface/sync_fifo_if.sv", 81: tb_top.sync_fifo_vif.a_full_exact: started at 1195000ps failed at 1195000ps
-	Offending '(full == (occ_cnt == DEPTH))'
-Error: "../tb/interface/sync_fifo_if.sv", 81: tb_top.sync_fifo_vif.a_full_exact: at time 1195000 ps
-FIFO full flag mismatch with occupancy model
-"../tb/interface/sync_fifo_if.sv", 99: tb_top.sync_fifo_vif.a_full_rw_behavior: started at 1185000ps failed at 1195000ps
-	Offending 'full'
-Error: "../tb/interface/sync_fifo_if.sv", 99: tb_top.sync_fifo_vif.a_full_rw_behavior: at time 1195000 ps
-Full + read/write should keep FIFO full
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1195001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe3 empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1195001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x51 actual=0xe3
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1205000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1205001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xed empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1205001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x32 actual=0xed
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1215000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1215001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x6d empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1215001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xe1 actual=0x6d
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1225000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1225001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x99 empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1225001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xe3 actual=0x99
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1235000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1235001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x6d empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1235001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xed actual=0x6d
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1245000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1245001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x7f empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1245001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x6d actual=0x7f
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1255000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1255001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x70 empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1255001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x99 actual=0x70
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1265000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1265001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x24 empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1265001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x6d actual=0x24
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1275000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1275001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xaf empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1275001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x7f actual=0xaf
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1285000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1285001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xf5 empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1285001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x70 actual=0xf5
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1295000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1295001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xce empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1295001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0x24 actual=0xce
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1305000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1305001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x68 empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1305001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xaf actual=0x68
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1315000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1315001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x71 empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1315001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xf5 actual=0x71
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1325000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1325001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x9c empty=0 wr_en=0 wr_data=0x0 full=0
-UVM_ERROR ../tb/env/sync_fifo_scoreboard.sv(46) @ 1325001: uvm_test_top.env.scb [FIFO_SCB] Data mismatch: expected=0xce actual=0x9c
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1335000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1335001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x40 empty=1 wr_en=0 wr_data=0x0 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1345000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
-"../tb/interface/sync_fifo_if.sv", 72: tb_top.sync_fifo_vif.a_empty_exact: started at 1345000ps failed at 1345000ps
-	Offending '(empty == (occ_cnt == 0))'
-Error: "../tb/interface/sync_fifo_if.sv", 72: tb_top.sync_fifo_vif.a_empty_exact: at time 1345000 ps
-FIFO empty flag mismatch with occupancy model
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1345001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x40 empty=1 wr_en=0 wr_data=0x0 full=0
-UVM_INFO ../tb/agent/sync_fifo_driver.sv(40) @ 1355000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x2
-"../tb/interface/sync_fifo_if.sv", 72: tb_top.sync_fifo_vif.a_empty_exact: started at 1355000ps failed at 1355000ps
-	Offending '(empty == (occ_cnt == 0))'
-Error: "../tb/interface/sync_fifo_if.sv", 72: tb_top.sync_fifo_vif.a_empty_exact: at time 1355000 ps
-FIFO empty flag mismatch with occupancy model
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(82) @ 1355001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x40 empty=1 wr_en=1 wr_data=0x2 full=0
-UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(30) @ 1355001: uvm_test_top.env.scb [FIFO_SCB] Model push: 0x2, depth=6
-UVM_INFO /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_objection.svh(1274) @ 1365000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
-UVM_INFO ../tb/agent/sync_fifo_monitor.sv(96) @ 1365000: uvm_test_top.env.agent.monitor [SYNC_FIFO_COV] ALU functional coverage = 92.19%
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 5001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 15001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 25001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 35001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 45001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 55001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=1 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 60000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x94
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 65001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x0 empty=0 wr_en=1 wr_data=0x94 full=0
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(37) @ 65001: uvm_test_top.env.scb [FIFO_SCB] Read ignored because model FIFO is empty
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 70000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 75001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=0 wr_en=1 wr_data=0xf0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 80000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x18
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 85001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x0 empty=0 wr_en=1 wr_data=0x18 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 90000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xa2
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 95001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x94 empty=0 wr_en=1 wr_data=0xa2 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 100000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xbc
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 105001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x94 empty=0 wr_en=1 wr_data=0xbc full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 110000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x89
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 115001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xf0 empty=0 wr_en=0 wr_data=0x89 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 120000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xe1
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 125001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xf0 empty=0 wr_en=1 wr_data=0xe1 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 130000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x8f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 135001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x18 empty=0 wr_en=0 wr_data=0x8f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 140000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x3f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 145001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x18 empty=0 wr_en=0 wr_data=0x3f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 150000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xc7
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 155001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xa2 empty=0 wr_en=1 wr_data=0xc7 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 160000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x1f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 165001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xa2 empty=0 wr_en=1 wr_data=0x1f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 170000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xc7
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 175001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xa2 empty=0 wr_en=0 wr_data=0xc7 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 180000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xa0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 185001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xa2 empty=0 wr_en=0 wr_data=0xa0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 190000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x67
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 195001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xbc empty=0 wr_en=0 wr_data=0x67 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 200000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x78
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 205001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe1 empty=0 wr_en=1 wr_data=0x78 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 210000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x96
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 215001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xe1 empty=0 wr_en=0 wr_data=0x96 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 220000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x15
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 225001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xc7 empty=0 wr_en=1 wr_data=0x15 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 230000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xc6
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 235001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x1f empty=0 wr_en=0 wr_data=0xc6 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 240000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x80
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 245001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x1f empty=0 wr_en=0 wr_data=0x80 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 250000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x2e
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 255001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x78 empty=0 wr_en=0 wr_data=0x2e full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 260000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xf6
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 265001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x15 empty=1 wr_en=0 wr_data=0xf6 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 270000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x63
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 275001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x15 empty=0 wr_en=1 wr_data=0x63 full=0
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(37) @ 275001: uvm_test_top.env.scb [FIFO_SCB] Read ignored because model FIFO is empty
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 280000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x19
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 285001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x15 empty=0 wr_en=1 wr_data=0x19 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 290000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf3
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 295001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x15 empty=0 wr_en=1 wr_data=0xf3 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 300000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xd1
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 305001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x63 empty=0 wr_en=1 wr_data=0xd1 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 310000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x2c
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 315001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x19 empty=0 wr_en=1 wr_data=0x2c full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 320000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xc0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 325001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x19 empty=0 wr_en=1 wr_data=0xc0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 330000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x77
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 335001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xf3 empty=0 wr_en=1 wr_data=0x77 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 340000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x23
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 345001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xf3 empty=0 wr_en=0 wr_data=0x23 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 350000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xc4
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 355001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xd1 empty=0 wr_en=0 wr_data=0xc4 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 360000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x8
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 365001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x2c empty=0 wr_en=1 wr_data=0x8 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 370000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x5c
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 375001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x2c empty=0 wr_en=1 wr_data=0x5c full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 380000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x1c
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 385001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xc0 empty=0 wr_en=1 wr_data=0x1c full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 390000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xb
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 395001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xc0 empty=0 wr_en=0 wr_data=0xb full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 400000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x74
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 405001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x77 empty=0 wr_en=0 wr_data=0x74 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 410000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xec
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 415001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x8 empty=0 wr_en=1 wr_data=0xec full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 420000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x64
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 425001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x8 empty=0 wr_en=0 wr_data=0x64 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 430000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x3b
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 435001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x8 empty=0 wr_en=0 wr_data=0x3b full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 440000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xd4
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 445001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x5c empty=0 wr_en=0 wr_data=0xd4 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 450000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x4
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 455001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x1c empty=0 wr_en=0 wr_data=0x4 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 460000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xc9
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 465001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x1c empty=0 wr_en=1 wr_data=0xc9 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 470000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x4
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 475001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x1c empty=0 wr_en=1 wr_data=0x4 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 480000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x23
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 485001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xec empty=0 wr_en=0 wr_data=0x23 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 490000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xdc
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 495001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xc9 empty=0 wr_en=1 wr_data=0xdc full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 500000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xe2
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 505001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xc9 empty=0 wr_en=0 wr_data=0xe2 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 510000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x95
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 515001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x4 empty=0 wr_en=1 wr_data=0x95 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 520000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x19
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 525001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x4 empty=0 wr_en=0 wr_data=0x19 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 530000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x18
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 535001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x4 empty=0 wr_en=1 wr_data=0x18 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 540000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xd8
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 545001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x4 empty=0 wr_en=0 wr_data=0xd8 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 550000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xf0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 555001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x4 empty=0 wr_en=0 wr_data=0xf0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 560000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x9
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 565001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xdc empty=0 wr_en=0 wr_data=0x9 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 570000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x9f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 575001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x95 empty=0 wr_en=0 wr_data=0x9f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 580000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x38
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 585001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x18 empty=0 wr_en=1 wr_data=0x38 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 590000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x17
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 595001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x18 empty=0 wr_en=1 wr_data=0x17 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 600000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x7f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 605001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x18 empty=0 wr_en=1 wr_data=0x7f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 610000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x39
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 615001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x18 empty=0 wr_en=1 wr_data=0x39 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 620000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xd6
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 625001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x38 empty=0 wr_en=0 wr_data=0xd6 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 630000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x1f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 635001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x17 empty=0 wr_en=0 wr_data=0x1f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 640000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x5f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 645001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x7f empty=0 wr_en=0 wr_data=0x5f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 650000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x16
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 655001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x39 empty=1 wr_en=0 wr_data=0x16 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 660000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x31
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 665001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x39 empty=0 wr_en=1 wr_data=0x31 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 670000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x8a
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 675001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x31 empty=0 wr_en=1 wr_data=0x8a full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 680000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x13
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 685001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x8a empty=0 wr_en=1 wr_data=0x13 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 690000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xf1
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 695001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x13 empty=1 wr_en=0 wr_data=0xf1 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 700000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xa3
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 705001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x13 empty=0 wr_en=1 wr_data=0xa3 full=0
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(37) @ 705001: uvm_test_top.env.scb [FIFO_SCB] Read ignored because model FIFO is empty
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 710000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x6f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 715001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xa3 empty=1 wr_en=0 wr_data=0x6f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 720000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x60
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 725001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xa3 empty=0 wr_en=1 wr_data=0x60 full=0
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(37) @ 725001: uvm_test_top.env.scb [FIFO_SCB] Read ignored because model FIFO is empty
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 730000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x16
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 735001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xa3 empty=0 wr_en=1 wr_data=0x16 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 740000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x88
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 745001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x60 empty=0 wr_en=0 wr_data=0x88 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 750000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x79
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 755001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x60 empty=0 wr_en=1 wr_data=0x79 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 760000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xa7
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 765001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x16 empty=0 wr_en=1 wr_data=0xa7 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 770000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xc7
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 775001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x79 empty=0 wr_en=1 wr_data=0xc7 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 780000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x6
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 785001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xa7 empty=0 wr_en=0 wr_data=0x6 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 790000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xee
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 795001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xa7 empty=0 wr_en=1 wr_data=0xee full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 800000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x5e
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 805001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xc7 empty=0 wr_en=1 wr_data=0x5e full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 810000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xac
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 815001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xee empty=0 wr_en=0 wr_data=0xac full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 820000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x29
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 825001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xee empty=0 wr_en=1 wr_data=0x29 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 830000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x83
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 835001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0xee empty=0 wr_en=0 wr_data=0x83 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 840000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x54
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 845001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x5e empty=0 wr_en=1 wr_data=0x54 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 850000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xb3
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 855001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x5e empty=0 wr_en=0 wr_data=0xb3 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 860000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xf9
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 865001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x29 empty=0 wr_en=0 wr_data=0xf9 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 870000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x46
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 875001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x29 empty=0 wr_en=0 wr_data=0x46 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 880000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x6d
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 885001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x29 empty=0 wr_en=1 wr_data=0x6d full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 890000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x2e
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 895001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x29 empty=0 wr_en=0 wr_data=0x2e full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 900000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x48
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 905001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x29 empty=0 wr_en=1 wr_data=0x48 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 910000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xe8
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 915001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x54 empty=0 wr_en=0 wr_data=0xe8 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 920000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x51
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 925001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x6d empty=0 wr_en=1 wr_data=0x51 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 930000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x82
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 935001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x48 empty=0 wr_en=0 wr_data=0x82 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 940000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0xb1
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 945001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x51 empty=1 wr_en=0 wr_data=0xb1 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 950000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x32
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 955001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0x32 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 960000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0x39
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 965001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=0 wr_data=0x39 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 970000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=0 wr_data=0xdd
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 975001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=0 wr_data=0xdd full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 980000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xe1
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 985001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0xe1 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 990000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xe3
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 995001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0xe3 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1000000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xed
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1005001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0xed full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1010000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x6d
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1015001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0x6d full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1020000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x99
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1025001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x51 empty=0 wr_en=1 wr_data=0x99 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1030000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x6d
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1035001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x32 empty=0 wr_en=1 wr_data=0x6d full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1040000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x7f
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1045001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x7f full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1050000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x70
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1055001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x70 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1060000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x24
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1065001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x24 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1070000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xaf
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1075001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xaf full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1080000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf5
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1085001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xf5 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1090000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xce
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1095001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xce full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1100000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x68
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1105001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x68 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1110000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x71
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1115001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x71 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1120000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x9c
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1125001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x9c full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1130000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x40
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1135001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x40 full=1
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1140000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xc6
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1145001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xc6 full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1145001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1150000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x55
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1155001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x55 full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1155001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1160000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1165001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xf0 full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1165001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1170000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x45
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1175001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x45 full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1175001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1180000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xba
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1185001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xba full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1185001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1190000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xa7
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1195001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xa7 full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1195001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1200000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0xf1
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1205001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0xf1 full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1205001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1210000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x33
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1215001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x33 full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1215001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1220000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=0 wr_en=1 wr_data=0x81
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1225001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=0 rd_data=0x32 empty=0 wr_en=1 wr_data=0x81 full=1
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(61) @ 1225001: uvm_test_top.env.scb [FIFO_SCB] Write ignored because model FIFO is full
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1230000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0xe3
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1235001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe1 empty=0 wr_en=1 wr_data=0xe3 full=1
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1240000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1245001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe3 empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1250000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1255001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xed empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1260000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1265001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x6d empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1270000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1275001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x99 empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1280000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1285001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x6d empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1290000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1295001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x7f empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1300000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1305001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x70 empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1310000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1315001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x24 empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1320000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1325001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xaf empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1330000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1335001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xf5 empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1340000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1345001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xce empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1350000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1355001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x68 empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1360000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1365001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x71 empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1370000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1375001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x9c empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1380000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1385001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0x40 empty=0 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1390000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1395001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe3 empty=1 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1400000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=0 wr_data=0x0
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(83) @ 1405001: uvm_test_top.env.agent.monitor [SYNC_FIFO_MON] Sample item: rd_en=1 rd_data=0xe3 empty=1 wr_en=0 wr_data=0x0 full=0
+UVM_INFO ../tb/env/sync_fifo_scoreboard.sv(37) @ 1405001: uvm_test_top.env.scb [FIFO_SCB] Read ignored because model FIFO is empty
+UVM_INFO ../tb/agent/sync_fifo_driver.sv(43) @ 1410000: uvm_test_top.env.agent.driver [SYNC_FIFO_DRV] Drive item: rd_en=1 wr_en=1 wr_data=0x2
+UVM_INFO /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_objection.svh(1274) @ 1415000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../tb/agent/sync_fifo_monitor.sv(97) @ 1415000: uvm_test_top.env.agent.monitor [SYNC_FIFO_COV] ALU functional coverage = 90.62%
 
 --- UVM Report Summary ---
 
 ** Report counts by severity
-UVM_INFO :  340
+UVM_INFO :  294
 UVM_WARNING :    0
-UVM_ERROR :   59
+UVM_ERROR :    0
 UVM_FATAL :    0
 ** Report counts by id
-[FIFO_SCB]   124
+[FIFO_SCB]    14
 [RNTST]     1
 [SYNC_FIFO_COV]     1
 [SYNC_FIFO_DRV]   136
-[SYNC_FIFO_MON]   136
+[SYNC_FIFO_MON]   141
 [TEST_DONE]     1
 $finish called from file "/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_root.svh", line 437.
-$finish at simulation time              1365000
+$finish at simulation time              1415000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 1365000 ps
-CPU Time:      0.260 seconds;       Data structure size:   0.5Mb
-Sat May 23 01:50:57 2026
+Time: 1415000 ps
+CPU Time:      0.230 seconds;       Data structure size:   0.5Mb
+Sun May 24 00:44:03 2026

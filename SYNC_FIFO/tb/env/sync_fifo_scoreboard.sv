@@ -22,22 +22,19 @@ class sync_fifo_scoreboard extends uvm_component;
 
         bit [WIDTH-1:0] exp_data;
 
-        // Write accepted if wr_en is high and FIFO is not full.
-        // For full + simultaneous read/write, allow write because read frees space.
-        if (tr.wr_en && (!tr.full || tr.rd_en)) begin
-            model_q.push_back(tr.wr_data);
-
-            `uvm_info("FIFO_SCB",
-                $sformatf("Model push: 0x%0h, depth=%0d",
-                          tr.wr_data, model_q.size()),
-                UVM_MEDIUM)
+        // Reset Queue
+        if (!tr.rst_n) begin
+            model_q.delete();
+            return;
         end
 
         // Read accepted if rd_en is high and FIFO is not empty.
         // Empty + simultaneous read/write is treated as read fail, write only.
-        if (tr.rd_en && !tr.empty) begin
+        // Read First, then write when empty
+        // Read first
+        if (tr.rd_en) begin
             if (model_q.size() == 0) begin
-                `uvm_error("FIFO_SCB", "Model queue underflow")
+                `uvm_info("FIFO_SCB", "Read ignored because model FIFO is empty", UVM_MEDIUM)
             end
             else begin
                 exp_data = model_q.pop_front();
@@ -45,13 +42,23 @@ class sync_fifo_scoreboard extends uvm_component;
                 if (tr.rd_data !== exp_data) begin
                     `uvm_error("FIFO_SCB",
                         $sformatf("Data mismatch: expected=0x%0h actual=0x%0h",
-                                  exp_data, tr.rd_data))
+                                exp_data, tr.rd_data))
                 end
-                else begin
-                    `uvm_info("FIFO_SCB",
-                        $sformatf("Data match: 0x%0h", tr.rd_data),
-                        UVM_MEDIUM)
-                end
+            end
+        end
+
+        // Write accepted if wr_en is high and FIFO is not full.
+        // For full + simultaneous read/write, allow write because read frees space.
+        // Write after read
+        if (tr.wr_en) begin
+            if (model_q.size() < DEPTH) begin
+                model_q.push_back(tr.wr_data);
+            end
+            else if (tr.rd_en) begin
+                model_q.push_back(tr.wr_data);
+            end
+            else begin
+                `uvm_info("FIFO_SCB", "Write ignored because model FIFO is full", UVM_MEDIUM)
             end
         end
 

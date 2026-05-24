@@ -28,11 +28,14 @@ class sync_fifo_driver extends uvm_driver #(sync_fifo_transaction);
         vif.wr_en   <= 1'b0;
         vif.wr_data <= '0;
 
+        wait (vif.rst_n == 1'b1);
+        @ (negedge vif.clk);
+
         forever begin
 
             seq_item_port.get_next_item(tr);
 
-            @(posedge vif.clk);
+            @(negedge vif.clk);
             vif.rd_en   <= tr.rd_en;
             vif.wr_en   <= tr.wr_en;
             vif.wr_data <= tr.wr_data;

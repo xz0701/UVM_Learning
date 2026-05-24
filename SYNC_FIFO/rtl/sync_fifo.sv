@@ -20,7 +20,7 @@ module sync_fifo #(
 
     logic write_real, read_real;
 
-    assign write_real = wr_en && !full;
+    assign write_real = wr_en && (!full || rd_en);
     assign read_real  = rd_en && !empty;
     
     always_ff @(posedge clk or negedge rst_n) begin
