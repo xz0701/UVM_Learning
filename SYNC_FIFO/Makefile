@@ -2,11 +2,15 @@ VCS      = vcs
 SIM_DIR  = sim
 FLIST    = ../script/filelist.f
 TOP      = tb_top
-TEST     = sync_fifo_test
+WIDTH ?= 8
+DEPTH ?= 16
+TEST  ?= sync_fifo_test
 
 VCS_OPTS = -full64 \
            -sverilog \
            -ntb_opts uvm \
+           +define+WIDTH=$(WIDTH) \
+           +define+DEPTH=$(DEPTH) \
            -timescale=1ns/1ps \
            -debug_access+all \
            -top $(TOP) \

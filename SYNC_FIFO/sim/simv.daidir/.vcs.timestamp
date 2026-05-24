@@ -468,9 +468,11 @@
 0 ../tb/seq/sync_fifo_test.sv
 0 ../tb/agent/sync_fifo_test.sv
 0 ../tb/env/sync_fifo_test.sv
-43
+45
++define+DEPTH=4
 +define+UVM_DIRECTC_OPTS
 +define+UVM_VCS_RECORD
++define+WIDTH=64
 +incdir+/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/
 +incdir+/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs
 +itf+/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/vcsdp_lite.tab
@@ -512,13 +514,14 @@ uvm
 tb_top
 simv
 ../script/filelist.f
-70
+73
 which_declare=declare -f
 _LMFILES__modshare=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs:1
 _LMFILES_=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs
 XDG_SESSION_ID=1591
 XDG_RUNTIME_DIR=/run/user/1775996
 XDG_DATA_DIRS=/home/xz974/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
+WIDTH=64
 VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
 VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-b698e4cf-7347-4586-b402-93bb9eec3819.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1775996/vscode-git-c1abf4066f.sock
@@ -540,6 +543,7 @@ VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64
+TEST=/bin/test
 TERM_PROGRAM_VERSION=1.121.0
 TERM_PROGRAM=vscode
 SYNOPSYS_DIR=/opt/synopsys/vcs/V-2023.12-SP2-1
@@ -563,10 +567,10 @@ MODULESHOME=/usr/share/Modules
 MODULEPATH_modshare=/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2
 MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 MFLAGS=
-MAKE_TERMOUT=/dev/pts/0
 MAKE_TERMERR=/dev/pts/0
+MAKEOVERRIDES=${-*-command-variables-*-}
 MAKELEVEL=1
-MAKEFLAGS=
+MAKEFLAGS= -- TEST=sync_fifo_test DEPTH=4 WIDTH=64
 LOADEDMODULES_modshare=synopsys/synopsys-vcs:1
 LOADEDMODULES=synopsys/synopsys-vcs
 LESSOPEN=||/usr/bin/lesspipe.sh %s
@@ -575,6 +579,7 @@ LC_ALL=C
 HISTCONTROL=ignoredups
 GIT_ASKPASS=/home/xz974/.vscode-server/cli/servers/Stable-f6cfa2ea2403534de03f069bdf160d06451ed282/server/extensions/git/dist/askpass.sh
 DVE_HOME=/opt/synopsys/vcs/V-2023.12-SP2-1/gui/dve
+DEPTH=4
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1775996/bus
 COLORTERM=truecolor
 BASH_FUNC_which%%=() {  ( alias;_ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@_}
@@ -738,7 +743,7 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1779515698 ../rtl/sync_fifo.sv
 1779429880 ../tb/pkg/sync_fifo_pkg.sv
 1779596618 ../tb/interface/sync_fifo_if.sv
-1779515112 ../tb/pkg/sync_fifo_param_pkg.sv
+1779600137 ../tb/pkg/sync_fifo_param_pkg.sv
 1721621732 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv
 1721621732 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv
 1779515029 ../script/filelist.f
@@ -749,5 +754,5 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1721618558 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/liberrorinf.so
 1721618482 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libsnpsmalloc.so
 1721618554 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libvfs.so
-1779599714 simv.daidir
+1779600507 simv.daidir
 -1 partitionlib

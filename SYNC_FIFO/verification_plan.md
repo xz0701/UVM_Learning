@@ -45,7 +45,7 @@ Main features of the DUT include:
 ### Read
 - Read data matches the oldest accepted write transaction
 - Read behavior when FIFO is empty
-- Counter and poinger update correctness
+- FIFO occupancy behavior correctness
 
 ### Simultaneous Read/Write
 - Concurrent accesses
@@ -120,3 +120,20 @@ Main features of the DUT include:
 - Functional coverage > 95%
 - All planned testcases pass
 - No unexpected simulation error or deadlock
+
+## Verification Environment Architecture
+
+The UVM testbench consists of:
+
+- sequence item / transaction
+- sequence
+- sequencer
+- driver
+- monitor
+- agent
+- scoreboard
+- environment
+- test
+
+The monitor broadcasts sampled transactions through analysis ports to the scoreboard and coverage collector.
+The scoreboard uses a queue-based reference model to verify FIFO ordering and data integrity.
