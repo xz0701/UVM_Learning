@@ -45,11 +45,18 @@ module tb_top;
     initial begin
         uvm_config_db#(virtual sync_fifo_if)::set(
             null,
-            "*",
+            "uvm_test_top",
             "vif",
             sync_fifo_vif
         );
 
+        uvm_config_db#(virtual sync_fifo_if)::set(
+            null,
+            "uvm_test_top.env.agent.*",
+            "vif",
+            sync_fifo_vif
+        );
+        
         run_test("sync_fifo_test");
     end
 endmodule

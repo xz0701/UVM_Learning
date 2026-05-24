@@ -35,6 +35,22 @@ class sync_fifo_sequence extends uvm_sequence #(sync_fifo_transaction);
             finish_item(req);
         end
 
+        // Hold full for one idle cycle
+        req = sync_fifo_transaction::type_id::create("req");
+        start_item(req);
+        req.rd_en   = 1'b0;
+        req.wr_en   = 1'b0;
+        req.wr_data = '0;
+        finish_item(req);
+
+        // Read when full, write off
+        req = sync_fifo_transaction::type_id::create("req");
+        start_item(req);
+        req.rd_en   = 1'b1;
+        req.wr_en   = 1'b0;
+        req.wr_data = '0;
+        finish_item(req);
+
         // 3. Write when full
         req = sync_fifo_transaction::type_id::create("req");
         start_item(req);
@@ -85,6 +101,8 @@ class sync_fifo_sequence extends uvm_sequence #(sync_fifo_transaction);
         req.wr_en = 1'b1;
         req.rd_en = 1'b1;
         req.wr_data = $urandom();
+
+        
 
         finish_item(req);
 

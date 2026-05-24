@@ -2,7 +2,7 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
 )
  1 1
  0 84 /home/xz974/UVM_Learning/UVM_Learning/SYNC_FIFO/sim/../tb/agent/sync_fifo_monitor.sv
- 14 0 0 0 1 0 0 0 0  1
+ 16 0 0 0 1 0 0 0 0  1
 0
 0 0
  0
@@ -24,7 +24,7 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
  0
  0
  0
- 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_5
+ 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_f
 0
 0
 0
@@ -32,11 +32,11 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
 0
  0
 
-4
+5
 0
-4
+3
 0
- 5 rd_cp 18 0 0 0 0 0 0 56 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn 56 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 5 rd_cp 20 0 0 0 0 0 0 56 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn 56 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
  0
  0
  0
@@ -51,12 +51,12 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
  0
  0
  0
- 2 1 1 0 0 1 1 6 rd_off 19 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 2 1 1 0 0 1 1 6 rd_off 21 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_0 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 rd_on 20 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 5 rd_on 22 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_1 0 0 0 0 0 0 0
  0
 
- 5 wr_cp 23 0 0 0 0 0 0 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_2 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 5 wr_cp 25 0 0 0 0 0 0 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_2 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
  0
  0
  0
@@ -71,12 +71,12 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
  0
  0
  0
- 2 1 1 0 0 1 1 6 wr_off 24 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 2 1 1 0 0 1 1 6 wr_off 26 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_0 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 wr_on 25 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 5 wr_on 27 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_1 0 0 0 0 0 0 0
  0
 
- 7 full_cp 28 0 0 0 0 0 0 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_3 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_3 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 7 full_cp 30 0 0 0 0 0 0 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_3 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_3 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
  0
  0
  0
@@ -91,12 +91,12 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
  0
  0
  0
- 2 1 1 0 0 1 1 8 not_full 29 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 2 1 1 0 0 1 1 8 not_full 31 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_0 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 4 full 30 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 4 full 32 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_1 0 0 0 0 0 0 0
  0
 
- 8 empty_cp 33 0 0 0 0 0 0 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_4 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_4 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 8 empty_cp 35 0 0 0 0 0 0 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_4 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_4 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
  0
  0
  0
@@ -111,12 +111,46 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
  0
  0
  0
- 2 1 1 0 0 1 1 9 not_empty 34 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 2 1 1 0 0 1 1 9 not_empty 36 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_0 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 empty 35 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 5 empty 37 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_1 0 0 0 0 0 0 0
  0
 
- 11 wr_rd_cross 0 38 0 0 -1 0 0 0 0 2 1 0 0 -1 0 0 0
+ 11 scenario_cp 43 0 0 0 0 0 0 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_5 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_5 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 4 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 9 1 1 0 0 1 1 11 normal_idle 44 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_6 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 10 empty_idle 45 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_7 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 12 normal_write 46 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_8 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 11 normal_read 47 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_9 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 9 normal_rw 48 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_a 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 10 empty_read 49 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_b 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 8 empty_rw 50 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_c 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 10 full_write 51 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_d 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 7 full_rw 52 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 58 sync_fifo_monitor::sync_fifo_pkg_sync_fifo_monitor_cg_fn_e 0 0 0 0 0 0 0
+ 0
+
+ 11 wr_rd_cross 0 40 0 0 -1 0 0 0 0 2 1 0 0 -1 0 0 0
  0
  0
  0
@@ -129,7 +163,7 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
  0
  0
  0
- 13 full_wr_cross 0 39 0 0 -1 0 0 0 0 2 1 2 0 -1 0 0 0
+ 13 full_wr_cross 0 41 0 0 -1 0 0 0 0 2 1 2 0 -1 0 0 0
  0
  0
  0
@@ -142,20 +176,7 @@ global coverage_group 0 0 sync_fifo_pkg::sync_fifo_monitor::cg __coverage_sync_f
  0
  0
  0
- 14 empty_rd_cross 0 40 0 0 -1 0 0 0 0 2 0 3 0 -1 0 0 0
- 0
- 0
- 0
- 0 0
- 0 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 14 boundary_cross 0 41 0 0 -1 0 0 0 0 4 0 1 2 3 0 -1 0 0 0
+ 14 empty_rd_cross 0 42 0 0 -1 0 0 0 0 2 0 3 0 -1 0 0 0
  0
  0
  0
