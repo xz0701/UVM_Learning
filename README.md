@@ -1,119 +1,223 @@
 # 📘 UVM Learning Journey
 
-> 🚀 Self-paced learning project for SystemVerilog & UVM-based Design Verification
-> 🎯 Goal: Become an industry-ready DV (Design Verification) engineer
+> 🚀 Hands-on SystemVerilog & UVM Verification Projects  
+> 🎯 Goal: Become an industry-ready Design Verification (DV) engineer
 
 ---
 
 ## 📌 Overview
 
-This repository documents my journey of learning **SystemVerilog, UVM, Assertions, and Coverage** through hands-on projects.
+This repository documents my self-paced learning journey in:
 
-The focus is on:
+- SystemVerilog
+- UVM (Universal Verification Methodology)
+- Assertions (SVA)
+- Functional Coverage
+- Coverage-Driven Verification
 
-* Building reusable **UVM testbenches**
-* Understanding **verification methodology**
-* Practicing **debugging and coverage-driven verification**
-* Simulating real-world DV workflows
-
----
-
-## 🎯 Learning Goals
-
-* Master **SystemVerilog for verification**
-* Build complete **UVM environments from scratch**
-* Understand **protocol-level verification (AXI, MIPI, etc.)**
-* Develop strong **debugging & waveform analysis skills**
-* Learn **coverage-driven verification methodology**
+The projects focus on building reusable verification environments and practicing real-world DV workflows through progressively more complex designs.
 
 ---
 
-## 🧩 Project Structure
+## 🎯 Learning Objectives
 
-```bash
-UVM_Projects/
-├── ALU/
-│   ├── rtl/        # DUT design
-│   ├── tb/         # Testbench (SV/UVM)
-│   ├── sim/        # Simulation scripts
-│   └── scripts/    # VCS Sripts
-
-```
+- Build reusable UVM verification environments
+- Develop strong debugging and waveform analysis skills
+- Understand coverage-driven verification methodology
+- Practice assertion-based verification
+- Learn protocol-level verification concepts
+- Simulate industry-style regression and verification flows
 
 ---
 
-## 🔬 Current Progress
+## 🧩 Repository Structure
 
-#### 🔹 ALU Verification (04/27/2026)
-
-* UVM-based verification environment (driver, monitor, scoreboard)
-* Constrained random stimulus generation
-* Directed corner-case tesing (zero/one/max)
-* Functional checking with scoreboard
-* Coverage closure achieved 100%
-
-#### (Ongoing) Stage 2: Sync FIFO Verification
-
-* Sync FIFO corner cases
-* Overflow / Underflow detection
-* Data integrity checking
-* Multi-channel support
+    UVM_Projects/
+    ├── ALU/
+    │   ├── rtl/
+    │   ├── tb/
+    │   ├── sim/
+    │   └── script/
+    │
+    ├── Sync_FIFO/
+    │   ├── rtl/
+    │   ├── tb/
+    │   ├── sim/
+    │   └── script/
 
 ---
 
+# 🔬 Verification Projects
+
+## 🔹 ALU Verification (04/27/2026)
+
+### DUT Features
+
+- Arithmetic and logic operations
+- Shift and comparison operations
+- Parameterized data width
+
+### Verification Features
+
+- UVM-based verification environment
+- Constrained random stimulus generation
+- Directed corner-case testing
+- Functional coverage collection
+- Assertions for ALU behavior verification
+- Scoreboard-based functional checking
+
+### Verification Components
+
+- sequence item / transaction
+- sequence
+- sequencer
+- driver
+- monitor
+- agent
+- scoreboard
+- environment
+- test
+
+### Corner Cases Verified
+
+- Zero operands
+- Maximum value operands
+- Shift boundary behavior
+- Signed comparison behavior
+
+### Verification Results
+
+- Functional coverage closure achieved (100%)
+- All planned testcases passed
+- No scoreboard mismatch or assertion failure
+
 ---
 
-### 🔜 Stage 3: Protocol Verification
+## 🔹 Synchronous FIFO Verification (05/23/2026)
 
-* AXI-Lite
-* MIPI
-* PCIe (concept-level)
+### DUT Features
+
+- Parameterized WIDTH and DEPTH
+- Asynchronous active-low reset
+- Simultaneous read/write support
+- Full/empty flag generation
+- Circular buffer architecture
+
+### Verification Features
+
+- Queue-based reference model scoreboard
+- Full/empty boundary verification
+- Simultaneous read/write corner-case testing
+- Assertions for FIFO state correctness
+- Functional coverage and scenario coverage
+- Parameterized regression testing
+
+### Corner Cases Verified
+
+- Write when full
+- Read when empty
+- Full + simultaneous read/write
+- Empty + simultaneous read/write
+- Pointer wrap-around behavior
+- Reset during traffic
+- Back-to-back read/write operations
+
+### Verification Infrastructure
+
+- UVM environment built from scratch
+- Configurable WIDTH/DEPTH regression flow
+- Automated regression script
+- Log-based PASS/FAIL checking
+- Functional coverage collection
+- Assertion-based verification
+
+### Verification Results
+
+- Functional coverage closure achieved
+- Multi-configuration regression passed
+- No scoreboard mismatch or assertion failure
+
+
+# 🚧 Ongoing Projects
+
+## 🔹 Asynchronous FIFO Verification (In Progress)
+
+### Current Focus
+
+- Dual-clock FIFO architecture
+- Gray-code pointer synchronization
+- Clock domain crossing (CDC) behavior
+- Independent read/write clock generation
+- Async reset synchronization
+
+### Planned Verification Features
+
+- Dual-agent UVM architecture
+- Independent read/write sequences
+- CDC-related assertions
+- Full/empty synchronization verification
+- Random clock ratio testing
+- Parameterized regression flow
+
+---
+
+## 🔜 Planned Projects
+
+### Protocol Verification
+
+- AXI-Lite
+- AXI-Stream
+- MIPI (concept-level)
+- PCIe (concept-level)
+
+### Advanced Verification Topics
+
+- Async FIFO Verification
+- Virtual Sequences
+- UVM Register Model
+- Coverage Closure Flow
+- Formal Verification Basics
 
 ---
 
 ## 🛠 Tools & Environment
 
-* Simulator: VCS
+- Simulator: VCS
+- Language: SystemVerilog
+- Methodology: UVM
+- Waveform Debug: Verdi / DVE
 
 ---
 
-## 📈 What I Focus On
+## 📈 Key Focus Areas
 
-* Writing **clean and readable SV/UVM code**
-* Building **scalable verification environments**
-* Debugging using **waveforms and logs**
-* Understanding **real industry workflows**
-
----
-
-## 📚 Learning Approach
-
-Instead of only reading theory, this repo emphasizes:
-
-✔ Hands-on implementation
-✔ Incremental complexity (ALU → FIFO → Protocols)
-✔ Debugging real issues
-✔ Writing reusable components
+- Clean and reusable UVM architecture
+- Coverage-driven verification methodology
+- Assertion-based verification
+- Debugging using logs and waveforms
+- Industry-style regression workflows
+- Verification planning and coverage closure
 
 ---
 
-## 🚧 Future Work
+## 📚 Learning Philosophy
 
-* Add **coverage collection (functional + code)**
-* Integrate **SystemVerilog Assertions (SVA)**
-* Build **full UVM agents for protocols**
-* Add **performance and stress tests**
-* Improve **documentation and diagrams**
+This repository emphasizes:
+
+- Hands-on implementation
+- Incremental complexity growth
+- Debugging real verification issues
+- Building reusable verification components
+- Understanding verification intent instead of only syntax
 
 ---
 
 ## 📬 Notes
 
-This is an evolving repository.
-Updates will follow my learning progress.
+This repository is continuously evolving as I progress through more advanced DV topics and protocol verification projects.
 
 ---
 
-## ⭐ If you find this useful
+## ⭐ Feedback
 
-Feel free to ⭐ the repo or share suggestions!
+Suggestions and discussions are always welcome.
