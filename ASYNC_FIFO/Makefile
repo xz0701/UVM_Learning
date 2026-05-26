@@ -4,7 +4,7 @@ FLIST    = ../script/filelist.f
 TOP      = tb_top
 WIDTH ?= 8
 DEPTH ?= 16
-TEST  ?= sync_fifo_test
+TEST  ?= async_fifo_test
 
 VCS_OPTS = -full64 \
            -sverilog \
