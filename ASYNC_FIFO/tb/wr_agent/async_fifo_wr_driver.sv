@@ -31,7 +31,6 @@ class async_fifo_wr_driver extends uvm_driver #(async_fifo_wr_tr);
         wait_reset_release();
 
         forever begin
-
             seq_item_port.get_next_item(tr);
 
             @(negedge vif.wr_clk);

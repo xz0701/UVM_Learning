@@ -1,6 +1,6 @@
 class async_fifo_rd_driver extends uvm_driver #(async_fifo_rd_tr);
 
-    `uvm_component_utils(async_fifo_tr_driver);
+    `uvm_component_utils(async_fifo_rd_driver);
 
     virtual async_fifo_if vif;
 
@@ -9,7 +9,7 @@ class async_fifo_rd_driver extends uvm_driver #(async_fifo_rd_tr);
     endfunction
 
     virtual function void build_phase(uvm_phase phase);
-        super.build(phase);
+        super.build_phase(phase);
 
         if (!uvm_config_db#(virtual async_fifo_if)::get(this, "", "vif", vif)) begin
             `uvm_fatal("ASYNC_FIFO_RD_DRV", "Failed to get virtual interface");
