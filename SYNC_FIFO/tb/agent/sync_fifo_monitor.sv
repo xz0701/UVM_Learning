@@ -103,7 +103,7 @@ class sync_fifo_monitor extends uvm_component;
                     $sformatf("Sample item: rd_en=%0b rd_data=0x%0h empty=%0b wr_en=%0b wr_data=0x%0h full=%0b",
                             tr.rd_en, tr.rd_data, tr.empty, 
                             tr.wr_en, tr.wr_data, tr.full),
-                            UVM_MEDIUM);
+                            UVM_MEDIUM)
 
             ap.write(tr);
         end

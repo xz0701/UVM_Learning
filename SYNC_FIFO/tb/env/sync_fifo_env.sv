@@ -2,7 +2,7 @@
 `define SYNC_FIFO_ENV_SV
 
 class sync_fifo_env extends uvm_env;
-    `uvm_component_utils(sync_fifo_env);
+    `uvm_component_utils(sync_fifo_env)
 
     sync_fifo_agent      agent;
     sync_fifo_scoreboard scb;
