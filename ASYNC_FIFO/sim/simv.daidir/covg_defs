@@ -1,0 +1,183 @@
+global coverage_group 0 0 async_fifo_pkg::async_fifo_wr_monitor::cg __coverage_async_fifo_wr_monitor.cg unused_async_fifo_wr_monitor_cg_loop_label async_fifo_pkg 0 1 0 0 0  ( 0 
+)
+ 1 2
+ 0 92 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/../tb/wr_agent/async_fifo_wr_monitor.sv
+ 92 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/../tb/rd_agent/async_fifo_rd_monitor.sv
+ 10 0 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_3
+0
+0
+0
+64
+0
+ 0
+
+2
+0
+1
+0
+ 5 wr_cp 13 0 0 0 0 0 0 65 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn 65 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 6 wr_off 14 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 5 wr_on 15 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 7 full_cp 18 0 0 0 0 0 0 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_2 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 8 not_full 19 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 4 full 20 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 13 wr_full_cross 0 23 0 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group
+global coverage_group 0 0 async_fifo_pkg::async_fifo_rd_monitor::cg __coverage_async_fifo_rd_monitor.cg unused_async_fifo_rd_monitor_cg_loop_label async_fifo_pkg 0 1 0 0 0  ( 0 
+)
+ 0 10 1 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 67 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn_3
+0
+0
+0
+64
+0
+ 0
+
+2
+0
+1
+0
+ 5 rd_cp 13 1 0 0 0 0 0 65 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn 65 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 6 rd_off 14 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 5 rd_on 15 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 8 empty_cp 18 1 0 0 0 0 0 67 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn_2 67 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 9 not_empty 19 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 5 empty 20 1 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_rd_monitor::async_fifo_pkg_async_fifo_rd_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 14 rd_empty_cross 0 23 1 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+end_coverage_group

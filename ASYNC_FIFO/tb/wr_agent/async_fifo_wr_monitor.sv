@@ -43,29 +43,22 @@ class async_fifo_wr_monitor extends uvm_monitor;
         async_fifo_wr_tr tr;
 
         forever begin
-            @(posedge vif.wr_clk);
-            #1step;
-
-            if (!vif.wr_rstn) begin
-                continue;
-            end
+            @(negedge vif.wr_clk);
 
             tr = async_fifo_wr_tr::type_id::create("tr");
 
-            tr.wr_en = vif.wr_en;
+            tr.wr_en   = vif.wr_en;
             tr.wr_data = vif.wr_data;
-            tr.full = vif.full;
+            tr.full    = vif.full;   // pre-write full
+
+            @(posedge vif.wr_clk);
+            #1step;
+
+            if (!vif.wr_rstn) continue;
 
             cov_tr = tr;
             cg.sample();
-
-            `uvm_info("ASYNC_FIFO_WR_MON",
-                $sformatf("WR sample item: wr_en=%0b wr_data=0x%0h full=%0b", 
-                    tr.wr_en, tr.wr_data, tr.full),
-                    UVM_MEDIUM)
-
             ap.write(tr);
-            
         end
     endtask
 

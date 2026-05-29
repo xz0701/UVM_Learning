@@ -38,35 +38,49 @@ class async_fifo_rd_monitor extends uvm_monitor;
         end
     endfunction
 
-    virtual task run_phase(uvm_phase phase);
-        
-        async_fifo_rd_tr tr;
+virtual task run_phase(uvm_phase phase);
 
-        forever begin
-            @(posedge vif.rd_clk);
-            #1step;
+    async_fifo_rd_tr tr;
 
-            if (!vif.rd_rstn) begin
-                continue;
-            end
+    forever begin
+        @(negedge vif.rd_clk);
 
-            tr = async_fifo_rd_tr::type_id::create("tr");
+        if (!vif.rd_rstn) begin
+            continue;
+        end
 
-            tr.rd_en = vif.rd_en;
+        tr = async_fifo_rd_tr::type_id::create("tr");
+
+        tr.rd_en = vif.rd_en;
+        tr.empty = vif.empty;
+
+        @(posedge vif.rd_clk);
+        #1step;
+
+        if (!vif.rd_rstn) begin
+            continue;
+        end
+
+        if (tr.rd_en && !tr.empty) begin
             tr.rd_data = vif.rd_data;
-            tr.empty = vif.empty;
 
             cov_tr = tr;
             cg.sample();
 
             `uvm_info("ASYNC_FIFO_RD_MON",
-                $sformatf("RD sample item: rd_en=%0b rd_data=0x%0h empty=%0b", 
-                    tr.rd_en, tr.rd_data, tr.empty),
-                    UVM_MEDIUM)
+                $sformatf("RD sample item: rd_en=%0b rd_data=0x%0h empty=%0b",
+                          tr.rd_en, tr.rd_data, tr.empty),
+                UVM_MEDIUM)
 
             ap.write(tr);
         end
-    endtask
+        else begin
+            cov_tr = tr;
+            cg.sample();
+        end
+    end
+
+endtask
 
     virtual function void report_phase(uvm_phase phase);
         super.report_phase(phase);

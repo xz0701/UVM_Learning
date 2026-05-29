@@ -3,68 +3,85 @@
 module tb_top;
 
     import uvm_pkg::*;
+    import async_fifo_param_pkg::*;
+    import async_fifo_pkg::*;
+
     `include "uvm_macros.svh"
 
-    localparam int WIDTH = 8;
-    localparam int DEPTH = 16;
+    logic wr_clk;
+    logic wr_rstn;
+    logic rd_clk;
+    logic rd_rstn;
+
+    initial begin
+        wr_clk = 1'b0;
+        forever #5 wr_clk = ~wr_clk;
+    end
+
+    initial begin
+        rd_clk = 1'b0;
+        forever #8 rd_clk = ~rd_clk;
+    end
+
+    initial begin
+        wr_rstn = 1'b0;
+        rd_rstn = 1'b0;
+
+        repeat (5) @(posedge wr_clk);
+        repeat (5) @(posedge rd_clk);
+
+        wr_rstn = 1'b1;
+        rd_rstn = 1'b1;
+    end
 
     async_fifo_if #(
         .WIDTH(WIDTH) 
-    ) fifo_if();
+    ) async_fifo_vif();
+
+    assign async_fifo_vif.wr_clk = wr_clk;
+    assign async_fifo_vif.wr_rstn = wr_rstn;
+    assign async_fifo_vif.rd_clk = rd_clk;
+    assign async_fifo_vif.rd_rstn = rd_rstn;
 
     async_fifo #(
         .WIDTH(WIDTH),
         .DEPTH(DEPTH)
     ) dut (
-        .wr_clk(wr_clk),
-        .wr_rstn(wr_rstn),
-        .wr_en(wr_en),
-        .wr_data(wr_data),
-        .rd_clk(rd_clk),
-        .rd_rstn(rd_rstn),
-        .rd_en(rd_en),
-        .rd_data(rd_data),
-        .full(full),
-        .empty(empty)
+        .wr_clk(async_fifo_vif.wr_clk),
+        .wr_rstn(async_fifo_vif.wr_rstn),
+        .wr_en(async_fifo_vif.wr_en),
+        .wr_data(async_fifo_vif.wr_data),
+        .rd_clk(async_fifo_vif.rd_clk),
+        .rd_rstn(async_fifo_vif.rd_rstn),
+        .rd_en(async_fifo_vif.rd_en),
+        .rd_data(async_fifo_vif.rd_data),
+        .full(async_fifo_vif.full),
+        .empty(async_fifo_vif.empty)
     );
 
     initial begin
-        fifo_if.wr_clk = 1'b0;
-        forever #5 fifo_if.wr_clk = ~fifo_if.wr_clk;
-    end
 
-    initial begin
-        fifo_if.rd_clk = 1'b0;
-        forever #8 fifo_if.rd_clk = ~fifo_if.rd_clk;
-    end
-
-    initial begin
-        fifo_if.wr_rstn = 1'b0;
-        fifo_if.rd_rstn = 1'b0;
-        fifo_if.wr_en = 1'b0;
-        fifo_if.wr_data = '0;
-        fifo_if.rd_en = 1'b0;
-
-        repeat (5) @(posedge fifo_if.wr_clk);
-        repeat (5) @(posedge fifo_if.rd_clk);
-
-        fifo_if.wr_rstn = 1'b1;
-        fifo_if.rd_rstn = 1'b1;
-    end
-
-    initial begin
-        uvm_config_db#(virtual async_fifo_if #(WIDTH))::set(
+        uvm_config_db#(virtual async_fifo_if)::set(
             null, 
             "uvm_test_top", 
             "vif", 
-            fifo_if
+            async_fifo_vif
         );
 
-        run_test();
-    end
+        uvm_config_db#(virtual async_fifo_if)::set(
+            null, 
+            "uvm_test_top.env.*", 
+            "vif", 
+            async_fifo_vif
+        );
 
-    initial begin
-        #1000;
-        $finish;
+        // uvm_config_db#(virtual async_fifo_if)::set(
+        //     null, 
+        //     "uvm_test_top.env.*", 
+        //     "vif", 
+        //     async_fifo_vif
+        // );
+
+        run_test("async_fifo_test");
     end
 endmodule

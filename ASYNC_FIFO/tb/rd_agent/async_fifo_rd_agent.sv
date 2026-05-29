@@ -2,9 +2,9 @@ class async_fifo_rd_agent extends uvm_agent;
 
     `uvm_component_utils(async_fifo_rd_agent)
 
-    async_fifo_wr_sequencer sequencer;
-    async_fifo_wr_driver driver;
-    async_fifo_wr_monitor monitor;
+    async_fifo_rd_sequencer sequencer;
+    async_fifo_rd_driver driver;
+    async_fifo_rd_monitor monitor;
 
     function new(string name = "async_fifo_rd_agent", uvm_component parent);
         super.new(name, parent);
