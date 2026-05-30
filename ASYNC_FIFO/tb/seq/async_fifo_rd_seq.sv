@@ -36,12 +36,12 @@ class async_fifo_rd_seq extends uvm_sequence #(async_fifo_rd_tr);
             finish_item(req);
         end
 
-        // 3. Hold read idle
-        repeat (10) begin
+        // 3. Hold read active to hit full + simultaneous read/write
+        repeat (20) begin
             req = async_fifo_rd_tr::type_id::create("req");
             start_item(req);
 
-            req.rd_en   = 1'b0;
+            req.rd_en = 1'b1;
 
             finish_item(req);
         end
@@ -55,6 +55,22 @@ class async_fifo_rd_seq extends uvm_sequence #(async_fifo_rd_tr);
                 `uvm_error("ASYNC_FIFO_RD_SEQ", "RD randomization failed")
             end
 
+            finish_item(req);
+        end
+
+        // Drain FIFO to empty
+        repeat (DEPTH * 3) begin
+            req = async_fifo_rd_tr::type_id::create("req");
+            start_item(req);
+            req.rd_en = 1'b1;
+            finish_item(req);
+        end
+
+        // Hit empty + simultaneous read/write
+        repeat (20) begin
+            req = async_fifo_rd_tr::type_id::create("req");
+            start_item(req);
+            req.rd_en = 1'b1;
             finish_item(req);
         end
 

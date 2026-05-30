@@ -1,5 +1,6 @@
 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/rtl/async_fifo.sv
 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/rtl/dual_port_ram.sv
+/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/tb/env/async_fifo_cov.sv
 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/tb/env/async_fifo_env.sv
 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/tb/env/async_fifo_scoreboard.sv
 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/tb/interface/async_fifo_if.sv

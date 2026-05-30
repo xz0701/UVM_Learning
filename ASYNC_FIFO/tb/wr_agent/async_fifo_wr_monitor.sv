@@ -6,6 +6,8 @@ class async_fifo_wr_monitor extends uvm_monitor;
     virtual async_fifo_if vif;
 
     uvm_analysis_port #(async_fifo_wr_tr) ap;
+
+    bit full_pre;
     
     covergroup cg;
         option.per_instance = 1;
@@ -39,26 +41,32 @@ class async_fifo_wr_monitor extends uvm_monitor;
     endfunction
 
     virtual task run_phase(uvm_phase phase);
-
         async_fifo_wr_tr tr;
 
+        full_pre = 1'b0;
+
         forever begin
-            @(negedge vif.wr_clk);
-
-            tr = async_fifo_wr_tr::type_id::create("tr");
-
-            tr.wr_en   = vif.wr_en;
-            tr.wr_data = vif.wr_data;
-            tr.full    = vif.full;   // pre-write full
-
             @(posedge vif.wr_clk);
             #1step;
 
-            if (!vif.wr_rstn) continue;
+            if (!vif.wr_rstn) begin
+                full_pre = 1'b0;
+                continue;
+            end
+
+            tr = async_fifo_wr_tr::type_id::create("tr");
+
+            tr.wr_en     = vif.wr_en;
+            tr.wr_data   = vif.wr_data;
+            tr.full      = vif.full;
+            tr.wr_accept = vif.wr_en && !full_pre;
 
             cov_tr = tr;
             cg.sample();
+
             ap.write(tr);
+
+            full_pre = vif.full;
         end
     endtask
 

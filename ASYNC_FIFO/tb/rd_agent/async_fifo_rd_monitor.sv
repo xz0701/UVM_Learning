@@ -37,50 +37,44 @@ class async_fifo_rd_monitor extends uvm_monitor;
             `uvm_fatal("ASYNC_FIFO_RD_MON", "Failed to get virtual interface")
         end
     endfunction
+    
+    virtual task run_phase(uvm_phase phase);
 
-virtual task run_phase(uvm_phase phase);
+        async_fifo_rd_tr tr;
+        bit rd_en_pre;
+        bit empty_pre;
 
-    async_fifo_rd_tr tr;
+        forever begin
+            @(posedge vif.rd_clk);
 
-    forever begin
-        @(negedge vif.rd_clk);
+            rd_en_pre = vif.rd_en;
+            empty_pre = vif.empty;
 
-        if (!vif.rd_rstn) begin
-            continue;
-        end
+            #1step;
 
-        tr = async_fifo_rd_tr::type_id::create("tr");
+            if (!vif.rd_rstn) begin
+                continue;
+            end
 
-        tr.rd_en = vif.rd_en;
-        tr.empty = vif.empty;
+            tr = async_fifo_rd_tr::type_id::create("tr");
 
-        @(posedge vif.rd_clk);
-        #1step;
-
-        if (!vif.rd_rstn) begin
-            continue;
-        end
-
-        if (tr.rd_en && !tr.empty) begin
+            tr.rd_en  = rd_en_pre;
+            tr.empty  = empty_pre;
             tr.rd_data = vif.rd_data;
 
             cov_tr = tr;
             cg.sample();
 
-            `uvm_info("ASYNC_FIFO_RD_MON",
-                $sformatf("RD sample item: rd_en=%0b rd_data=0x%0h empty=%0b",
-                          tr.rd_en, tr.rd_data, tr.empty),
-                UVM_MEDIUM)
+            if (rd_en_pre && !empty_pre) begin
+                `uvm_info("ASYNC_FIFO_RD_MON",
+                    $sformatf("RD accepted item: rd_data=0x%0h", tr.rd_data),
+                    UVM_MEDIUM)
 
-            ap.write(tr);
+                ap.write(tr);
+            end
         end
-        else begin
-            cov_tr = tr;
-            cg.sample();
-        end
-    end
 
-endtask
+    endtask
 
     virtual function void report_phase(uvm_phase phase);
         super.report_phase(phase);

@@ -43,42 +43,41 @@ class async_fifo_scoreboard extends uvm_component;
             return;
         end
 
-        if (tr.wr_en && !tr.full) begin
+        if (tr.wr_accept) begin
             model_q.push_back(tr.wr_data);
-            `uvm_info("ASYNC_FIFO_SCB", 
-                $sformatf("Model Push: 0x%0h depth=%d", tr.wr_data, model_q.size()),
-                    UVM_MEDIUM)
+
+            `uvm_info("ASYNC_FIFO_SCB",
+                $sformatf("Model Push: 0x%0h depth=%0d",
+                        tr.wr_data, model_q.size()),
+                UVM_MEDIUM)
         end
-        else if (tr.wr_en && tr.full) begin
-            `uvm_info("ASYNC_FIFO_SCB", "Write ignored because DUT FIFO is full", UVM_MEDIUM)
+        else if (tr.wr_en) begin
+            `uvm_info("ASYNC_FIFO_SCB",
+                "Write ignored because write side was full before edge",
+                UVM_MEDIUM)
         end
 
     endfunction
 
     virtual function void write_rd(async_fifo_rd_tr tr_rd);
-
         bit [WIDTH-1:0] exp_data;
 
         if (!vif.rd_rstn) begin
             return;
         end
 
-        if (tr_rd.rd_en && !tr_rd.empty) begin
-
-            if (model_q.size() == 0) begin
-                `uvm_error("ASYNC_FIFO_SCB", "Model queue underflow: DUT says read accepted but model is empty")
-            end
-            else begin
-                exp_data = model_q.pop_front();
-                if (tr_rd.rd_data !== exp_data) begin
-                    `uvm_error("ASYNC_FIFO_SCB",
-                        $sformatf("Data mismatch: expected=0x%0h actual=0x%0h",
-                                exp_data, tr_rd.rd_data))
-                end
-            end
+        if (model_q.size() == 0) begin
+            `uvm_error("ASYNC_FIFO_SCB",
+                "Model queue underflow: read data returned but model is empty")
+            return;
         end
-        else if (tr_rd.rd_en && tr_rd.empty) begin
-            `uvm_info("ASYNC_FIFO_SCB", "Read ignored because model FIFO is empty", UVM_MEDIUM)
+
+        exp_data = model_q.pop_front();
+
+        if (tr_rd.rd_data !== exp_data) begin
+            `uvm_error("ASYNC_FIFO_SCB",
+                $sformatf("Data mismatch: expected=0x%0h actual=0x%0h",
+                        exp_data, tr_rd.rd_data))
         end
     endfunction
 endclass

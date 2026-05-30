@@ -1,4 +1,4 @@
-510      
+518      
 0 uvm_macros.svh
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/uvm_macros.svh
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_macros.svh
@@ -492,6 +492,14 @@
 0 ../tb/seq/async_fifo_scoreboard.sv
 0 ../tb/wr_agent/async_fifo_scoreboard.sv
 0 ../tb/rd_agent/async_fifo_scoreboard.sv
+0 async_fifo_cov.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/async_fifo_cov.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/async_fifo_cov.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/async_fifo_cov.sv
+0 ../tb/pkg/async_fifo_cov.sv
+0 ../tb/seq/async_fifo_cov.sv
+0 ../tb/wr_agent/async_fifo_cov.sv
+0 ../tb/rd_agent/async_fifo_cov.sv
 0 async_fifo_env.sv
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/async_fifo_env.sv
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/async_fifo_env.sv
@@ -559,11 +567,11 @@ simv
 which_declare=declare -f
 _LMFILES__modshare=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs:1
 _LMFILES_=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs
-XDG_SESSION_ID=1
+XDG_SESSION_ID=995
 XDG_RUNTIME_DIR=/run/user/1775996
 XDG_DATA_DIRS=/home/xz974/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
-VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-74f7dfed-535e-4f38-91f4-987a73fbf76f.sock
+VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-4ec31cd1-3c33-4751-ad44-65670e904ea0.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1775996/vscode-git-c1abf4066f.sock
 VSCODE_GIT_ASKPASS_NODE=/home/xz974/.vscode-server/cli/servers/Stable-6a49527b96e326fe62fbdb56f60e16877c9aa724/server/node
 VSCODE_GIT_ASKPASS_MAIN=/home/xz974/.vscode-server/cli/servers/Stable-6a49527b96e326fe62fbdb56f60e16877c9aa724/server/extensions/git/dist/askpass-main.js
@@ -587,8 +595,8 @@ TERM_PROGRAM_VERSION=1.122.0
 TERM_PROGRAM=vscode
 SYNOPSYS_DIR=/opt/synopsys/vcs/V-2023.12-SP2-1
 SYNOPSYS=/opt/synopsys/vcs/V-2023.12-SP2-1
-SSH_CONNECTION=128.84.192.196 41386 128.84.192.154 22
-SSH_CLIENT=128.84.192.196 41386 22
+SSH_CONNECTION=128.84.192.196 43588 128.84.192.142 22
+SSH_CLIENT=128.84.192.196 43588 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_PYTHON3=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/clang
@@ -629,22 +637,23 @@ BASH_FUNC_ml%%=() {  module ml "$@"_}
 BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ unset _mlre _mlIFS;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ unset _mlre _mlv _mlrv _mlIFS;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlshdbg;_ return $_mlstatus_}
 0
 0
-164
+165
 1780032278 ../tb/tests/async_fifo_test.sv
-1779946872 ../tb/env/async_fifo_env.sv
-1780034514 ../tb/env/async_fifo_scoreboard.sv
+1780112897 ../tb/env/async_fifo_env.sv
+1780113222 ../tb/env/async_fifo_cov.sv
+1780112195 ../tb/env/async_fifo_scoreboard.sv
 1780033473 ../tb/rd_agent/async_fifo_rd_agent.sv
 1779863061 ../tb/wr_agent/async_fifo_wr_agent.sv
-1780035710 ../tb/rd_agent/async_fifo_rd_monitor.sv
-1780034942 ../tb/wr_agent/async_fifo_wr_monitor.sv
+1780112319 ../tb/rd_agent/async_fifo_rd_monitor.sv
+1780112178 ../tb/wr_agent/async_fifo_wr_monitor.sv
 1779859593 ../tb/rd_agent/async_fifo_rd_driver.sv
 1779944933 ../tb/wr_agent/async_fifo_wr_driver.sv
 1780032252 ../tb/rd_agent/async_fifo_rd_sequencer.sv
 1779862785 ../tb/wr_agent/async_fifo_wr_sequencer.sv
-1779948754 ../tb/seq/async_fifo_rd_seq.sv
-1779948219 ../tb/seq/async_fifo_wr_seq.sv
+1780114016 ../tb/seq/async_fifo_rd_seq.sv
+1780113997 ../tb/seq/async_fifo_wr_seq.sv
 1779843235 ../tb/seq/async_fifo_rd_tr.sv
-1779843243 ../tb/seq/async_fifo_wr_tr.sv
+1780112110 ../tb/seq/async_fifo_wr_tr.sv
 1721621732 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_vcs_record_interface.sv
 1721621732 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_vcs_recorder.svh
 1721621732 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_msglog_report_server.sv
@@ -787,7 +796,7 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1780033735 ../tb/top/tb_top.sv
 1779681829 ../rtl/async_fifo.sv
 1779645840 ../rtl/dual_port_ram.sv
-1780032135 ../tb/pkg/async_fifo_pkg.sv
+1780112852 ../tb/pkg/async_fifo_pkg.sv
 1779762880 ../tb/interface/async_fifo_if.sv
 1779843480 ../tb/pkg/async_fifo_param_pkg.sv
 1721621732 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv
@@ -800,5 +809,5 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1721618558 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/liberrorinf.so
 1721618482 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libsnpsmalloc.so
 1721618554 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libvfs.so
-1780035727 simv.daidir
+1780114031 simv.daidir
 -1 partitionlib

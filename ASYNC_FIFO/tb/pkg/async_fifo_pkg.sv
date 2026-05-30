@@ -25,6 +25,7 @@ package async_fifo_pkg;
 
 
     `include "async_fifo_scoreboard.sv"
+    `include "async_fifo_cov.sv"
     `include "async_fifo_env.sv"
     `include "async_fifo_test.sv"
 

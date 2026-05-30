@@ -37,13 +37,13 @@ class async_fifo_wr_seq extends uvm_sequence #(async_fifo_wr_tr);
             finish_item(req);
         end
 
-        // 3. Hold write idle
-        repeat (10) begin
+        // 3. Hold write active after FIFO is likely full
+        repeat (20) begin
             req = async_fifo_wr_tr::type_id::create("req");
             start_item(req);
 
-            req.wr_en   = 1'b0;
-            req.wr_data = '0;
+            req.wr_en   = 1'b1;
+            req.wr_data = $urandom();
 
             finish_item(req);
         end
@@ -57,6 +57,24 @@ class async_fifo_wr_seq extends uvm_sequence #(async_fifo_wr_tr);
                 `uvm_error("ASYNC_FIFO_WR_SEQ", "WR randomization failed")
             end
 
+            finish_item(req);
+        end
+
+        // Wait while read side drains FIFO to empty
+        repeat (DEPTH * 3) begin
+            req = async_fifo_wr_tr::type_id::create("req");
+            start_item(req);
+            req.wr_en   = 1'b0;
+            req.wr_data = '0;
+            finish_item(req);
+        end
+
+        // Hit empty + simultaneous read/write
+        repeat (20) begin
+            req = async_fifo_wr_tr::type_id::create("req");
+            start_item(req);
+            req.wr_en   = 1'b1;
+            req.wr_data = $urandom();
             finish_item(req);
         end
 

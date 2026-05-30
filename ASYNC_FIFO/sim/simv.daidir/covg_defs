@@ -1,9 +1,10 @@
 global coverage_group 0 0 async_fifo_pkg::async_fifo_wr_monitor::cg __coverage_async_fifo_wr_monitor.cg unused_async_fifo_wr_monitor_cg_loop_label async_fifo_pkg 0 1 0 0 0  ( 0 
 )
- 1 2
+ 1 3
  0 92 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/../tb/wr_agent/async_fifo_wr_monitor.sv
  92 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/../tb/rd_agent/async_fifo_rd_monitor.sv
- 10 0 0 0 1 0 0 0 0  1
+ 80 /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/../tb/env/async_fifo_cov.sv
+ 12 0 0 0 1 0 0 0 0  1
 0
 0 0
  0
@@ -37,7 +38,7 @@ global coverage_group 0 0 async_fifo_pkg::async_fifo_wr_monitor::cg __coverage_a
 0
 1
 0
- 5 wr_cp 13 0 0 0 0 0 0 65 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn 65 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 5 wr_cp 15 0 0 0 0 0 0 65 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn 65 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
  0
  0
  0
@@ -52,12 +53,12 @@ global coverage_group 0 0 async_fifo_pkg::async_fifo_wr_monitor::cg __coverage_a
  0
  0
  0
- 2 1 1 0 0 1 1 6 wr_off 14 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 2 1 1 0 0 1 1 6 wr_off 16 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_0 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 wr_on 15 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 5 wr_on 17 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_1 0 0 0 0 0 0 0
  0
 
- 7 full_cp 18 0 0 0 0 0 0 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_2 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 7 full_cp 20 0 0 0 0 0 0 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_2 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
  0
  0
  0
@@ -72,12 +73,12 @@ global coverage_group 0 0 async_fifo_pkg::async_fifo_wr_monitor::cg __coverage_a
  0
  0
  0
- 2 1 1 0 0 1 1 8 not_full 19 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_0 0 0 0 0 0 0 0
+ 2 1 1 0 0 1 1 8 not_full 21 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_0 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 4 full 20 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_1 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 4 full 22 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 67 async_fifo_wr_monitor::async_fifo_pkg_async_fifo_wr_monitor_cg_fn_1 0 0 0 0 0 0 0
  0
 
- 13 wr_full_cross 0 23 0 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0
+ 13 wr_full_cross 0 25 0 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0
  0
  0
  0
@@ -180,4 +181,148 @@ global coverage_group 0 0 async_fifo_pkg::async_fifo_rd_monitor::cg __coverage_a
  0
  0
  0
+end_coverage_group
+global coverage_group 0 0 async_fifo_pkg::async_fifo_cov::cg __coverage_async_fifo_cov.cg unused_async_fifo_cov_cg_loop_label async_fifo_pkg 0 1 0 0 0  ( 0 
+)
+ 0 12 2 0 0 1 0 0 0 0  1
+0
+0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_5
+0
+0
+0
+64
+0
+ 0
+
+4
+0
+2
+0
+ 5 wr_cp 15 2 0 0 0 0 0 51 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn 51 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 3 off 16 2 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 2 on 17 2 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 5 rd_cp 20 2 0 0 0 0 0 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_2 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_2 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 3 off 21 2 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 2 on 22 2 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 7 full_cp 25 2 0 0 0 0 0 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_3 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_3 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 8 not_full 26 2 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 4 full 27 2 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 8 empty_cp 30 2 0 0 0 0 0 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_4 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_4 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 2 1 1 0 0 1 1 9 not_empty 31 2 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_0 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 5 empty 32 2 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 53 async_fifo_cov::async_fifo_pkg_async_fifo_cov_cg_fn_1 0 0 0 0 0 0 0
+ 0
+
+ 11 wr_rd_cross 0 35 2 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 14 boundary_cross 0 37 2 0 -1 0 0 0 0 4 0 1 2 3 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 1 1 2 0 0 -1 0 0 1 1 18 illegal_full_empty 39 2 2 0 1 3 1 0 2 1 4 full 0 0 0 0 0 1 0 3 1 5 empty 0 0 0 0 0 0 0 0 0 0 0 0
+
 end_coverage_group
