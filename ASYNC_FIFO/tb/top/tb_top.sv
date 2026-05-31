@@ -1,5 +1,13 @@
 `timescale 1ns/1ns
 
+`ifndef WR_CLK_PERIOD
+    `define WR_CLK_PERIOD 10
+`endif
+
+`ifndef RD_CLK_PERIOD
+    `define RD_CLK_PERIOD 15
+`endif
+
 module tb_top;
 
     import uvm_pkg::*;
@@ -14,13 +22,13 @@ module tb_top;
     logic rd_rstn;
 
     initial begin
-        wr_clk = 1'b0;
-        forever #5 wr_clk = ~wr_clk;
+        wr_clk = 0;
+        forever #(`WR_CLK_PERIOD/2) wr_clk = ~wr_clk;
     end
 
     initial begin
-        rd_clk = 1'b0;
-        forever #8 rd_clk = ~rd_clk;
+        rd_clk = 0;
+        forever #(`RD_CLK_PERIOD/2) rd_clk = ~rd_clk;
     end
 
     initial begin

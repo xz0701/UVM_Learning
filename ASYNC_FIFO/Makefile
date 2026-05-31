@@ -4,6 +4,8 @@ FLIST    = ../script/filelist.f
 TOP      = tb_top
 WIDTH ?= 8
 DEPTH ?= 16
+WR_CLK_PERIOD ?= 10
+RD_CLK_PERIOD ?= 16
 TEST  ?= async_fifo_test
 
 VCS_OPTS = -full64 \
@@ -11,6 +13,8 @@ VCS_OPTS = -full64 \
            -ntb_opts uvm \
            +define+WIDTH=$(WIDTH) \
            +define+DEPTH=$(DEPTH) \
+           +define+WR_CLK_PERIOD=$(WR_CLK_PERIOD) \
+           +define+RD_CLK_PERIOD=$(RD_CLK_PERIOD) \
            -timescale=1ns/1ps \
            -debug_access+all \
            -top $(TOP) \
