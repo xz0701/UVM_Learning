@@ -1,0 +1,9 @@
+{"vcs1":{"timestamp_begin":1780283141.064861974, "rt":6.80, "ut":6.43, "st":0.22}}
+{"vcselab":{"timestamp_begin":1780283147.914312973, "rt":0.24, "ut":0.13, "st":0.05}}
+{"link":{"timestamp_begin":1780283148.198645430, "rt":0.40, "ut":0.14, "st":0.13}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1780283140.726720242}
+{"VCS_COMP_START_TIME": 1780283140.726720242}
+{"VCS_COMP_END_TIME": 1780283148.720635783}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -ntb_opts uvm +define+WIDTH=16 +define+DEPTH=8 +define+WR_CLK_PERIOD=20 +define+RD_CLK_PERIOD=10 -timescale=1ns/1ps -debug_access+all -top tb_top -l compile.log -f ../script/filelist.f -o simv"}
+{"vcs1": {"peak_mem": 469808}}
+{"vcselab": {"peak_mem": 252548}}

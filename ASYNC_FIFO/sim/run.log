@@ -1,7 +1,7 @@
 Command: /home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/./simv +UVM_TESTNAME=async_fifo_test -l run.log
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  May 31 01:49 2026
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  May 31 23:06 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -1236,4 +1236,4 @@ $finish at simulation time              7882000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 7882000 ps
 CPU Time:      0.260 seconds;       Data structure size:   0.5Mb
-Sun May 31 01:49:48 2026
+Sun May 31 23:06:06 2026

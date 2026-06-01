@@ -569,16 +569,16 @@ simv
 which_declare=declare -f
 _LMFILES__modshare=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs:1
 _LMFILES_=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs
-XDG_SESSION_ID=1607
+XDG_SESSION_ID=3
 XDG_RUNTIME_DIR=/run/user/1775996
 XDG_DATA_DIRS=/home/xz974/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 WR_CLK_PERIOD=13
 WIDTH=64
 VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
-VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-238c1fce-f641-46eb-aa22-5313237c4b42.sock
+VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-fd35e144-eb99-4c5c-b839-1368040a3db8.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1775996/vscode-git-c1abf4066f.sock
-VSCODE_GIT_ASKPASS_NODE=/home/xz974/.vscode-server/cli/servers/Stable-6a49527b96e326fe62fbdb56f60e16877c9aa724/server/node
-VSCODE_GIT_ASKPASS_MAIN=/home/xz974/.vscode-server/cli/servers/Stable-6a49527b96e326fe62fbdb56f60e16877c9aa724/server/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_NODE=/home/xz974/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/node
+VSCODE_GIT_ASKPASS_MAIN=/home/xz974/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass-main.js
 VSCODE_GIT_ASKPASS_EXTRA_ARGS=
 VMR_MODE_FLAG=64
 VCS_UVM_HOME=/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm
@@ -596,12 +596,12 @@ VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64
 TEST=/bin/test
-TERM_PROGRAM_VERSION=1.122.0
+TERM_PROGRAM_VERSION=1.122.1
 TERM_PROGRAM=vscode
 SYNOPSYS_DIR=/opt/synopsys/vcs/V-2023.12-SP2-1
 SYNOPSYS=/opt/synopsys/vcs/V-2023.12-SP2-1
-SSH_CONNECTION=128.84.192.196 58490 128.84.192.145 22
-SSH_CLIENT=128.84.192.196 58490 22
+SSH_CONNECTION=128.84.192.196 52748 128.84.192.147 22
+SSH_CLIENT=128.84.192.196 52748 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_PYTHON3=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/clang
@@ -612,7 +612,7 @@ SELINUX_LEVEL_REQUESTED=
 SCRNAME=vcs
 SCRIPT_NAME=vcs
 RD_CLK_PERIOD=29
-PATH_modshare=/opt/synopsys/vcs/V-2023.12-SP2-1/gui/dve:1:/usr/bin:1:/home/xz974/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:1:/usr/local/bin:1:/usr/share/Modules/bin:1:/home/xz974/.vscode-server/cli/servers/Stable-6a49527b96e326fe62fbdb56f60e16877c9aa724/server/bin/remote-cli:1:/usr/sbin:1:/classes/setup:1:/home/xz974/bin:1:/home/xz974/.local/bin:1:/opt/synopsys/vcs/V-2023.12-SP2-1/bin:1:/usr/local/sbin:1:/home/xz974/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:1:/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/bin:1
+PATH_modshare=/opt/synopsys/vcs/V-2023.12-SP2-1/gui/dve:1:/usr/bin:1:/home/xz974/.vscode-server/data/User/globalStorage/github.copilot-chat/debugCommand:1:/usr/local/bin:1:/usr/share/Modules/bin:1:/usr/sbin:1:/home/xz974/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/bin/remote-cli:1:/classes/setup:1:/home/xz974/bin:1:/home/xz974/.local/bin:1:/opt/synopsys/vcs/V-2023.12-SP2-1/bin:1:/usr/local/sbin:1:/home/xz974/.vscode-server/data/User/globalStorage/github.copilot-chat/copilotCli:1:/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/bin:1
 OVA_UUM=0
 MODULES_RUN_QUARANTINE=LD_LIBRARY_PATH LD_PRELOAD
 MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
@@ -620,7 +620,7 @@ MODULESHOME=/usr/share/Modules
 MODULEPATH_modshare=/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2
 MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
 MFLAGS=
-MAKE_TERMERR=/dev/pts/3
+MAKE_TERMERR=/dev/pts/0
 MAKEOVERRIDES=${-*-command-variables-*-}
 MAKELEVEL=1
 MAKEFLAGS= -- TEST=async_fifo_test RD_CLK_PERIOD=29 WR_CLK_PERIOD=13 DEPTH=4 WIDTH=64
@@ -630,7 +630,7 @@ LESSOPEN=||/usr/bin/lesspipe.sh %s
 LD_LIBRARY_PATH_modshare=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib:1
 LC_ALL=C
 HISTCONTROL=ignoredups
-GIT_ASKPASS=/home/xz974/.vscode-server/cli/servers/Stable-6a49527b96e326fe62fbdb56f60e16877c9aa724/server/extensions/git/dist/askpass.sh
+GIT_ASKPASS=/home/xz974/.vscode-server/cli/servers/Stable-8761a5560cfd65fdd19ce7e2bd18dab5c0a4d84e/server/extensions/git/dist/askpass.sh
 DVE_HOME=/opt/synopsys/vcs/V-2023.12-SP2-1/gui/dve
 DEPTH=4
 DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1775996/bus
@@ -816,5 +816,5 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1721618558 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/liberrorinf.so
 1721618482 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libsnpsmalloc.so
 1721618554 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libvfs.so
-1780206587 simv.daidir
+1780283165 simv.daidir
 -1 partitionlib

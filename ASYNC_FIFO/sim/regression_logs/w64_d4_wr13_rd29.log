@@ -1,6 +1,6 @@
 cd sim && vcs -full64 -sverilog -ntb_opts uvm +define+WIDTH=64 +define+DEPTH=4 +define+WR_CLK_PERIOD=13 +define+RD_CLK_PERIOD=29 -timescale=1ns/1ps -debug_access+all -top tb_top -l compile.log -f ../script/filelist.f -o simv
                          Chronologic VCS (TM)
-      Version V-2023.12-SP2-1_Full64 -- Sun May 31 01:49:33 2026
+      Version V-2023.12-SP2-1_Full64 -- Sun May 31 23:05:58 2026
 
                     Copyright (c) 1991 - 2024 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -474,29 +474,28 @@ Starting vcs inline pass...
 8 modules and 0 UDP read.
 recompiling package vcs_paramclassrepository
 recompiling package uvm_pkg
-recompiling package _vcs_msglog
 recompiling package async_fifo_param_pkg
 recompiling module async_fifo_if
 recompiling package async_fifo_pkg
 recompiling module async_fifo
 recompiling module tb_top
-All of 8 modules done
+7 of 8 modules done
+	However, due to incremental compilation, only 7 modules need to be compiled. 
 make[1]: Entering directory '/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/csrc'
 make[1]: Leaving directory '/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/csrc'
 make[1]: Entering directory '/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/csrc'
 rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
-g++ -w  -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -O -I/opt/synopsys/vcs/V-2023.12-SP2-1/include     -c /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/dpi/uvm_dpi.cc
 if [ -x ../simv ]; then chmod a-x ../simv; fi
-g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib -L/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 uvm_dpi.o   objs/amcQw_d.o   _264872_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o    /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib -L/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 uvm_dpi.o   objs/amcQw_d.o   _260935_archive_1.so _prev_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o    /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
 ../simv up to date
 make[1]: Leaving directory '/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/csrc'
-CPU time: 6.460 seconds to compile + .219 seconds to elab + .416 seconds to link
+CPU time: 6.536 seconds to compile + .215 seconds to elab + .324 seconds to link
 cd sim && ./simv +UVM_TESTNAME=async_fifo_test -l run.log
 Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
 Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  May 31 01:49 2026
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  May 31 23:06 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -1731,4 +1730,4 @@ $finish at simulation time              7882000
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 7882000 ps
 CPU Time:      0.260 seconds;       Data structure size:   0.5Mb
-Sun May 31 01:49:48 2026
+Sun May 31 23:06:06 2026

@@ -1,0 +1,1425 @@
+cd sim && vcs -full64 -sverilog -ntb_opts uvm +define+WIDTH=16 +define+DEPTH=8 +define+WR_CLK_PERIOD=20 +define+RD_CLK_PERIOD=10 -timescale=1ns/1ps -debug_access+all -top tb_top -l compile.log -f ../script/filelist.f -o simv
+                         Chronologic VCS (TM)
+      Version V-2023.12-SP2-1_Full64 -- Sun May 31 23:05:41 2026
+
+                    Copyright (c) 1991 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_version_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/snps_macros.svp'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_message_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_phase_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_object_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_printer_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_tlm_defines.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm_imps.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_tlm_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_sequence_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_callback_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_reg_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_deprecated_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/directc/uvm_directc.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/directc/uvm_seed.vh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/directc/uvm_directc.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/dpi/uvm_hdl.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/dpi/uvm_svcmd_dpi.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/dpi/uvm_dpi.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/dpi/uvm_regex.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/dpi/uvm_dpi.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_version.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_object_globals.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_misc.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_object.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_pool.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_queue.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_factory.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_registry.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_spell_chkr.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_resource.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/deprecated/uvm_resource_converter.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_resource_specializations.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_resource_db.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_config_db.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_printer.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_comparer.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_packer.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_recorder.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_event_callback.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_event.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_barrier.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_callback.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_callback.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_report_catcher.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_report_server.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_report_handler.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_report_object.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_transaction.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_phase.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_domain.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_bottomup_phase.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_topdown_phase.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_task_phase.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_common_phases.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_runtime_phases.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_component.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_root.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_component.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_objection.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_heartbeat.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_globals.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_cmdline_processor.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_base.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm_ifs.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_sqr_ifs.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_port_base.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm_imps.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_imps.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_ports.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_exports.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_analysis_port.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm_fifo_base.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm_fifos.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm_req_rsp.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_sqr_connections.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm1/uvm_tlm.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_pair.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_policies.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_in_order_comparator.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_algorithmic_comparator.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_random_stimulus.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_subscriber.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_monitor.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_driver.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_push_driver.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_scoreboard.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_agent.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_env.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_test.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/comps/uvm_comps.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequence_item.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequencer_base.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequencer_analysis_fifo.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequencer_param_base.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequencer.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_push_sequencer.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequence_base.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequence.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequence_library.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_sequence_builtin.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/seq/uvm_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_defines.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_time.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_generic_payload.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_ifs.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_imps.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_ports.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_exports.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_sockets_base.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2_sockets.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/tlm2/uvm_tlm2.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_item.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_adapter.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_predictor.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_sequence.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_cbs.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_backdoor.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_field.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_vreg_field.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_indirect.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_fifo.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_file.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_mem_mam.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_vreg.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_mem.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_map.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_block.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/sequences/uvm_reg_hw_reset_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/sequences/uvm_reg_bit_bash_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/sequences/uvm_mem_walk_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/sequences/uvm_mem_access_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/sequences/uvm_reg_access_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/sequences/uvm_reg_mem_shared_access_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/sequences/uvm_reg_mem_built_in_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/sequences/uvm_reg_mem_hdl_paths_seq.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/snps_uvm_reg_bank.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/reg/uvm_reg_model.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/vcs_uvm_alt.sv'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_pkg.sv'.
+Parsing design file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/msglog.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_msglog_report_server.sv'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_vcs_recorder.svh'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_vcs_record_interface.sv'.
+Back to file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_custom_install_vcs_recorder.sv'.
+Parsing design file '../tb/pkg/async_fifo_param_pkg.sv'
+Parsing design file '../tb/interface/async_fifo_if.sv'
+Parsing design file '../tb/pkg/async_fifo_pkg.sv'
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/seq/async_fifo_wr_tr.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/seq/async_fifo_rd_tr.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/seq/async_fifo_wr_seq.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/seq/async_fifo_rd_seq.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/wr_agent/async_fifo_wr_sequencer.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/rd_agent/async_fifo_rd_sequencer.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/wr_agent/async_fifo_wr_driver.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/rd_agent/async_fifo_rd_driver.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/wr_agent/async_fifo_wr_monitor.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/rd_agent/async_fifo_rd_monitor.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/wr_agent/async_fifo_wr_agent.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/rd_agent/async_fifo_rd_agent.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/env/async_fifo_scoreboard.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/env/async_fifo_cov.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/env/async_fifo_env.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing included file '../tb/tests/async_fifo_test.sv'.
+Back to file '../tb/pkg/async_fifo_pkg.sv'.
+Parsing design file '../rtl/dual_port_ram.sv'
+Parsing design file '../rtl/async_fifo.sv'
+Parsing design file '../tb/top/tb_top.sv'
+Parsing included file '/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh'.
+Back to file '../tb/top/tb_top.sv'.
+Top Level Modules:
+       tb_top
+TimeScale is 1 ns / 1 ps
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/wr_agent/async_fifo_wr_driver.sv, 5
+async_fifo_if
+  Non-parameterized virtual interface 
+  (../tb/wr_agent/async_fifo_wr_driver.sv,5) is being used for parameterized 
+  interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/wr_agent/async_fifo_wr_driver.sv, 14
+async_fifo_if
+  Non-parameterized virtual interface 
+  (../tb/wr_agent/async_fifo_wr_driver.sv,14) is being used for parameterized 
+  interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/rd_agent/async_fifo_rd_driver.sv, 5
+async_fifo_if
+  Non-parameterized virtual interface 
+  (../tb/rd_agent/async_fifo_rd_driver.sv,5) is being used for parameterized 
+  interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/rd_agent/async_fifo_rd_driver.sv, 14
+async_fifo_if
+  Non-parameterized virtual interface 
+  (../tb/rd_agent/async_fifo_rd_driver.sv,14) is being used for parameterized 
+  interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/wr_agent/async_fifo_wr_monitor.sv, 6
+async_fifo_if
+  Non-parameterized virtual interface 
+  (../tb/wr_agent/async_fifo_wr_monitor.sv,6) is being used for parameterized 
+  interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/rd_agent/async_fifo_rd_monitor.sv, 5
+async_fifo_if
+  Non-parameterized virtual interface 
+  (../tb/rd_agent/async_fifo_rd_monitor.sv,5) is being used for parameterized 
+  interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/env/async_fifo_scoreboard.sv, 13
+async_fifo_if
+  Non-parameterized virtual interface (../tb/env/async_fifo_scoreboard.sv,13) 
+  is being used for parameterized interface 
+  (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/env/async_fifo_cov.sv, 5
+async_fifo_if
+  Non-parameterized virtual interface (../tb/env/async_fifo_cov.sv,5) is being
+  used for parameterized interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/tests/async_fifo_test.sv, 7
+async_fifo_if
+  Non-parameterized virtual interface (../tb/tests/async_fifo_test.sv,7) is 
+  being used for parameterized interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/wr_agent/async_fifo_wr_monitor.sv, 38
+async_fifo_if
+  Non-parameterized virtual interface 
+  (../tb/wr_agent/async_fifo_wr_monitor.sv,38) is being used for parameterized
+  interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/rd_agent/async_fifo_rd_monitor.sv, 36
+async_fifo_if
+  Non-parameterized virtual interface 
+  (../tb/rd_agent/async_fifo_rd_monitor.sv,36) is being used for parameterized
+  interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/env/async_fifo_scoreboard.sv, 24
+async_fifo_if
+  Non-parameterized virtual interface (../tb/env/async_fifo_scoreboard.sv,24) 
+  is being used for parameterized interface 
+  (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/env/async_fifo_cov.sv, 52
+async_fifo_if
+  Non-parameterized virtual interface (../tb/env/async_fifo_cov.sv,52) is 
+  being used for parameterized interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/tests/async_fifo_test.sv, 18
+async_fifo_if
+  Non-parameterized virtual interface (../tb/tests/async_fifo_test.sv,18) is 
+  being used for parameterized interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/top/tb_top.sv, 72
+async_fifo_if
+  Non-parameterized virtual interface (../tb/top/tb_top.sv,72) is being used 
+  for parameterized interface (../tb/interface/async_fifo_if.sv,1).
+
+
+Warning-[OSVF-NPVIUFPI] Obsolete SystemVerilog feature
+../tb/top/tb_top.sv, 79
+async_fifo_if
+  Non-parameterized virtual interface (../tb/top/tb_top.sv,79) is being used 
+  for parameterized interface (../tb/interface/async_fifo_if.sv,1).
+
+Starting vcs inline pass...
+
+8 modules and 0 UDP read.
+recompiling package vcs_paramclassrepository
+recompiling package uvm_pkg
+recompiling package async_fifo_param_pkg
+recompiling module async_fifo_if
+recompiling package async_fifo_pkg
+recompiling module async_fifo
+recompiling module tb_top
+7 of 8 modules done
+	However, due to incremental compilation, only 7 modules need to be compiled. 
+make[1]: Entering directory '/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/csrc'
+make[1]: Leaving directory '/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/csrc'
+make[1]: Entering directory '/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/csrc'
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../simv ]; then chmod a-x ../simv; fi
+g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir -Wl,-rpath=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib -L/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib  -Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 uvm_dpi.o   objs/amcQw_d.o   _259405_archive_1.so _prev_archive_1.so   SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o            -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/vcs_tls.o   -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o    /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/vcs_save_restore_new.o -ldl  -lc -lm -lpthread -ldl 
+../simv up to date
+make[1]: Leaving directory '/home/xz974/UVM_Learning/UVM_Learning/ASYNC_FIFO/sim/csrc'
+CPU time: 6.691 seconds to compile + .212 seconds to elab + .329 seconds to link
+cd sim && ./simv +UVM_TESTNAME=async_fifo_test -l run.log
+Info: [VCS_SAVE_RESTORE_INFO] ASLR (Address Space Layout Randomization) is detected on the machine. To enable $save functionality, ASLR will be switched off and simv re-executed.
+Please use '-no_save' simv switch to avoid re-execution or '-suppress=ASLR_DETECTED_INFO' to suppress this message.
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  May 31 23:05 2026
+----------------------------------------------------------------
+UVM-1.1d.Synopsys
+(C) 2007-2013 Mentor Graphics Corporation
+(C) 2007-2013 Cadence Design Systems, Inc.
+(C) 2006-2013 Synopsys, Inc.
+(C) 2011-2013 Cypress Semiconductor Corp.
+----------------------------------------------------------------
+
+  ***********       IMPORTANT RELEASE NOTES         ************
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_NO_DEPRECATED undefined.
+  See http://www.eda.org/svdb/view.php?id=3313 for more details.
+
+  You are using a version of the UVM library that has been compiled
+  with `UVM_OBJECT_MUST_HAVE_CONSTRUCTOR undefined.
+  See http://www.eda.org/svdb/view.php?id=3770 for more details.
+
+      (Specify +UVM_NO_RELNOTES to turn off this notice)
+
+UVM_INFO @ 0: reporter [RNTST] Running test async_fifo_test...
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 160000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 170000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 180000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xa136
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 180000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 190000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 190001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xa136 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 200000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x5e1c
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 200000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 210000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 220000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc2e4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 220000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 230000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 230001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc2e4 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 240000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x9bf7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 240000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 250000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 250001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9bf7 depth=3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 255001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xa136
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 260000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3050
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 260000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 265001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc2e4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 270000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 270001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3050 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 280000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x7594
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 280000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 285001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9bf7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 290000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 300000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x543b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 300000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 310000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 315001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3050
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 320000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x1303
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 320000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 330000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 330001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x1303 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 340000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x10c6
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 340000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 350000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 350001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x10c6 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 360000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x3b56
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 360000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 370000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 380000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x41a1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 380000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 385001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x1303
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 390000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 390001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x41a1 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 400000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x7569
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 400000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 410000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 420000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xc1f0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 420000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 425001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x10c6
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 430000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 440000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc1b6
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 440000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 445001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x41a1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 450000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 450001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc1b6 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 460000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x8064
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 460000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 470000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 480000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x8ab7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 480000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 485001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc1b6
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 490000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 490001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x8ab7 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 500000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xf3fb
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 500000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 510000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 510001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xf3fb depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 520000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x4060
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 520000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 525001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x8ab7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 530000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 540000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x50a5
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 540000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 545001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xf3fb
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 550000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 550001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x50a5 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 560000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xa943
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 560000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 570000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 580000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3ad4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 580000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 585001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x50a5
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 590000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 590001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3ad4 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 600000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x9067
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 600000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 610000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 610001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9067 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 620000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x8cb8
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 620000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 630000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 640000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x6d57
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 640000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 650000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 655001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3ad4
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 660000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xbcc1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 660000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 665001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9067
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 670000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 670001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xbcc1 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 680000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x5a1f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 680000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 690000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 700000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xe1d9
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 700000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 705001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xbcc1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 710000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 720000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xad5b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 720000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 730000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 740000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe8ee
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 740000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 750000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 750001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe8ee depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 760000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x7940
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 760000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 770000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 780000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x7300
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 780000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 790000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 795001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe8ee
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 800000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x5c9a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 800000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 810000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 810001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x5c9a depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 820000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x5bfd
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 820000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 830000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 840000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x4a98
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 840000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 845001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x5c9a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 850000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 850001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x4a98 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 860000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xa28b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 860000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 870000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 870001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xa28b depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 880000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xf13f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 880000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 885001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x4a98
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 890000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 900000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x8f3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 900000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 905001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xa28b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 910000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 920000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xa8ba
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 920000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 930000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 940000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xeec7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 940000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 950000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 960000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xd73d
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 960000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 970000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 970001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xd73d depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 980000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x27d
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 980000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 990000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 990001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x27d depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1000000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x2d41
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1000000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1010000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1015001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xd73d
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1020000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe7bc
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1020000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1025001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x27d
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1030000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1030001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe7bc depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1040000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xbb32
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1040000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1050000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1060000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe70a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1060000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1070000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1070001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe70a depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1075001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe7bc
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1080000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc369
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1080000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1090000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1090001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc369 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1100000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2afb
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1100000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1110000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1110001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2afb depth=3
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1120000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xd2f6
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1120000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1125001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe70a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1130000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1140000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x3ce1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1140000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1150000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1160000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x71c2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1160000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1165001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc369
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1170000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1175001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2afb
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1180000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x19a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1180000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1190000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1200000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x5879
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1200000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1210000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1210001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x5879 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1220000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xb192
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1220000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1230000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1230001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xb192 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1240000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xcc88
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1240000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1245001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x5879
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1250000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1250001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xcc88 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1260000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x773a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1260000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1265001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xb192
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1270000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1280000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xfc38
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1280000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1285001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xcc88
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1290000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1290001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xfc38 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1300000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x7650
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1300000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1310000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1320000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x4546
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1320000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1325001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xfc38
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1330000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1330001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x4546 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1340000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xaa84
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1340000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1350000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1350001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xaa84 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1360000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xfd5b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1360000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1365001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x4546
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1370000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1380000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x2091
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1380000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1385001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xaa84
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1390000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1400000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xb85
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1400000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1410000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1410001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xb85 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1420000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xf066
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1420000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1430000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1440000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xb568
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1440000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1445001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xb85
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1450000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1450001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xb568 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1460000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3e2b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1460000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1470000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1470001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3e2b depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1480000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x357e
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1480000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1485001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xb568
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1490000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1500000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xfd29
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1500000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1505001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3e2b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1510000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1520000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x5242
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1520000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1530000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1540000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x8567
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1540000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1550000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1560000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xbda1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1560000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1570000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1580000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x97cc
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1580000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1590000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1600000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x823a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1600000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1610000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1610001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x823a depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1620000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x6314
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1620000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1630000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1640000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xb0c5
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1640000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1650000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1660000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x3e33
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1660000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1665001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x823a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1670000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1680000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xf184
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1680000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1690000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1690001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xf184 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1700000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x595c
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1700000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1710000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1720000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xa019
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1720000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1725001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xf184
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1730000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1740000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xf140
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1740000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1750000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1760000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe144
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1760000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1770000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1770001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe144 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1780000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xb1ca
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1780000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1790000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1800000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x632d
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1800000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1810000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1815001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe144
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1820000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xd600
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1820000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1830000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1840000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xcd1d
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1840000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1850000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1860000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x849c
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1860000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1870000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1880000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x6c03
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1880000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1890000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1900000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x74b4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1900000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1910000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1920000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xcb7e
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1920000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1930000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 1930001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xcb7e depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1940000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x4df6
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1940000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1950000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1960000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x62d4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1960000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 1965001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xcb7e
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1970000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 1980000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x3fee
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1980000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 1990000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2000000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x6042
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2000000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2010000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2010001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x6042 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2020000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xaa6c
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2020000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2030000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2040000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x84b7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2040000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2045001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x6042
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2050000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2060000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xdb8e
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2060000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2070000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2070001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xdb8e depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2080000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xe52a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2080000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2090000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2100000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xd6f2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2100000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2105001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xdb8e
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2110000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2110001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xd6f2 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2120000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x6ba1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2120000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2130000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2140000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x9a06
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2140000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2150000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2160000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xaa6b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2160000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2170000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2170001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xaa6b depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2180000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x5ef0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2180000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2190000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2190001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x5ef0 depth=3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2195001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xd6f2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2200000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3893
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2200000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2210000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2210001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3893 depth=3
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2220000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x62d2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2220000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2230000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2230001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x62d2 depth=4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2235001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xaa6b
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2240000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x8af0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2240000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2245001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x5ef0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2250000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2250001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x8af0 depth=3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2255001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3893
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2260000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7897
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2260000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2270000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2270001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7897 depth=3
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2280000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x378f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2280000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2285001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x62d2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2290000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2290001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x378f depth=3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2295001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x8af0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2300000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc821
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2300000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2310000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2310001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc821 depth=3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2315001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7897
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2320000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xf82a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2320000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2325001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x378f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2330000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2330001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xf82a depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2340000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x5938
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2340000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2350000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2350001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x5938 depth=3
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2360000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x32
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2360000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2370000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2370001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x32 depth=4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2375001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc821
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2380000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x9305
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2380000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2385001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xf82a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2390000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2390001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9305 depth=3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2395001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x5938
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2400000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x8147
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2400000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2405001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x32
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2410000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2410001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x8147 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2420000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x4d06
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2420000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2425001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9305
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2430000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2430001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x4d06 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2440000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x52d7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2440000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2445001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x8147
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2450000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2450001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x52d7 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2460000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xae94
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2460000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2470000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2470001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xae94 depth=3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2475001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x4d06
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2480000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7ac
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2480000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2490000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2490001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7ac depth=3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2495001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x52d7
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2500000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3931
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2500000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2505001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xae94
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2510000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=0
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2510001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3931 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2520000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x4837
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2520000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2525001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7ac
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2530000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2530001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x4837 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2540000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2ce1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2540000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2545001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3931
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2550000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2550001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2ce1 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2560000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x509
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2560000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2565001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x4837
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2570000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2570001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x509 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2580000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xd5ef
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2580000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2585001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2ce1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2590000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2590001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xd5ef depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2600000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xefe6
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2600000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2605001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x509
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2610000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2610001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xefe6 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2620000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xd64a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2620000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2625001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xd5ef
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2630000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2630001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xd64a depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2640000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x635e
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2640000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2645001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xefe6
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2650000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2650001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x635e depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2660000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc0ac
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2660000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2665001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xd64a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2670000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2670001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc0ac depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2680000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x6667
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2680000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2685001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x635e
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2690000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2690001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x6667 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2700000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc40a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2700000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2705001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc0ac
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2710000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2710001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc40a depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2720000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2650
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2720000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2725001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x6667
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2730000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2730001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2650 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2740000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xb4cd
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2740000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2745001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc40a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2750000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2750001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xb4cd depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2760000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x545a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2760000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2765001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2650
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2770000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2770001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x545a depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2780000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7e66
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2780000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2785001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xb4cd
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2790000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2790001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7e66 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2800000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7b93
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2800000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2805001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x545a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2810000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2810001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7b93 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2820000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x45dc
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2820000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2825001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7e66
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2830000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2830001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x45dc depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2840000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x9695
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2840000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2845001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7b93
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2850000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2850001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9695 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2860000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x442a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2860000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2865001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x45dc
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2870000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2870001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x442a depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2880000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7e3f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2880000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2885001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9695
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2890000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2890001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7e3f depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2900000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xb9eb
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2900000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2905001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x442a
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2910000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2910001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xb9eb depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2920000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xa74c
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2920000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2925001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7e3f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2930000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2940000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x755c
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2940000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 2945001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xb9eb
+UVM_INFO ../tb/rd_agent/async_fifo_rd_driver.sv(38) @ 2950000: uvm_test_top.env.rd_agt.driver [ASYNC_FIFO_RD_DRV] RD Drive item: rd_en=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2960000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xb2b4
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 2970001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xb2b4 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 2980000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x93b7
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3000000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x6639
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3005001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xb2b4
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3020000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xb114
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3040000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x9e7d
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3050001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9e7d depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3060000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xd64a
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3070001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xd64a depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3080000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x8d2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3085001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9e7d
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3100000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x537c
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3105001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xd64a
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3120000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7f93
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3130001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7f93 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3140000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xd67c
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3150001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xd67c depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3160000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xe533
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3165001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7f93
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3180000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xf985
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3185001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xd67c
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3190001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xf985 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3200000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xaa97
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3210001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xaa97 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3220000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xfde4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3225001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xf985
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3240000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xe9cd
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3245001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xaa97
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3260000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xd7ad
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3270001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xd7ad depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3280000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2224
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3290001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2224 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3300000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x75c1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3305001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xd7ad
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3310001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x75c1 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3320000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x56fa
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3325001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2224
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3340000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x45e1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3345001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x75c1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3350001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x45e1 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3360000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x2abd
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3380000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe88f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3385001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x45e1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3390001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe88f depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3400000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x9364
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3410001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9364 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3420000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xd699
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3425001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe88f
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3440000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xba05
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3445001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9364
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3450001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xba05 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3460000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2969
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3470001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2969 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3480000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7e7b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3485001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xba05
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3490001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7e7b depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3500000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xdb42
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3505001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2969
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3510001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xdb42 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3520000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x5bb4
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3525001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7e7b
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3540000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3125
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3545001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xdb42
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3550001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3125 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3560000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x8b6
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3580000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x6af0
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3585001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3125
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3590001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x6af0 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3600000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x84ff
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3610001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x84ff depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3620000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x9596
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3625001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x6af0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3640000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xf832
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3645001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x84ff
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3660000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xed97
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3680000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2143
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3690001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2143 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3700000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x5bae
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3720000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x9bd3
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3725001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2143
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3740000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x1237
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3750001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x1237 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3760000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xd924
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3780000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xde48
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3785001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x1237
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3800000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3303
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3810001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3303 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3820000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x64d4
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3830001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x64d4 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3840000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xecd9
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3845001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3303
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3860000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc351
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3865001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x64d4
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3870001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc351 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3880000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xabd5
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3900000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2317
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3905001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc351
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3910001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2317 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3920000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe918
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 3930001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe918 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3940000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x48ef
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3945001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2317
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3960000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x8b16
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 3965001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe918
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 3980000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xdaff
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4000000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x7fab
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4020000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xb8e
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4040000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x4b77
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4060000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x3bdc
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4080000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xc5b4
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4100000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x65c6
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4120000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xc3f7
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4140000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x62ac
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4150001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x62ac depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4160000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x8dac
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4170001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x8dac depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4180000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2c34
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4185001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x62ac
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4190001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2c34 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4200000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3b91
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4205001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x8dac
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4210001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3b91 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4220000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x2cc8
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4225001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2c34
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4240000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xf0b1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4245001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3b91
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4250001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xf0b1 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4260000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xaec
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4270001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xaec depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4280000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x74e5
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4285001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xf0b1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4290001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x74e5 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4300000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x1c57
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4305001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xaec
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4320000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xb6e1
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4325001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x74e5
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4330001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xb6e1 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4340000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xf14b
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4350001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xf14b depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4360000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2fc
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4365001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xb6e1
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4370001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2fc depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4380000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc74
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4385001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xf14b
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4390001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc74 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4400000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x89ce
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4405001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2fc
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4410001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x89ce depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4420000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x9faa
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4425001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc74
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4440000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x578b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4445001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x89ce
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4460000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x15b
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4480000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xee7f
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4500000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xb0da
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4520000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x8d34
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4530001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x8d34 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4540000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x8e7b
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4550001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x8e7b depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4560000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xdc8f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4565001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x8d34
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4580000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x18b2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4585001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x8e7b
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4600000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x1d7f
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4610001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x1d7f depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4620000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe152
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4630001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe152 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4640000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x4135
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4645001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x1d7f
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4650001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x4135 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4660000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x4597
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4665001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe152
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4680000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x2791
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4685001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x4135
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4700000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x822c
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4710001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x822c depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4720000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x753e
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4740000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xa376
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4745001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x822c
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4760000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xf60e
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4770001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xf60e depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4780000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xd4ee
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4800000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7826
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4805001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xf60e
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4810001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7826 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4820000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xa6c3
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4840000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2005
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4845001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7826
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 4850001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2005 depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4860000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x4cad
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4880000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0xa285
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 4885001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2005
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4900000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4920000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4940000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4960000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 4980000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5000000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5020000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5040000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5060000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5080000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5100000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5120000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5140000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5160000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5180000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5200000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5220000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5240000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5260000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5280000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5300000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5320000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5340000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5360000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=0 wr_data=0x0
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5380000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xc8ce
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5390001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xc8ce depth=1
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5400000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x5038
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5410001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x5038 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5420000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xea48
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5425001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xc8ce
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5430001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xea48 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5440000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3532
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5445001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x5038
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5450001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3532 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5460000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3c7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5465001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xea48
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5470001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3c7 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5480000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x9424
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5485001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3532
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5490001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9424 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5500000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x6468
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5505001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3c7
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5510001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x6468 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5520000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe217
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5525001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9424
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5530001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe217 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5540000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2a2b
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5545001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x6468
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5550001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2a2b depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5560000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xa71f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5565001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe217
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5570001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xa71f depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5580000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x2cae
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5585001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2a2b
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5590001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x2cae depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5600000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x1a7
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5605001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xa71f
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5610001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x1a7 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5620000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x74bc
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5625001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x2cae
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5630001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x74bc depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5640000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x68ab
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5645001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x1a7
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5650001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x68ab depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5660000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x354f
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5665001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x74bc
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5670001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x354f depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5680000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xe753
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5685001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x68ab
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5690001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xe753 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5700000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x3122
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5705001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x354f
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5710001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x3122 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5720000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x7ccd
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5725001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xe753
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5730001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x7ccd depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5740000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0xf443
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5745001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x3122
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5750001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0xf443 depth=2
+UVM_INFO ../tb/wr_agent/async_fifo_wr_driver.sv(40) @ 5760000: uvm_test_top.env.wr_agt.driver [ASYNC_FIFO_WR_DRV] WR Drive item: wr_en=1 wr_data=0x9799
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5765001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x7ccd
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5770001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5785001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0xf443
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5790001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5805001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5810001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5825001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5830001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5845001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5850001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5865001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5870001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5885001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5890001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5905001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5910001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5925001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5930001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5945001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5950001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5965001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5970001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 5985001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 5990001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 6005001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 6010001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(69) @ 6025001: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_MON] RD accepted item: rd_data=0x9799
+UVM_INFO ../tb/env/async_fifo_scoreboard.sv(49) @ 6030001: uvm_test_top.env.scb [ASYNC_FIFO_SCB] Model Push: 0x9799 depth=2
+UVM_INFO /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_objection.svh(1274) @ 6045000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../tb/env/async_fifo_cov.sv(78) @ 6045000: uvm_test_top.env.cov [ASYNC_FIFO_GLOBAL_COV] ASYNC_FIFO global functional coverage = 86.11%
+UVM_INFO ../tb/env/async_fifo_cov.sv(82) @ 6045000: uvm_test_top.env.cov [ASYNC_FIFO_GLOBAL_COV] wr_rd_cross = 100.00%
+UVM_INFO ../tb/env/async_fifo_cov.sv(86) @ 6045000: uvm_test_top.env.cov [ASYNC_FIFO_GLOBAL_COV] boundary_cross = 66.67%
+UVM_INFO ../tb/rd_agent/async_fifo_rd_monitor.sv(82) @ 6045000: uvm_test_top.env.rd_agt.monitor [ASYNC_FIFO_RD_COV] ASYNC_FIFO_RD functional coverage = 100.00%
+UVM_INFO ../tb/wr_agent/async_fifo_wr_monitor.sv(76) @ 6045000: uvm_test_top.env.wr_agt.monitor [ASYNC_FIFO_WR_COV] ASYNC_FIFO_WR functional coverage = 66.67%
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :  883
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[ASYNC_FIFO_GLOBAL_COV]     3
+[ASYNC_FIFO_RD_COV]     1
+[ASYNC_FIFO_RD_DRV]   280
+[ASYNC_FIFO_RD_MON]   157
+[ASYNC_FIFO_SCB]   159
+[ASYNC_FIFO_WR_COV]     1
+[ASYNC_FIFO_WR_DRV]   280
+[RNTST]     1
+[TEST_DONE]     1
+$finish called from file "/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time              6045000
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 6045000 ps
+CPU Time:      0.260 seconds;       Data structure size:   0.5Mb
+Sun May 31 23:05:49 2026

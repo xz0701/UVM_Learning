@@ -10,6 +10,8 @@ CONFIGS=(
   "64 4 13 29"
 )
 
+make clean
+
 LOG_DIR="sim/regression_logs"
 mkdir -p ${LOG_DIR}
 
@@ -29,19 +31,16 @@ for cfg in "${CONFIGS[@]}"; do
   echo "WR_CLK=${WR_CLK}ns RD_CLK=${RD_CLK}ns"
   echo "================================================="
 
-  make clean
-  mkdir -p ${LOG_DIR}
-
   make \
       WIDTH=${WIDTH} \
       DEPTH=${DEPTH} \
       WR_CLK_PERIOD=${WR_CLK} \
       RD_CLK_PERIOD=${RD_CLK} \
       TEST=${TEST_NAME} \
-      | tee ${LOG_NAME}
+      | tee "${LOG_NAME}"
 
-  if grep -q "UVM_ERROR :    0" ${LOG_NAME} && \
-     grep -q "UVM_FATAL :    0" ${LOG_NAME}; then
+  if grep -Eq "UVM_ERROR[[:space:]]*:[[:space:]]*0" "${LOG_NAME}" && \
+     grep -Eq "UVM_FATAL[[:space:]]*:[[:space:]]*0" "${LOG_NAME}"; then
 
       echo "[PASS] WIDTH=${WIDTH} DEPTH=${DEPTH} WR=${WR_CLK} RD=${RD_CLK}"
 
