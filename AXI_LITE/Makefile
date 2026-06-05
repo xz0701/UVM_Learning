@@ -1,0 +1,49 @@
+VCS      = vcs
+SIM_DIR  = sim
+FLIST    = ../script/filelist.f
+TOP      = tb_top
+WIDTH ?= 8
+DEPTH ?= 16
+WR_CLK_PERIOD ?= 10
+RD_CLK_PERIOD ?= 16
+TEST  ?= async_fifo_test
+
+VCS_OPTS = -full64 \
+           -sverilog \
+           -ntb_opts uvm \
+           +define+WIDTH=$(WIDTH) \
+           +define+DEPTH=$(DEPTH) \
+           +define+WR_CLK_PERIOD=$(WR_CLK_PERIOD) \
+           +define+RD_CLK_PERIOD=$(RD_CLK_PERIOD) \
+           -timescale=1ns/1ps \
+           -debug_access+all \
+           -top $(TOP) \
+           -l compile.log
+
+SIM_OPTS = +UVM_TESTNAME=$(TEST) \
+           -l run.log
+
+all: run
+
+$(SIM_DIR):
+	mkdir -p $(SIM_DIR)
+
+compile: $(SIM_DIR)
+	cd $(SIM_DIR) && $(VCS) $(VCS_OPTS) -f $(FLIST) -o simv
+
+run: compile
+	cd $(SIM_DIR) && ./simv $(SIM_OPTS)
+
+clean:
+	rm -rf $(SIM_DIR)/simv \
+	       $(SIM_DIR)/simv.daidir \
+	       $(SIM_DIR)/csrc \
+	       $(SIM_DIR)/*.log \
+	       $(SIM_DIR)/*.vpd \
+	       $(SIM_DIR)/*.fsdb \
+	       $(SIM_DIR)/ucli.key \
+	       $(SIM_DIR)/DVEfiles \
+	       $(SIM_DIR)/inter.vpd \
+		   $(SIM_DIR)/regression_logs
+
+.PHONY: all compile run clean
