@@ -1,0 +1,6 @@
+[submodule "AXI_LITE/third_party/axi"]
+	path = AXI_LITE/third_party/axi
+	url = https://github.com/pulp-platform/axi.git
+[submodule "AXI_LITE/third_party/common_cells"]
+	path = AXI_LITE/third_party/common_cells
+	url = https://github.com/pulp-platform/common_cells.git
