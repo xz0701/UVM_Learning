@@ -1,7 +1,9 @@
+SHELL    = /bin/bash
 VCS      = vcs
 SIM_DIR  = sim
 FLIST    = ../script/filelist.f
 TOP      = tb_top
+ENV_SETUP ?= ../../env/setup.sh
 WIDTH ?= 8
 DEPTH ?= 16
 WR_CLK_PERIOD ?= 10
@@ -23,16 +25,18 @@ VCS_OPTS = -full64 \
 SIM_OPTS = +UVM_TESTNAME=$(TEST) \
            -l run.log
 
+LOAD_ENV = if [[ -f "$(ENV_SETUP)" ]]; then source "$(ENV_SETUP)"; fi
+
 all: run
 
 $(SIM_DIR):
 	mkdir -p $(SIM_DIR)
 
 compile: $(SIM_DIR)
-	cd $(SIM_DIR) && $(VCS) $(VCS_OPTS) -f $(FLIST) -o simv
+	$(LOAD_ENV); cd $(SIM_DIR) && $(VCS) $(VCS_OPTS) -f $(FLIST) -o simv
 
 run: compile
-	cd $(SIM_DIR) && ./simv $(SIM_OPTS)
+	$(LOAD_ENV); cd $(SIM_DIR) && ./simv $(SIM_OPTS)
 
 clean:
 	rm -rf $(SIM_DIR)/simv \
