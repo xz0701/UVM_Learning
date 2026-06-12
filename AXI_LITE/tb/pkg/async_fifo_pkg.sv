@@ -1,33 +1,13 @@
-package async_fifo_pkg;
+package axi_lite_pkg;
 
-    import uvm_pkg::*;
-    `include "uvm_macros.svh"
+  import uvm_pkg::*;
+  `include "uvm_macros.svh"
 
-    import async_fifo_param_pkg::*;
+  typedef enum bit {
+    AXI_LITE_READ,
+    AXI_LITE_WRITE
+  } axi_lite_cmd_e;
 
-    `include "async_fifo_wr_tr.sv"
-    `include "async_fifo_rd_tr.sv"
-    
-    `include "async_fifo_wr_seq.sv"
-    `include "async_fifo_rd_seq.sv"
-
-    `include "async_fifo_wr_sequencer.sv"
-    `include "async_fifo_rd_sequencer.sv"
-
-    `include "async_fifo_wr_driver.sv"
-    `include "async_fifo_rd_driver.sv"
-
-    `include "async_fifo_wr_monitor.sv"
-    `include "async_fifo_rd_monitor.sv"
-
-    `include "async_fifo_wr_agent.sv"
-    `include "async_fifo_rd_agent.sv"
-
-
-    `include "async_fifo_scoreboard.sv"
-    `include "async_fifo_cov.sv"
-    `include "async_fifo_env.sv"
-    `include "async_fifo_test.sv"
-
+  `include "axi_lite_tr.sv"
 
 endpackage
