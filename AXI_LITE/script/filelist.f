@@ -3,6 +3,8 @@
 
 +incdir+../tb/pkg
 +incdir+../tb/seq
++incdir+../tb/agent
++incdir+../tb/interface
 
 ../third_party/common_cells/src/cf_math_pkg.sv
 ../third_party/common_cells/src/addr_decode_dync.sv
@@ -14,6 +16,7 @@
 ../third_party/axi/src/axi_intf.sv
 ../third_party/axi/src/axi_lite_regs.sv
 
-../tb/tb_axi_lite_regs.sv
+../tb/interface/axi_lite_ctrl_if.sv
+../tb/pkg/axi_lite_pkg.sv
 
-../tb/pkg/axi_lite_pkg.sv;
+../tb/tb_axi_lite_regs.sv

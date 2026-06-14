@@ -9,6 +9,10 @@ class axi_lite_tr extends uvm_sequence_item;
     bit [1:0] resp;
 
     constraint addr_align_c {
+        addr[1:0] == 2'b00;
+    }
+
+    constraint strb_nonzero_c {
         cmd == AXI_LITE_WRITE -> strb != '0;
     }
 
@@ -21,7 +25,7 @@ class axi_lite_tr extends uvm_sequence_item;
         `uvm_field_int(resp,  UVM_DEFAULT)
     `uvm_object_utils_end
 
-    function new(string name = "axi_lite_item");
+    function new(string name = "axi_lite_tr");
         super.new(name);
     endfunction
 
