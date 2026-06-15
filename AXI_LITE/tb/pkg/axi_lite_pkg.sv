@@ -21,5 +21,7 @@ package axi_lite_pkg;
   `include "axi_lite_tr.sv"
   `include "axi_lite_sequencer.sv"
   `include "axi_lite_driver.sv"
+  `include "axi_lite_monitor.sv"
+  `include "axi_lite_agent.sv"
 
 endpackage
