@@ -2,7 +2,7 @@ Command: vcs -full64 -sverilog -ntb_opts uvm +define+WIDTH=8 +define+DEPTH=16 +d
 +define+RD_CLK_PERIOD=16 -timescale=1ns/1ps -debug_access+all -top tb_axi_lite_regs \
 -l compile.log -f ../script/filelist.f -o simv
                          Chronologic VCS (TM)
-      Version V-2023.12-SP2-1_Full64 -- Mon Jun 15 01:47:37 2026
+      Version V-2023.12-SP2-1_Full64 -- Tue Jun 16 00:58:48 2026
 
                     Copyright (c) 1991 - 2024 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -20,4 +20,4 @@ Command: vcs -full64 -sverilog -ntb_opts uvm +define+WIDTH=8 +define+DEPTH=16 +d
             Inclusivity and Diversity" (Refer to article 000036315 at
                         https://solvnetplus.synopsys.com)
 
-CPU time: .148 seconds to compile
+CPU time: .154 seconds to compile

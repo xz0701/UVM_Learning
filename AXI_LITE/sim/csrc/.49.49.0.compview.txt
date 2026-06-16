@@ -1,6 +1,6 @@
 Command exited with non-zero status 255
-{"vcs1":{"timestamp_begin":1781502455.275456696, "rt":2.72, "ut":0.05, "st":0.05}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1781502454.275056605}
-{"VCS_COMP_START_TIME": 1781502454.275056605}
-{"VCS_COMP_END_TIME": 1781502458.332556809}
+{"vcs1":{"timestamp_begin":1781585926.245059274, "rt":2.04, "ut":0.05, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1781585925.479748931}
+{"VCS_COMP_START_TIME": 1781585925.479748931}
+{"VCS_COMP_END_TIME": 1781585928.360763003}
 {"VCS_USER_OPTIONS": "-full64 -sverilog -ntb_opts uvm +define+WIDTH=8 +define+DEPTH=16 +define+WR_CLK_PERIOD=10 +define+RD_CLK_PERIOD=16 -timescale=1ns/1ps -debug_access+all -top tb_axi_lite_regs -l compile.log -f ../script/filelist.f -o simv"}

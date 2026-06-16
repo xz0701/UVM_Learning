@@ -4,7 +4,9 @@
 +incdir+../tb/pkg
 +incdir+../tb/seq
 +incdir+../tb/agent
++incdir+../tb/env
 +incdir+../tb/interface
++incdir+../tb/tests
 
 ../third_party/common_cells/src/cf_math_pkg.sv
 ../third_party/common_cells/src/addr_decode_dync.sv
