@@ -1,95 +1,80 @@
-`timescale 1ns/1ns
-
-`ifndef WR_CLK_PERIOD
-    `define WR_CLK_PERIOD 10
-`endif
-
-`ifndef RD_CLK_PERIOD
-    `define RD_CLK_PERIOD 15
-`endif
+`timescale 1ns/1ps
 
 module tb_top;
 
     import uvm_pkg::*;
-    import async_fifo_param_pkg::*;
-    import async_fifo_pkg::*;
+    import axi_lite_pkg::*;
 
     `include "uvm_macros.svh"
 
-    logic wr_clk;
-    logic wr_rstn;
-    logic rd_clk;
-    logic rd_rstn;
+    logic clk;
+    logic rst_n;
+
+    typedef logic [7:0] byte_t;
+
+    logic [AXI_LITE_REG_NUM_BYTES-1:0] wr_active;
+    logic [AXI_LITE_REG_NUM_BYTES-1:0] rd_active;
+
+    byte_t [AXI_LITE_REG_NUM_BYTES-1:0] reg_d;
+    logic [AXI_LITE_REG_NUM_BYTES-1:0] reg_load;
+    byte_t [AXI_LITE_REG_NUM_BYTES-1:0] reg_q;
 
     initial begin
-        wr_clk = 0;
-        forever #(`WR_CLK_PERIOD/2) wr_clk = ~wr_clk;
+        clk = 1'b0;
+        forever #5 clk = ~clk;
     end
 
     initial begin
-        rd_clk = 0;
-        forever #(`RD_CLK_PERIOD/2) rd_clk = ~rd_clk;
+        rst_n    = 1'b0;
+        reg_d    = '{default: 8'h00};
+        reg_load = '0;
+
+        repeat (5) @(posedge clk);
+        rst_n = 1'b1;
     end
 
-    initial begin
-        wr_rstn = 1'b0;
-        rd_rstn = 1'b0;
+    AXI_LITE #(
+        .AXI_ADDR_WIDTH(AXI_LITE_ADDR_WIDTH),
+        .AXI_DATA_WIDTH(AXI_LITE_DATA_WIDTH)
+    ) axi_if ();
 
-        repeat (5) @(posedge wr_clk);
-        repeat (5) @(posedge rd_clk);
+    axi_lite_ctrl_if ctrl_if (
+        .clk   (clk),
+        .rst_n (rst_n)
+    );
 
-        wr_rstn = 1'b1;
-        rd_rstn = 1'b1;
-    end
-
-    async_fifo_if #(
-        .WIDTH(WIDTH) 
-    ) async_fifo_vif();
-
-    assign async_fifo_vif.wr_clk = wr_clk;
-    assign async_fifo_vif.wr_rstn = wr_rstn;
-    assign async_fifo_vif.rd_clk = rd_clk;
-    assign async_fifo_vif.rd_rstn = rd_rstn;
-
-    async_fifo #(
-        .WIDTH(WIDTH),
-        .DEPTH(DEPTH)
+    axi_lite_regs_intf #(
+        .byte_t         (byte_t),
+        .REG_NUM_BYTES  (AXI_LITE_REG_NUM_BYTES),
+        .AXI_ADDR_WIDTH (AXI_LITE_ADDR_WIDTH),
+        .AXI_DATA_WIDTH (AXI_LITE_DATA_WIDTH)
     ) dut (
-        .wr_clk(async_fifo_vif.wr_clk),
-        .wr_rstn(async_fifo_vif.wr_rstn),
-        .wr_en(async_fifo_vif.wr_en),
-        .wr_data(async_fifo_vif.wr_data),
-        .rd_clk(async_fifo_vif.rd_clk),
-        .rd_rstn(async_fifo_vif.rd_rstn),
-        .rd_en(async_fifo_vif.rd_en),
-        .rd_data(async_fifo_vif.rd_data),
-        .full(async_fifo_vif.full),
-        .empty(async_fifo_vif.empty)
+        .clk_i       (clk),
+        .rst_ni      (rst_n),
+        .slv         (axi_if),
+        .wr_active_o (wr_active),
+        .rd_active_o (rd_active),
+        .reg_d_i     (reg_d),
+        .reg_load_i  (reg_load),
+        .reg_q_o     (reg_q)
     );
 
     initial begin
-
-        uvm_config_db#(virtual async_fifo_if)::set(
-            null, 
-            "uvm_test_top", 
-            "vif", 
-            async_fifo_vif
+        uvm_config_db#(axi_lite_vif_t)::set(
+            null,
+            "*",
+            "axi_vif",
+            axi_if
         );
 
-        uvm_config_db#(virtual async_fifo_if)::set(
-            null, 
-            "uvm_test_top.env.*", 
-            "vif", 
-            async_fifo_vif
+        uvm_config_db#(axi_lite_ctrl_vif_t)::set(
+            null,
+            "*",
+            "ctrl_vif",
+            ctrl_if
         );
 
-        // uvm_config_db#(virtual async_fifo_if)::set(
-        //     null, 
-        //     "uvm_test_top.env.*", 
-        //     "vif", 
-        //     async_fifo_vif
-        // );
-
-        run_test("async_fifo_test");
+        run_test();
     end
+
 endmodule

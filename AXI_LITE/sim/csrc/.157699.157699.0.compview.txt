@@ -1,9 +1,0 @@
-{"vcs1":{"timestamp_begin":1781156932.939748424, "rt":5.02, "ut":3.25, "st":0.17}}
-{"vcselab":{"timestamp_begin":1781156938.014281651, "rt":0.27, "ut":0.14, "st":0.06}}
-{"link":{"timestamp_begin":1781156938.330532318, "rt":2.08, "ut":0.15, "st":0.13}}
-{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1781156932.586965105}
-{"VCS_COMP_START_TIME": 1781156932.586965105}
-{"VCS_COMP_END_TIME": 1781156940.574863333}
-{"VCS_USER_OPTIONS": "-full64 -sverilog -ntb_opts uvm +define+WIDTH=8 +define+DEPTH=16 +define+WR_CLK_PERIOD=10 +define+RD_CLK_PERIOD=16 -timescale=1ns/1ps -debug_access+all -top tb_axi_lite_regs -l compile.log -f ../script/filelist.f -o simv"}
-{"vcs1": {"peak_mem": 450540}}
-{"vcselab": {"peak_mem": 260772}}

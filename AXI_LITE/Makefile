@@ -8,7 +8,7 @@ WIDTH ?= 8
 DEPTH ?= 16
 WR_CLK_PERIOD ?= 10
 RD_CLK_PERIOD ?= 16
-TEST  ?= async_fifo_test
+TEST  ?= axi_lite_test
 
 VCS_OPTS = -full64 \
            -sverilog \

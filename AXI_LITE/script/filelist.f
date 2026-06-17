@@ -21,4 +21,5 @@
 ../tb/interface/axi_lite_ctrl_if.sv
 ../tb/pkg/axi_lite_pkg.sv
 
+../tb/top/tb_top.sv
 ../tb/tb_axi_lite_regs.sv

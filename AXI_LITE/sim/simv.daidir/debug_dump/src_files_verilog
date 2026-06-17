@@ -1,4 +1,17 @@
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/agent/axi_lite_agent.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/agent/axi_lite_driver.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/agent/axi_lite_monitor.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/agent/axi_lite_sequencer.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/env/axi_lite_cov.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/env/axi_lite_env.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/env/axi_lite_scoreboard.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/interface/axi_lite_ctrl_if.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/pkg/axi_lite_pkg.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/seq/axi_lite_seq.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/seq/axi_lite_tr.sv
 /home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/tb_axi_lite_regs.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/tests/axi_lite_test.sv
+/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/tb/top/tb_top.sv
 /home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/third_party/axi/include/axi/assign.svh
 /home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/third_party/axi/include/axi/typedef.svh
 /home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/third_party/axi/src/axi_intf.sv

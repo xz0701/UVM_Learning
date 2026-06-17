@@ -1,7 +1,7 @@
-Command: /home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/sim/./simv +UVM_TESTNAME=async_fifo_test -l run.log
+Command: /home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/sim/./simv +UVM_TESTNAME=axi_lite_test -l run.log
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  Jun 11 01:49 2026
+Compiler version V-2023.12-SP2-1_Full64; Runtime version V-2023.12-SP2-1_Full64;  Jun 17 00:40 2026
 ----------------------------------------------------------------
 UVM-1.1d.Synopsys
 (C) 2007-2013 Mentor Graphics Corporation
@@ -22,47 +22,46 @@ UVM-1.1d.Synopsys
 
       (Specify +UVM_NO_RELNOTES to turn off this notice)
 
-[95000] AXI READ START addr=0x00000000
-[125000] AXI READ OK addr=0x00000000 data=0x00000000 resp=OKAY
-[135000] RESET DEFAULT TEST PASSED: addr=0x00000000 data=0x00000000
-[135000] AXI WRITE START addr=0x00000000 data=0x12345678 strb=0xf
-[165000] AXI WRITE OK addr=0x00000000 resp=OKAY
-[175000] AXI READ START addr=0x00000000
-[205000] AXI READ OK addr=0x00000000 data=0x12345678 resp=OKAY
-[215000] BASIC WRITE/READ TEST PASSED: addr=0x00000000 data=0x12345678
-[215000] AXI WRITE START addr=0x00000000 data=0xffffffff strb=0xf
-[245000] AXI WRITE OK addr=0x00000000 resp=OKAY
-[255000] AXI WRITE START addr=0x00000000 data=0x0000aa00 strb=0x2
-[285000] AXI WRITE OK addr=0x00000000 resp=OKAY
-[295000] AXI READ START addr=0x00000000
-[325000] AXI READ OK addr=0x00000000 data=0xffffaaff resp=OKAY
-[335000] BYTE STROBE TEST PASSED: addr=0x00000000 data=0xffffaaff
-[335000] AXI WRITE START addr=0x00000004 data=0xdeadbeef strb=0xf
-[365000] AXI WRITE OK addr=0x00000004 resp=OKAY
-[375000] AXI WRITE START addr=0x00000008 data=0xcafecafe strb=0xf
-[405000] AXI WRITE OK addr=0x00000008 resp=OKAY
-[415000] AXI READ START addr=0x00000000
-[445000] AXI READ OK addr=0x00000000 data=0xffffaaff resp=OKAY
-[455000] MULTI ADDR TEST ADDR0 PASSED: addr=0x00000000 data=0xffffaaff
-[455000] AXI READ START addr=0x00000004
-[485000] AXI READ OK addr=0x00000004 data=0xdeadbeef resp=OKAY
-[495000] MULTI ADDR TEST ADDR4 PASSED: addr=0x00000004 data=0xdeadbeef
-[495000] AXI READ START addr=0x00000008
-[525000] AXI READ OK addr=0x00000008 data=0xcafecafe resp=OKAY
-[535000] MULTI ADDR TEST ADDR8 PASSED: addr=0x00000008 data=0xcafecafe
-[635000] AXI READ START addr=0x00000000
-[665000] AXI READ OK addr=0x00000000 data=0x00000000 resp=OKAY
-[675000] POST RESET TEST ADDR0 PASSED: addr=0x00000000 data=0x00000000
-[675000] AXI READ START addr=0x00000004
-[705000] AXI READ OK addr=0x00000004 data=0x00000000 resp=OKAY
-[715000] POST RESET TEST ADDR4 PASSED: addr=0x00000004 data=0x00000000
-[715000] AXI READ START addr=0x00000008
-[745000] AXI READ OK addr=0x00000008 data=0x00000000 resp=OKAY
-[755000] POST RESET TEST ADDR8 PASSED: addr=0x00000008 data=0x00000000
-[755000] ALL DIRECTED TESTS PASSED
-$finish called from file "../tb/tb_axi_lite_regs.sv", line 254.
-$finish at simulation time               855000
+UVM_INFO @ 0: reporter [RNTST] Running test axi_lite_test...
+UVM_INFO ../tb/agent/axi_lite_monitor.sv(83) @ 95000: uvm_test_top.env.agt.monitor [AXI_LITE_MON] WRITE addr=0x00000000 data=0x12345678 strb=0xf resp=0x0
+UVM_INFO ../tb/env/axi_lite_scoreboard.sv(71) @ 95000: uvm_test_top.env.scb [AXI_LITE_SCB] Model write: addr=0x00000000 data=0x12345678 strb=0xf
+UVM_INFO ../tb/agent/axi_lite_driver.sv(72) @ 105000: uvm_test_top.env.agt.driver [AXI_LITE_DRV] WRITE addr=0x00000000 data=0x12345678 strb=0xf resp=0x0
+UVM_INFO ../tb/agent/axi_lite_monitor.sv(126) @ 135000: uvm_test_top.env.agt.monitor [AXI_LITE_MON] READ addr=0x00000000 rdata=0x12345678 resp=0x0
+UVM_INFO ../tb/env/axi_lite_scoreboard.sv(113) @ 135000: uvm_test_top.env.scb [AXI_LITE_SCB] Read match: addr=0x00000000 data=0x12345678
+UVM_INFO ../tb/agent/axi_lite_driver.sv(102) @ 145000: uvm_test_top.env.agt.driver [AXI_LITE_DRV] READ addr=0x00000000 rdata=0x12345678 resp=0x0
+UVM_INFO ../tb/agent/axi_lite_monitor.sv(83) @ 175000: uvm_test_top.env.agt.monitor [AXI_LITE_MON] WRITE addr=0x00000000 data=0xffffffff strb=0xf resp=0x0
+UVM_INFO ../tb/env/axi_lite_scoreboard.sv(71) @ 175000: uvm_test_top.env.scb [AXI_LITE_SCB] Model write: addr=0x00000000 data=0xffffffff strb=0xf
+UVM_INFO ../tb/agent/axi_lite_driver.sv(72) @ 185000: uvm_test_top.env.agt.driver [AXI_LITE_DRV] WRITE addr=0x00000000 data=0xffffffff strb=0xf resp=0x0
+UVM_INFO ../tb/agent/axi_lite_monitor.sv(83) @ 215000: uvm_test_top.env.agt.monitor [AXI_LITE_MON] WRITE addr=0x00000000 data=0x0000aa00 strb=0x2 resp=0x0
+UVM_INFO ../tb/env/axi_lite_scoreboard.sv(71) @ 215000: uvm_test_top.env.scb [AXI_LITE_SCB] Model write: addr=0x00000000 data=0x0000aa00 strb=0x2
+UVM_INFO ../tb/agent/axi_lite_driver.sv(72) @ 225000: uvm_test_top.env.agt.driver [AXI_LITE_DRV] WRITE addr=0x00000000 data=0x0000aa00 strb=0x2 resp=0x0
+UVM_INFO ../tb/agent/axi_lite_monitor.sv(126) @ 255000: uvm_test_top.env.agt.monitor [AXI_LITE_MON] READ addr=0x00000000 rdata=0xffffaaff resp=0x0
+UVM_INFO ../tb/env/axi_lite_scoreboard.sv(113) @ 255000: uvm_test_top.env.scb [AXI_LITE_SCB] Read match: addr=0x00000000 data=0xffffaaff
+UVM_INFO ../tb/agent/axi_lite_driver.sv(102) @ 265000: uvm_test_top.env.agt.driver [AXI_LITE_DRV] READ addr=0x00000000 rdata=0xffffaaff resp=0x0
+UVM_INFO /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_objection.svh(1274) @ 365000: reporter [TEST_DONE] 'run' phase is ready to proceed to the 'extract' phase
+UVM_INFO ../tb/env/axi_lite_cov.sv(87) @ 365000: uvm_test_top.env.cov [AXI_LITE_COV] AXI-Lite functional coverage = 24.01%
+UVM_INFO ../tb/env/axi_lite_cov.sv(91) @ 365000: uvm_test_top.env.cov [AXI_LITE_COV] cmd_addr_cross = 12.50%
+UVM_INFO ../tb/env/axi_lite_cov.sv(95) @ 365000: uvm_test_top.env.cov [AXI_LITE_COV] addr_strb_cross = 1.79%
+UVM_INFO ../tb/env/axi_lite_cov.sv(99) @ 365000: uvm_test_top.env.cov [AXI_LITE_COV] cmd_resp_cross = 25.00%
+UVM_INFO ../tb/env/axi_lite_scoreboard.sv(136) @ 365000: uvm_test_top.env.scb [AXI_LITE_SCB] Scoreboard passed: read_checks=2
+
+--- UVM Report Summary ---
+
+** Report counts by severity
+UVM_INFO :   22
+UVM_WARNING :    0
+UVM_ERROR :    0
+UVM_FATAL :    0
+** Report counts by id
+[AXI_LITE_COV]     4
+[AXI_LITE_DRV]     5
+[AXI_LITE_MON]     5
+[AXI_LITE_SCB]     6
+[RNTST]     1
+[TEST_DONE]     1
+$finish called from file "/opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/base/uvm_root.svh", line 437.
+$finish at simulation time               365000
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 855000 ps
-CPU Time:      0.210 seconds;       Data structure size:   0.4Mb
-Thu Jun 11 01:49:01 2026
+Time: 365000 ps
+CPU Time:      0.270 seconds;       Data structure size:   0.5Mb
+Wed Jun 17 00:40:46 2026
