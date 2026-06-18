@@ -23,25 +23,19 @@ class axi_lite_cov extends uvm_component;
             bins addr_14 = {32'h0000_0014};
             bins addr_18 = {32'h0000_0018};
             bins addr_1c = {32'h0000_001c};
-            bins others  = default;
         }
 
         strb_cp: coverpoint cov_tr.strb iff (cov_tr.cmd == AXI_LITE_WRITE) {
-            bins full      = {4'hf};
-            bins byte0     = {4'b0001};
-            bins byte1     = {4'b0010};
-            bins byte2     = {4'b0100};
-            bins byte3     = {4'b1000};
-            bins half_low  = {4'b0011};
-            bins half_high = {4'b1100};
-            bins partial[] = {[4'h1:4'he]};
+            bins full       = {4'hf};
+            bins single[]   = {4'b0001, 4'b0010, 4'b0100, 4'b1000};
+            bins half[]     = {4'b0011, 4'b1100};
+            bins sparse[]   = {4'b0101, 4'b1010};
+            bins partial[]  = {4'b0110, 4'b0111, 4'b1001, 4'b1011, 4'b1101, 4'b1110};
         }
 
         resp_cp: coverpoint cov_tr.resp {
-            bins okay   = {2'b00};
-            bins exokay = {2'b01};
-            bins slverr = {2'b10};
-            bins decerr = {2'b11};
+            bins okay = {2'b00};
+            ignore_bins reserved_or_error = {2'b01, 2'b10, 2'b11};
         }
 
         wdata_cp: coverpoint cov_tr.data iff (cov_tr.cmd == AXI_LITE_WRITE) {
@@ -60,9 +54,28 @@ class axi_lite_cov extends uvm_component;
             bins others   = default;
         }
 
+        wr_order_cp: coverpoint cov_tr.wr_order iff (cov_tr.cmd == AXI_LITE_WRITE) {
+            bins same_cycle  = {AXI_LITE_AW_W_SAME};
+            bins aw_before_w = {AXI_LITE_AW_BEFORE_W};
+            bins w_before_aw = {AXI_LITE_W_BEFORE_AW};
+        }
+
+        b_wait_cp: coverpoint cov_tr.b_wait_cycles iff (cov_tr.cmd == AXI_LITE_WRITE) {
+            bins no_wait = {0};
+            bins short[] = {[1:2]};
+            bins long[]  = {[3:8]};
+        }
+
+        r_wait_cp: coverpoint cov_tr.r_wait_cycles iff (cov_tr.cmd == AXI_LITE_READ) {
+            bins no_wait = {0};
+            bins short[] = {[1:2]};
+            bins long[]  = {[3:8]};
+        }
+
         cmd_addr_cross: cross cmd_cp, addr_cp;
         addr_strb_cross: cross addr_cp, strb_cp;
         cmd_resp_cross: cross cmd_cp, resp_cp;
+        wr_order_strb_cross: cross wr_order_cp, strb_cp;
 
     endgroup
 
@@ -98,6 +111,10 @@ class axi_lite_cov extends uvm_component;
 
         `uvm_info("AXI_LITE_COV",
             $sformatf("cmd_resp_cross = %.2f%%", cg.cmd_resp_cross.get_coverage()),
+            UVM_LOW)
+
+        `uvm_info("AXI_LITE_COV",
+            $sformatf("wr_order_strb_cross = %.2f%%", cg.wr_order_strb_cross.get_coverage()),
             UVM_LOW)
     endfunction
 

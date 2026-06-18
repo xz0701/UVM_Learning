@@ -20,6 +20,12 @@ package axi_lite_pkg;
     AXI_LITE_WRITE
   } axi_lite_cmd_e;
 
+  typedef enum bit [1:0] {
+    AXI_LITE_AW_W_SAME,
+    AXI_LITE_AW_BEFORE_W,
+    AXI_LITE_W_BEFORE_AW
+  } axi_lite_wr_order_e;
+
   `include "axi_lite_tr.sv"
   `include "axi_lite_seq.sv"
   `include "axi_lite_sequencer.sv"

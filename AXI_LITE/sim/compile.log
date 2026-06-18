@@ -2,7 +2,7 @@ Command: vcs -full64 -sverilog -ntb_opts uvm +define+WIDTH=8 +define+DEPTH=16 +d
 +define+RD_CLK_PERIOD=16 -timescale=1ns/1ps -debug_access+all -top tb_top -l compile.log \
 -f ../script/filelist.f -o simv
                          Chronologic VCS (TM)
-      Version V-2023.12-SP2-1_Full64 -- Wed Jun 17 00:40:30 2026
+      Version V-2023.12-SP2-1_Full64 -- Thu Jun 18 02:01:09 2026
 
                     Copyright (c) 1991 - 2024 Synopsys, Inc.
    This software and the associated documentation are proprietary to Synopsys,
@@ -420,7 +420,7 @@ g++ -w  -pipe -DVCS -DUVM_DPI_DO_TYPE_CHECK -fPIC -O -I/opt/synopsys/vcs/V-2023.
 if [ -x ../simv ]; then chmod a-x ../simv; fi
 g++  -o ../simv      -rdynamic  -Wl,-rpath='$ORIGIN'/simv.daidir -Wl,-rpath=./simv.daidir \
 -Wl,-rpath=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib -L/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib \
--Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 uvm_dpi.o   objs/amcQw_d.o   _55967_archive_1.so \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1 uvm_dpi.o   objs/amcQw_d.o   _157671_archive_1.so \
 SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o \
 -lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -luclinative /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/vcs_tls.o \
 -Wl,-whole-archive  -lvcsucli    -Wl,-no-whole-archive       ./../simv.daidir/vc_hdrs.o \
@@ -429,4 +429,4 @@ SIM_l.o      rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm
 ../simv up to date
 make[1]: Leaving directory '/home/xz974/UVM_Learning/UVM_Learning/AXI_LITE/sim/csrc' \
 
-CPU time: 7.579 seconds to compile + .260 seconds to elab + .486 seconds to link
+CPU time: 8.032 seconds to compile + .259 seconds to elab + .472 seconds to link

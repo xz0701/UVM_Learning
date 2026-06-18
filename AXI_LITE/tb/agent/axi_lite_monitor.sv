@@ -35,6 +35,12 @@ class axi_lite_monitor extends uvm_monitor;
         bit [AXI_LITE_DATA_WIDTH/8-1:0] strb;
         bit have_aw;
         bit have_w;
+        bit seen_aw_valid;
+        bit seen_w_valid;
+        int unsigned cycle_count;
+        int unsigned aw_valid_cycle;
+        int unsigned w_valid_cycle;
+        int unsigned b_wait_cycles;
         axi_lite_tr tr;
 
         forever begin
@@ -43,6 +49,11 @@ class axi_lite_monitor extends uvm_monitor;
             addr    = '0;
             data    = '0;
             strb    = '0;
+            cycle_count = 0;
+            seen_aw_valid = 1'b0;
+            seen_w_valid = 1'b0;
+            aw_valid_cycle = 0;
+            w_valid_cycle = 0;
 
             while (!(have_aw && have_w)) begin
                 @(posedge ctrl_vif.clk);
@@ -50,21 +61,37 @@ class axi_lite_monitor extends uvm_monitor;
                 if (!ctrl_vif.rst_n) begin
                     have_aw = 1'b0;
                     have_w  = 1'b0;
+                    seen_aw_valid = 1'b0;
+                    seen_w_valid = 1'b0;
+                    cycle_count = 0;
                     continue;
                 end
 
+                if (!seen_aw_valid && axi_vif.aw_valid) begin
+                    addr = axi_vif.aw_addr;
+                    seen_aw_valid = 1'b1;
+                    aw_valid_cycle = cycle_count;
+                end
+
+                if (!seen_w_valid && axi_vif.w_valid) begin
+                    data = axi_vif.w_data;
+                    strb = axi_vif.w_strb;
+                    seen_w_valid = 1'b1;
+                    w_valid_cycle = cycle_count;
+                end
+
                 if (!have_aw && axi_vif.aw_valid && axi_vif.aw_ready) begin
-                    addr    = axi_vif.aw_addr;
                     have_aw = 1'b1;
                 end
 
                 if (!have_w && axi_vif.w_valid && axi_vif.w_ready) begin
-                    data   = axi_vif.w_data;
-                    strb   = axi_vif.w_strb;
                     have_w = 1'b1;
                 end
+
+                cycle_count++;
             end
 
+            b_wait_cycles = 0;
             forever begin
                 @(posedge ctrl_vif.clk);
 
@@ -79,21 +106,33 @@ class axi_lite_monitor extends uvm_monitor;
                     tr.data = data;
                     tr.strb = strb;
                     tr.resp = axi_vif.b_resp;
+                    tr.b_wait_cycles = b_wait_cycles;
+
+                    if (aw_valid_cycle == w_valid_cycle) begin
+                        tr.wr_order = AXI_LITE_AW_W_SAME;
+                    end else if (aw_valid_cycle < w_valid_cycle) begin
+                        tr.wr_order = AXI_LITE_AW_BEFORE_W;
+                    end else begin
+                        tr.wr_order = AXI_LITE_W_BEFORE_AW;
+                    end
 
                     `uvm_info("AXI_LITE_MON",
-                        $sformatf("WRITE addr=0x%08h data=0x%08h strb=0x%0h resp=0x%0h",
-                            tr.addr, tr.data, tr.strb, tr.resp),
+                        $sformatf("WRITE addr=0x%08h data=0x%08h strb=0x%0h resp=0x%0h order=%s b_wait=%0d",
+                            tr.addr, tr.data, tr.strb, tr.resp, tr.wr_order.name(), tr.b_wait_cycles),
                         UVM_MEDIUM)
 
                     ap.write(tr);
                     break;
                 end
+
+                b_wait_cycles++;
             end
         end
     endtask
 
     virtual task monitor_read();
         bit [AXI_LITE_ADDR_WIDTH-1:0] addr;
+        int unsigned r_wait_cycles;
         axi_lite_tr tr;
 
         forever begin
@@ -108,6 +147,7 @@ class axi_lite_monitor extends uvm_monitor;
             end
 
             addr = axi_vif.ar_addr;
+            r_wait_cycles = 0;
 
             forever begin
                 @(posedge ctrl_vif.clk);
@@ -122,15 +162,18 @@ class axi_lite_monitor extends uvm_monitor;
                     tr.addr  = addr;
                     tr.rdata = axi_vif.r_data;
                     tr.resp  = axi_vif.r_resp;
+                    tr.r_wait_cycles = r_wait_cycles;
 
                     `uvm_info("AXI_LITE_MON",
-                        $sformatf("READ addr=0x%08h rdata=0x%08h resp=0x%0h",
-                            tr.addr, tr.rdata, tr.resp),
+                        $sformatf("READ addr=0x%08h rdata=0x%08h resp=0x%0h r_wait=%0d",
+                            tr.addr, tr.rdata, tr.resp, tr.r_wait_cycles),
                         UVM_MEDIUM)
 
                     ap.write(tr);
                     break;
                 end
+
+                r_wait_cycles++;
             end
         end
     endtask

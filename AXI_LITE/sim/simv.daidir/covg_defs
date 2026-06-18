@@ -24,7 +24,7 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  0
  0
- 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_20
+ 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_32
 0
 0
 0
@@ -32,9 +32,9 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
 0
  0
 
-6
+9
 0
-3
+4
 0
  6 cmd_cp 12 0 0 0 0 0 0 45 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn 45 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 7 1 1 28 axi_lite_pkg::axi_lite_cmd_e 1 0 0 1 0 0 0 0
  0
@@ -71,7 +71,7 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  0
  0
- 9 1 1 0 0 1 1 7 addr_00 18 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_3 0 0 0 0 0 0 0
+ 8 1 1 0 0 1 1 7 addr_00 18 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_3 0 0 0 0 0 0 0
  0
  1 1 0 0 1 1 7 addr_04 19 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_4 0 0 0 0 0 0 0
  0
@@ -87,9 +87,8 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  1 1 0 0 1 1 7 addr_1c 25 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_a 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 6 others 26 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 8 0 0 0 0 0 0 0 0 0
 
- 7 strb_cp 29 0 0 0 0 0 0 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_b 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_b 0 0 0 0 0 0 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_c 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 4 0 0 1 0 0 0 0
+ 7 strb_cp 28 0 0 0 0 0 0 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_b 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_b 0 0 0 0 0 0 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_c 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 4 0 0 1 0 0 0 0
  0
  0
  0
@@ -104,48 +103,28 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  0
  0
- 8 1 1 0 0 1 1 4 full 30 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_d 0 0 0 0 0 0 0
+ 5 1 1 0 0 1 1 4 full 29 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_d 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 byte0 31 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_e 0 0 0 0 0 0 0
+ 1 1 1 0 1 1 6 single 30 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 4 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_e 0 0 0 0 0 0 0
+ 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_f 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_10 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_11 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 byte1 32 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_f 0 0 0 0 0 0 0
+ 1 1 1 0 1 1 4 half 31 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_12 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_13 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 byte2 33 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_10 0 0 0 0 0 0 0
+ 1 1 1 0 1 1 6 sparse 32 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 2 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_14 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_15 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 byte3 34 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_11 0 0 0 0 0 0 0
- 0
- 1 1 0 0 1 1 8 half_low 35 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_12 0 0 0 0 0 0 0
- 0
- 1 1 0 0 1 1 9 half_high 36 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_13 0 0 0 0 0 0 0
- 0
- 1 1 1 0 1 1 7 partial 37 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_e 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_14 0 0 0 0 0
- 0
-
- 7 resp_cp 40 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_15 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_15 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 2 0 0 1 0 0 0 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0 0
- 0
- 0
- 0
- 0
- 0
- 0
- 0
- 4 1 1 0 0 1 1 4 okay 41 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_16 0 0 0 0 0 0 0
- 0
- 1 1 0 0 1 1 6 exokay 42 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_17 0 0 0 0 0 0 0
- 0
- 1 1 0 0 1 1 6 slverr 43 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_18 0 0 0 0 0 0 0
- 0
- 1 1 0 0 1 1 6 decerr 44 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_19 0 0 0 0 0 0 0
+ 1 1 1 0 1 1 7 partial 33 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 6 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_16 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_17 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_18 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_19 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1a 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1b 0 0 0 0 0 0 0
  0
 
- 8 wdata_cp 47 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1a 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1a 0 0 0 0 0 0 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_c 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 32 0 0 1 0 0 0 0
+ 7 resp_cp 36 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1c 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1c 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 2 0 0 1 0 0 0 0
  0
  0
  0
@@ -160,17 +139,14 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  0
  0
- 5 1 1 0 0 1 1 4 zero 48 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_3 0 0 0 0 0 0 0
+ 2 1 1 0 0 1 1 4 okay 37 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1d 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 8 all_ones 49 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1b 0 0 0 0 0 0 0
+ 1 2 0 0 1 1 17 reserved_or_error 38 0 0 2 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 3 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1e 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1f 0 0 0 0 0 0 0
+ 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_20 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 alt_a 50 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1c 0 0 0 0 0 0 0
- 0
- 1 1 0 0 1 1 5 alt_5 51 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1d 0 0 0 0 0 0 0
- 0
- 1 1 0 0 1 1 6 others 52 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 8 0 0 0 0 0 0 0 0 0
 
- 8 rdata_cp 55 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1e 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1e 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1f 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 32 0 0 1 0 0 0 0
+ 8 wdata_cp 41 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_21 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_21 0 0 0 0 0 0 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_c 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 32 0 0 1 0 0 0 0
  0
  0
  0
@@ -185,17 +161,108 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  0
  0
- 5 1 1 0 0 1 1 4 zero 56 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_3 0 0 0 0 0 0 0
+ 5 1 1 0 0 1 1 4 zero 42 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_3 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 8 all_ones 57 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1b 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 8 all_ones 43 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_22 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 alt_a 58 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1c 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 5 alt_a 44 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_23 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 5 alt_5 59 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_1d 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 5 alt_5 45 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_24 0 0 0 0 0 0 0
  0
- 1 1 0 0 1 1 6 others 60 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 8 0 0 0 0 0 0 0 0 0
+ 1 1 0 0 1 1 6 others 46 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 8 0 0 0 0 0 0 0 0 0
 
- 14 cmd_addr_cross 0 63 0 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0
+ 8 rdata_cp 49 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_25 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_25 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_26 0 0 0 0 -1 0 0 -1 0 0 0 -1 2 32 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 5 1 1 0 0 1 1 4 zero 50 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_3 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 8 all_ones 51 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_22 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 5 alt_a 52 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_23 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 5 alt_5 53 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_24 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 6 others 54 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 8 0 0 0 0 0 0 0 0 0
+
+ 11 wr_order_cp 57 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_27 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_27 0 0 0 0 0 0 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_c 0 0 0 0 -1 0 0 -1 0 0 0 -1 7 2 1 33 axi_lite_pkg::axi_lite_wr_order_e 1 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 3 1 1 0 0 1 1 10 same_cycle 58 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_28 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 11 aw_before_w 59 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_29 0 0 0 0 0 0 0
+ 0
+ 1 1 0 0 1 1 11 w_before_aw 60 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2a 0 0 0 0 0 0 0
+ 0
+
+ 9 b_wait_cp 63 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2b 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2b 0 0 0 0 0 0 47 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_c 0 0 0 0 -1 0 0 -1 0 0 0 -1 23 32 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 3 1 1 0 0 1 1 7 no_wait 64 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2c 0 0 0 0 0 0 0
+ 0
+ 1 1 1 0 1 1 5 short 65 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2d 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2e 0 0 0 0 0
+ 0
+ 1 1 1 0 1 1 4 long 66 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2f 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_30 0 0 0 0 0
+ 0
+
+ 9 r_wait_cp 69 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_31 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_31 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_26 0 0 0 0 -1 0 0 -1 0 0 0 -1 23 32 0 0 1 0 0 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 3 1 1 0 0 1 1 7 no_wait 70 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2c 0 0 0 0 0 0 0
+ 0
+ 1 1 1 0 1 1 5 short 71 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2d 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2e 0 0 0 0 0
+ 0
+ 1 1 1 0 1 1 4 long 72 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2f 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_30 0 0 0 0 0
+ 0
+
+ 14 cmd_addr_cross 0 75 0 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0
  0
  0
  0
@@ -208,7 +275,7 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  0
  0
- 15 addr_strb_cross 0 64 0 0 -1 0 0 0 0 2 1 2 0 -1 0 0 0
+ 15 addr_strb_cross 0 76 0 0 -1 0 0 0 0 2 1 2 0 -1 0 0 0
  0
  0
  0
@@ -221,7 +288,20 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  0
  0
- 14 cmd_resp_cross 0 65 0 0 -1 0 0 0 0 2 0 3 0 -1 0 0 0
+ 14 cmd_resp_cross 0 77 0 0 -1 0 0 0 0 2 0 3 0 -1 0 0 0
+ 0
+ 0
+ 0
+ 0 0
+ 0 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 0
+ 19 wr_order_strb_cross 0 78 0 0 -1 0 0 0 0 2 6 2 0 -1 0 0 0
  0
  0
  0
