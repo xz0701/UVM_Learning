@@ -62,14 +62,14 @@ class axi_lite_cov extends uvm_component;
 
         b_wait_cp: coverpoint cov_tr.b_wait_cycles iff (cov_tr.cmd == AXI_LITE_WRITE) {
             bins no_wait = {0};
-            bins short[] = {[1:2]};
-            bins long[]  = {[3:8]};
+            bins short   = {[1:2]};
+            bins long    = {[3:8]};
         }
 
         r_wait_cp: coverpoint cov_tr.r_wait_cycles iff (cov_tr.cmd == AXI_LITE_READ) {
             bins no_wait = {0};
-            bins short[] = {[1:2]};
-            bins long[]  = {[3:8]};
+            bins short   = {[1:2]};
+            bins long    = {[3:8]};
         }
 
         cmd_addr_cross: cross cmd_cp, addr_cp;
@@ -111,6 +111,18 @@ class axi_lite_cov extends uvm_component;
 
         `uvm_info("AXI_LITE_COV",
             $sformatf("cmd_resp_cross = %.2f%%", cg.cmd_resp_cross.get_coverage()),
+            UVM_LOW)
+
+        `uvm_info("AXI_LITE_COV",
+            $sformatf("wr_order_cp = %.2f%%", cg.wr_order_cp.get_coverage()),
+            UVM_LOW)
+
+        `uvm_info("AXI_LITE_COV",
+            $sformatf("b_wait_cp = %.2f%%", cg.b_wait_cp.get_coverage()),
+            UVM_LOW)
+
+        `uvm_info("AXI_LITE_COV",
+            $sformatf("r_wait_cp = %.2f%%", cg.r_wait_cp.get_coverage()),
             UVM_LOW)
 
         `uvm_info("AXI_LITE_COV",

@@ -566,11 +566,11 @@ simv
 which_declare=declare -f
 _LMFILES__modshare=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs:1
 _LMFILES_=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs
-XDG_SESSION_ID=3
+XDG_SESSION_ID=1
 XDG_RUNTIME_DIR=/run/user/1775996
 XDG_DATA_DIRS=/home/xz974/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
-VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-0d0b3518-3fff-4115-9ff8-b50a748f9729.sock
+VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-e6283257-13d0-498f-918c-7d66fbefcc66.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1775996/vscode-git-c1abf4066f.sock
 VSCODE_GIT_ASKPASS_NODE=/home/xz974/.vscode-server/cli/servers/Stable-6928394f91b684055b873eecb8bc281365131f1c/server/node
 VSCODE_GIT_ASKPASS_MAIN=/home/xz974/.vscode-server/cli/servers/Stable-6928394f91b684055b873eecb8bc281365131f1c/server/extensions/git/dist/askpass-main.js
@@ -594,8 +594,8 @@ TERM_PROGRAM_VERSION=1.124.2
 TERM_PROGRAM=vscode
 SYNOPSYS_DIR=/opt/synopsys/vcs/V-2023.12-SP2-1
 SYNOPSYS=/opt/synopsys/vcs/V-2023.12-SP2-1
-SSH_CONNECTION=128.84.192.196 59946 128.84.192.146 22
-SSH_CLIENT=128.84.192.196 59946 22
+SSH_CONNECTION=128.84.192.196 54494 128.84.192.148 22
+SSH_CLIENT=128.84.192.196 54494 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_PYTHON3=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/clang
@@ -639,13 +639,13 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 169
 1781588241 ../tb/tests/axi_lite_test.sv
 1781587399 ../tb/env/axi_lite_env.sv
-1781762345 ../tb/env/axi_lite_cov.sv
+1781844584 ../tb/env/axi_lite_cov.sv
 1781585908 ../tb/env/axi_lite_scoreboard.sv
 1781502441 ../tb/agent/axi_lite_agent.sv
 1781762376 ../tb/agent/axi_lite_monitor.sv
-1781762269 ../tb/agent/axi_lite_driver.sv
+1781844814 ../tb/agent/axi_lite_driver.sv
 1781415802 ../tb/agent/axi_lite_sequencer.sv
-1781762330 ../tb/seq/axi_lite_seq.sv
+1781844300 ../tb/seq/axi_lite_seq.sv
 1781762268 ../tb/seq/axi_lite_tr.sv
 1780984272 ../third_party/axi/include/axi/assign.svh
 1780984301 ../third_party/common_cells/include/common_cells/registers.svh
@@ -812,5 +812,5 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1721618558 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/liberrorinf.so
 1721618482 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libsnpsmalloc.so
 1721618554 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libvfs.so
-1781762479 simv.daidir
+1781844854 simv.daidir
 -1 partitionlib

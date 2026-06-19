@@ -113,16 +113,24 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
         axi_vif.ar_valid <= 1'b0;
         axi_vif.ar_addr  <= '0;
 
-        do begin
-            @(posedge ctrl_vif.clk);
-        end while (!axi_vif.r_valid);
+        if (tr.r_ready_delay == 0) begin
+            axi_vif.r_ready <= 1'b1;
 
-        repeat (tr.r_ready_delay) @(posedge ctrl_vif.clk);
-        axi_vif.r_ready <= 1'b1;
+            do begin
+                @(posedge ctrl_vif.clk);
+            end while (!axi_vif.r_valid);
+        end else begin
+            do begin
+                @(posedge ctrl_vif.clk);
+            end while (!axi_vif.r_valid);
 
-        do begin
-            @(posedge ctrl_vif.clk);
-        end while (!axi_vif.r_valid || !axi_vif.r_ready);
+            repeat (tr.r_ready_delay) @(posedge ctrl_vif.clk);
+            axi_vif.r_ready <= 1'b1;
+
+            do begin
+                @(posedge ctrl_vif.clk);
+            end while (!axi_vif.r_valid || !axi_vif.r_ready);
+        end
 
         tr.rdata = axi_vif.r_data;
         tr.resp  = axi_vif.r_resp;

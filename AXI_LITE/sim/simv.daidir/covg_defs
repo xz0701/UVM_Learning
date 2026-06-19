@@ -235,9 +235,9 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  3 1 1 0 0 1 1 7 no_wait 64 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2c 0 0 0 0 0 0 0
  0
- 1 1 1 0 1 1 5 short 65 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2d 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2e 0 0 0 0 0
+ 1 1 0 0 1 1 5 short 65 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2d 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2e 0 0 0 0 0
  0
- 1 1 1 0 1 1 4 long 66 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2f 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_30 0 0 0 0 0
+ 1 1 0 0 1 1 4 long 66 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2f 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_30 0 0 0 0 0
  0
 
  9 r_wait_cp 69 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_31 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_31 0 0 0 0 0 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_26 0 0 0 0 -1 0 0 -1 0 0 0 -1 23 32 0 0 1 0 0 0 0
@@ -257,9 +257,9 @@ global coverage_group 0 0 axi_lite_pkg::axi_lite_cov::cg __coverage_axi_lite_cov
  0
  3 1 1 0 0 1 1 7 no_wait 70 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2c 0 0 0 0 0 0 0
  0
- 1 1 1 0 1 1 5 short 71 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2d 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2e 0 0 0 0 0
+ 1 1 0 0 1 1 5 short 71 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2d 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2e 0 0 0 0 0
  0
- 1 1 1 0 1 1 4 long 72 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2f 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_30 0 0 0 0 0
+ 1 1 0 0 1 1 4 long 72 0 0 1 0 0 0 0 0 0 0 0 0 0 -1 0 0 -1 0 0 1 1 1 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_2f 0 48 axi_lite_cov::axi_lite_pkg_axi_lite_cov_cg_fn_30 0 0 0 0 0
  0
 
  14 cmd_addr_cross 0 75 0 0 -1 0 0 0 0 2 0 1 0 -1 0 0 0

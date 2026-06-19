@@ -120,6 +120,38 @@ class axi_lite_seq extends uvm_sequence #(axi_lite_tr);
             end
         end
 
+        // Close write-channel timing coverage for every strobe pattern.
+        foreach (strb_patterns[strb_idx]) begin
+            addr = (strb_idx % (AXI_LITE_REG_NUM_BYTES / AXI_LITE_STRB_WIDTH)) * AXI_LITE_STRB_WIDTH;
+
+            send_write(
+                addr,
+                32'h1000_0000 ^ (32'h0001_0101 * (strb_idx + 1)),
+                strb_patterns[strb_idx],
+                0,
+                0,
+                strb_idx % 3
+            );
+
+            send_write(
+                addr,
+                32'h2000_0000 ^ (32'h0002_0202 * (strb_idx + 1)),
+                strb_patterns[strb_idx],
+                0,
+                3,
+                (strb_idx + 1) % 3
+            );
+
+            send_write(
+                addr,
+                32'h3000_0000 ^ (32'h0003_0303 * (strb_idx + 1)),
+                strb_patterns[strb_idx],
+                3,
+                0,
+                (strb_idx + 2) % 3
+            );
+        end
+
         // A short constrained-random tail catches combinations not covered above.
         repeat (50) begin
             send_random_access($urandom_range(0, 32'hffff));
