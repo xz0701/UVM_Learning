@@ -7,6 +7,7 @@
 +incdir+../tb/env
 +incdir+../tb/interface
 +incdir+../tb/tests
++incdir+../tb/assertions
 
 ../third_party/common_cells/src/cf_math_pkg.sv
 ../third_party/common_cells/src/addr_decode_dync.sv
@@ -20,6 +21,7 @@
 
 ../tb/interface/axi_lite_ctrl_if.sv
 ../tb/pkg/axi_lite_pkg.sv
+../tb/assertions/axi_lite_assertions.sv
 
 ../tb/top/tb_top.sv
 ../tb/tb_axi_lite_regs.sv

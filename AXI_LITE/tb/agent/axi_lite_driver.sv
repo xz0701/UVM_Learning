@@ -41,14 +41,22 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
     endtask
 
     virtual task drive_aw(axi_lite_tr tr);
+        int unsigned wait_cycles;
+
         repeat (tr.aw_delay) @(posedge ctrl_vif.clk);
 
         axi_vif.aw_addr  <= tr.addr;
         axi_vif.aw_prot  <= 3'b000;
         axi_vif.aw_valid <= 1'b1;
 
+        wait_cycles = 0;
         do begin
             @(posedge ctrl_vif.clk);
+            wait_cycles++;
+            if (wait_cycles > AXI_LITE_TIMEOUT_CYCLES) begin
+                `uvm_fatal("AXI_LITE_DRV",
+                    $sformatf("AW channel timeout: addr=0x%08h", tr.addr))
+            end
         end while (!axi_vif.aw_ready);
 
         axi_vif.aw_valid <= 1'b0;
@@ -56,14 +64,23 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
     endtask
 
     virtual task drive_w(axi_lite_tr tr);
+        int unsigned wait_cycles;
+
         repeat (tr.w_delay) @(posedge ctrl_vif.clk);
 
         axi_vif.w_data  <= tr.data;
         axi_vif.w_strb  <= tr.strb;
         axi_vif.w_valid <= 1'b1;
 
+        wait_cycles = 0;
         do begin
             @(posedge ctrl_vif.clk);
+            wait_cycles++;
+            if (wait_cycles > AXI_LITE_TIMEOUT_CYCLES) begin
+                `uvm_fatal("AXI_LITE_DRV",
+                    $sformatf("W channel timeout: addr=0x%08h data=0x%08h strb=0x%0h",
+                        tr.addr, tr.data, tr.strb))
+            end
         end while (!axi_vif.w_ready);
 
         axi_vif.w_valid <= 1'b0;
@@ -72,6 +89,8 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
     endtask
 
     virtual task drive_write(axi_lite_tr tr);
+        int unsigned wait_cycles;
+
         @(posedge ctrl_vif.clk);
         axi_vif.b_ready <= 1'b0;
 
@@ -82,8 +101,14 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
 
         repeat (tr.b_ready_delay) @(posedge ctrl_vif.clk);
         axi_vif.b_ready <= 1'b1;
+        wait_cycles = 0;
         do begin
             @(posedge ctrl_vif.clk);
+            wait_cycles++;
+            if (wait_cycles > AXI_LITE_TIMEOUT_CYCLES) begin
+                `uvm_fatal("AXI_LITE_DRV",
+                    $sformatf("B channel timeout: addr=0x%08h", tr.addr))
+            end
         end while (!axi_vif.b_valid || !axi_vif.b_ready);
 
         tr.resp = axi_vif.b_resp;
@@ -98,6 +123,8 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
     endtask
 
     virtual task drive_read(axi_lite_tr tr);
+        int unsigned wait_cycles;
+
         @(posedge ctrl_vif.clk);
         axi_vif.r_ready <= 1'b0;
 
@@ -106,8 +133,14 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
         axi_vif.ar_prot  <= 3'b000;
         axi_vif.ar_valid <= 1'b1;
 
+        wait_cycles = 0;
         do begin
             @(posedge ctrl_vif.clk);
+            wait_cycles++;
+            if (wait_cycles > AXI_LITE_TIMEOUT_CYCLES) begin
+                `uvm_fatal("AXI_LITE_DRV",
+                    $sformatf("AR channel timeout: addr=0x%08h", tr.addr))
+            end
         end while (!axi_vif.ar_ready);
 
         axi_vif.ar_valid <= 1'b0;
@@ -116,19 +149,37 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
         if (tr.r_ready_delay == 0) begin
             axi_vif.r_ready <= 1'b1;
 
+            wait_cycles = 0;
             do begin
                 @(posedge ctrl_vif.clk);
+                wait_cycles++;
+                if (wait_cycles > AXI_LITE_TIMEOUT_CYCLES) begin
+                    `uvm_fatal("AXI_LITE_DRV",
+                        $sformatf("R channel timeout waiting valid: addr=0x%08h", tr.addr))
+                end
             end while (!axi_vif.r_valid);
         end else begin
+            wait_cycles = 0;
             do begin
                 @(posedge ctrl_vif.clk);
+                wait_cycles++;
+                if (wait_cycles > AXI_LITE_TIMEOUT_CYCLES) begin
+                    `uvm_fatal("AXI_LITE_DRV",
+                        $sformatf("R channel timeout waiting valid before backpressure: addr=0x%08h", tr.addr))
+                end
             end while (!axi_vif.r_valid);
 
             repeat (tr.r_ready_delay) @(posedge ctrl_vif.clk);
             axi_vif.r_ready <= 1'b1;
 
+            wait_cycles = 0;
             do begin
                 @(posedge ctrl_vif.clk);
+                wait_cycles++;
+                if (wait_cycles > AXI_LITE_TIMEOUT_CYCLES) begin
+                    `uvm_fatal("AXI_LITE_DRV",
+                        $sformatf("R channel timeout waiting handshake: addr=0x%08h", tr.addr))
+                end
             end while (!axi_vif.r_valid || !axi_vif.r_ready);
         end
 

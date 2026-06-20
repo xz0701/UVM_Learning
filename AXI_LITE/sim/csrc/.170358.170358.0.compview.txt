@@ -1,0 +1,5 @@
+{"vcs1":{"timestamp_begin":1781934679.725747258, "rt":0.17, "ut":0.04, "st":0.04}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1781934679.322213943}
+{"VCS_COMP_START_TIME": 1781934679.322213943}
+{"VCS_COMP_END_TIME": 1781934679.927069811}
+{"VCS_USER_OPTIONS": "-full64 -sverilog -ntb_opts uvm +define+WIDTH=8 +define+DEPTH=16 +define+WR_CLK_PERIOD=10 +define+RD_CLK_PERIOD=16 -timescale=1ns/1ps -debug_access+all -top tb_top -l compile.log -f ../script/filelist.f -o simv"}

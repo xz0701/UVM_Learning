@@ -34,8 +34,9 @@ class axi_lite_cov extends uvm_component;
         }
 
         resp_cp: coverpoint cov_tr.resp {
-            bins okay = {2'b00};
-            ignore_bins reserved_or_error = {2'b01, 2'b10, 2'b11};
+            bins okay   = {AXI_LITE_RESP_OKAY};
+            bins slverr = {AXI_LITE_RESP_SLVERR};
+            ignore_bins reserved_or_unused = {2'b01, 2'b11};
         }
 
         wdata_cp: coverpoint cov_tr.data iff (cov_tr.cmd == AXI_LITE_WRITE) {

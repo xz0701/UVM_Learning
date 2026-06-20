@@ -7,6 +7,11 @@ package axi_lite_pkg;
   localparam int unsigned AXI_LITE_DATA_WIDTH = 32;
   localparam int unsigned AXI_LITE_STRB_WIDTH = AXI_LITE_DATA_WIDTH / 8;
   localparam int unsigned AXI_LITE_REG_NUM_BYTES = 32;
+  localparam int unsigned AXI_LITE_REG_ADDR_WIDTH = $clog2(AXI_LITE_REG_NUM_BYTES) + 1;
+  localparam int unsigned AXI_LITE_TIMEOUT_CYCLES = 100;
+  localparam bit [1:0] AXI_LITE_RESP_OKAY = 2'b00;
+  localparam bit [1:0] AXI_LITE_RESP_SLVERR = 2'b10;
+  localparam bit [AXI_LITE_DATA_WIDTH-1:0] AXI_LITE_ERR_RDATA = 32'hBA5E_1E55;
 
   typedef virtual AXI_LITE #(
     .AXI_ADDR_WIDTH(AXI_LITE_ADDR_WIDTH),
@@ -27,6 +32,13 @@ package axi_lite_pkg;
   } axi_lite_wr_order_e;
 
   `include "axi_lite_tr.sv"
+  `include "axi_lite_base_seq.sv"
+  `include "axi_lite_smoke_seq.sv"
+  `include "axi_lite_strobe_seq.sv"
+  `include "axi_lite_backpressure_seq.sv"
+  `include "axi_lite_invalid_addr_seq.sv"
+  `include "axi_lite_random_seq.sv"
+  `include "axi_lite_full_cov_seq.sv"
   `include "axi_lite_seq.sv"
   `include "axi_lite_sequencer.sv"
   `include "axi_lite_driver.sv"
@@ -35,6 +47,10 @@ package axi_lite_pkg;
   `include "axi_lite_scoreboard.sv"
   `include "axi_lite_cov.sv"
   `include "axi_lite_env.sv"
+  `include "axi_lite_base_test.sv"
+  `include "axi_lite_smoke_test.sv"
+  `include "axi_lite_full_cov_test.sv"
+  `include "axi_lite_random_test.sv"
   `include "axi_lite_test.sv"
 
 endpackage

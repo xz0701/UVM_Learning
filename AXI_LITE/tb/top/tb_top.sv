@@ -59,6 +59,15 @@ module tb_top;
         .reg_q_o     (reg_q)
     );
 
+    axi_lite_assertions #(
+        .AXI_ADDR_WIDTH (AXI_LITE_ADDR_WIDTH),
+        .AXI_DATA_WIDTH (AXI_LITE_DATA_WIDTH)
+    ) axi_lite_assertions_i (
+        .clk   (clk),
+        .rst_n (rst_n),
+        .axi   (axi_if)
+    );
+
     initial begin
         uvm_config_db#(axi_lite_vif_t)::set(
             null,
