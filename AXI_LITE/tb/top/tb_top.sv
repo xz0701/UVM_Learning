@@ -47,7 +47,8 @@ module tb_top;
         .byte_t         (byte_t),
         .REG_NUM_BYTES  (AXI_LITE_REG_NUM_BYTES),
         .AXI_ADDR_WIDTH (AXI_LITE_ADDR_WIDTH),
-        .AXI_DATA_WIDTH (AXI_LITE_DATA_WIDTH)
+        .AXI_DATA_WIDTH (AXI_LITE_DATA_WIDTH),
+        .AXI_READ_ONLY  (AXI_LITE_READ_ONLY_MASK)
     ) dut (
         .clk_i       (clk),
         .rst_ni      (rst_n),

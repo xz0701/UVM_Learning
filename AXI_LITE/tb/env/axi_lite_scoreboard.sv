@@ -56,10 +56,30 @@ class axi_lite_scoreboard extends uvm_component;
         return (effective_addr(addr) < AXI_LITE_REG_NUM_BYTES);
     endfunction
 
+    virtual function bit byte_is_read_only(bit [AXI_LITE_REG_ADDR_WIDTH-1:0] addr);
+        if (addr < AXI_LITE_REG_NUM_BYTES) begin
+            return AXI_LITE_READ_ONLY_MASK[addr];
+        end
+
+        return 1'b0;
+    endfunction
+
+    virtual function bit chunk_is_read_only(bit [AXI_LITE_REG_ADDR_WIDTH-1:0] addr);
+        for (int unsigned i = 0; i < AXI_LITE_STRB_WIDTH; i++) begin
+            if (addr_in_range(addr, i) && !byte_is_read_only(addr + i)) begin
+                return 1'b0;
+            end
+        end
+
+        return 1'b1;
+    endfunction
+
     virtual function void model_write(axi_lite_tr tr);
         bit [AXI_LITE_REG_ADDR_WIDTH-1:0] eff_addr;
+        bit expected_slverr;
 
         eff_addr = effective_addr(tr.addr);
+        expected_slverr = chunk_is_read_only(eff_addr);
 
         if (!access_in_range(tr.addr)) begin
             if (tr.resp !== AXI_LITE_RESP_SLVERR) begin
@@ -70,6 +90,21 @@ class axi_lite_scoreboard extends uvm_component;
             end else begin
                 `uvm_info("AXI_LITE_SCB",
                     $sformatf("Invalid write returned SLVERR as expected: addr=0x%08h",
+                        tr.addr),
+                    UVM_MEDIUM)
+            end
+            return;
+        end
+
+        if (expected_slverr) begin
+            if (tr.resp !== AXI_LITE_RESP_SLVERR) begin
+                error_count++;
+                `uvm_error("AXI_LITE_SCB",
+                    $sformatf("Read-only chunk write response mismatch: addr=0x%08h actual=0x%0h expected=SLVERR",
+                        tr.addr, tr.resp))
+            end else begin
+                `uvm_info("AXI_LITE_SCB",
+                    $sformatf("Read-only chunk write returned SLVERR as expected: addr=0x%08h",
                         tr.addr),
                     UVM_MEDIUM)
             end
@@ -87,7 +122,9 @@ class axi_lite_scoreboard extends uvm_component;
         for (int unsigned i = 0; i < AXI_LITE_STRB_WIDTH; i++) begin
             if (tr.strb[i]) begin
                 if (addr_in_range(eff_addr, i)) begin
-                    reg_model[eff_addr + i] = tr.data[8*i +: 8];
+                    if (!byte_is_read_only(eff_addr + i)) begin
+                        reg_model[eff_addr + i] = tr.data[8*i +: 8];
+                    end
                 end else begin
                     error_count++;
                     `uvm_error("AXI_LITE_SCB",

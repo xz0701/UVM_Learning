@@ -5,6 +5,7 @@ class axi_lite_cov extends uvm_component;
     uvm_analysis_imp #(axi_lite_tr, axi_lite_cov) analysis_imp;
 
     axi_lite_tr cov_tr;
+    bit [1:0] cov_ro_kind;
 
     covergroup cg;
         option.per_instance = 1;
@@ -37,6 +38,13 @@ class axi_lite_cov extends uvm_component;
             bins okay   = {AXI_LITE_RESP_OKAY};
             bins slverr = {AXI_LITE_RESP_SLVERR};
             ignore_bins reserved_or_unused = {2'b01, 2'b11};
+        }
+
+        ro_kind_cp: coverpoint cov_ro_kind iff (cov_tr.cmd == AXI_LITE_WRITE) {
+            option.weight = 0;
+            bins no_read_only = {2'd0};
+            bins read_only_only = {2'd1};
+            bins mixed = {2'd2};
         }
 
         wdata_cp: coverpoint cov_tr.data iff (cov_tr.cmd == AXI_LITE_WRITE) {
@@ -77,6 +85,9 @@ class axi_lite_cov extends uvm_component;
         addr_strb_cross: cross addr_cp, strb_cp;
         cmd_resp_cross: cross cmd_cp, resp_cp;
         wr_order_strb_cross: cross wr_order_cp, strb_cp;
+        ro_kind_resp_cross: cross ro_kind_cp, resp_cp {
+            option.weight = 0;
+        }
 
     endgroup
 
@@ -90,8 +101,41 @@ class axi_lite_cov extends uvm_component;
         analysis_imp = new("analysis_imp", this);
     endfunction
 
+    virtual function bit [1:0] calc_read_only_kind(axi_lite_tr tr);
+        bit saw_read_only;
+        bit saw_writable;
+        bit [AXI_LITE_REG_ADDR_WIDTH-1:0] eff_addr;
+
+        if (tr.cmd != AXI_LITE_WRITE) begin
+            return 2'd0;
+        end
+
+        eff_addr = tr.addr[AXI_LITE_REG_ADDR_WIDTH-1:0];
+
+        for (int unsigned i = 0; i < AXI_LITE_STRB_WIDTH; i++) begin
+            if (tr.strb[i] && ((eff_addr + i) < AXI_LITE_REG_NUM_BYTES)) begin
+                if (AXI_LITE_READ_ONLY_MASK[eff_addr + i]) begin
+                    saw_read_only = 1'b1;
+                end else begin
+                    saw_writable = 1'b1;
+                end
+            end
+        end
+
+        if (saw_read_only && saw_writable) begin
+            return 2'd2;
+        end
+
+        if (saw_read_only) begin
+            return 2'd1;
+        end
+
+        return 2'd0;
+    endfunction
+
     virtual function void write(axi_lite_tr tr);
         cov_tr = tr;
+        cov_ro_kind = calc_read_only_kind(tr);
         cg.sample();
     endfunction
 
@@ -129,6 +173,16 @@ class axi_lite_cov extends uvm_component;
         `uvm_info("AXI_LITE_COV",
             $sformatf("wr_order_strb_cross = %.2f%%", cg.wr_order_strb_cross.get_coverage()),
             UVM_LOW)
+
+        if (AXI_LITE_READ_ONLY_MASK != '0) begin
+            `uvm_info("AXI_LITE_COV",
+                $sformatf("ro_kind_cp = %.2f%%", cg.ro_kind_cp.get_coverage()),
+                UVM_LOW)
+
+            `uvm_info("AXI_LITE_COV",
+                $sformatf("ro_kind_resp_cross = %.2f%%", cg.ro_kind_resp_cross.get_coverage()),
+                UVM_LOW)
+        end
     endfunction
 
 endclass
