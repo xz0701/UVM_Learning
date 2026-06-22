@@ -33,6 +33,7 @@ class axi_lite_monitor extends uvm_monitor;
         bit [AXI_LITE_ADDR_WIDTH-1:0] addr;
         bit [AXI_LITE_DATA_WIDTH-1:0] data;
         bit [AXI_LITE_DATA_WIDTH/8-1:0] strb;
+        bit [2:0] prot;
         bit have_aw;
         bit have_w;
         bit seen_aw_valid;
@@ -49,6 +50,7 @@ class axi_lite_monitor extends uvm_monitor;
             addr    = '0;
             data    = '0;
             strb    = '0;
+            prot    = '0;
             cycle_count = 0;
             seen_aw_valid = 1'b0;
             seen_w_valid = 1'b0;
@@ -69,6 +71,7 @@ class axi_lite_monitor extends uvm_monitor;
 
                 if (!seen_aw_valid && axi_vif.aw_valid) begin
                     addr = axi_vif.aw_addr;
+                    prot = axi_vif.aw_prot;
                     seen_aw_valid = 1'b1;
                     aw_valid_cycle = cycle_count;
                 end
@@ -105,6 +108,7 @@ class axi_lite_monitor extends uvm_monitor;
                     tr.addr = addr;
                     tr.data = data;
                     tr.strb = strb;
+                    tr.prot = prot;
                     tr.resp = axi_vif.b_resp;
                     tr.b_wait_cycles = b_wait_cycles;
 
@@ -132,11 +136,13 @@ class axi_lite_monitor extends uvm_monitor;
 
     virtual task monitor_read();
         bit [AXI_LITE_ADDR_WIDTH-1:0] addr;
+        bit [2:0] prot;
         int unsigned r_wait_cycles;
         axi_lite_tr tr;
 
         forever begin
             addr = '0;
+            prot = '0;
 
             do begin
                 @(posedge ctrl_vif.clk);
@@ -147,6 +153,7 @@ class axi_lite_monitor extends uvm_monitor;
             end
 
             addr = axi_vif.ar_addr;
+            prot = axi_vif.ar_prot;
             r_wait_cycles = 0;
 
             forever begin
@@ -160,6 +167,7 @@ class axi_lite_monitor extends uvm_monitor;
                     tr = axi_lite_tr::type_id::create("rd_tr", this);
                     tr.cmd   = AXI_LITE_READ;
                     tr.addr  = addr;
+                    tr.prot  = prot;
                     tr.rdata = axi_vif.r_data;
                     tr.resp  = axi_vif.r_resp;
                     tr.r_wait_cycles = r_wait_cycles;

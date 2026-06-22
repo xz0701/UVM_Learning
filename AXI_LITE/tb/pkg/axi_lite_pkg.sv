@@ -17,13 +17,23 @@ package axi_lite_pkg;
 `else
   localparam logic [AXI_LITE_REG_NUM_BYTES-1:0] AXI_LITE_READ_ONLY_MASK = '0;
 `endif
+`ifdef AXI_LITE_PROT_TEST
+  localparam bit AXI_LITE_PRIV_PROT_ONLY = 1'b1;
+  localparam bit AXI_LITE_SECU_PROT_ONLY = 1'b1;
+`else
+  localparam bit AXI_LITE_PRIV_PROT_ONLY = 1'b0;
+  localparam bit AXI_LITE_SECU_PROT_ONLY = 1'b0;
+`endif
 
   typedef virtual AXI_LITE #(
     .AXI_ADDR_WIDTH(AXI_LITE_ADDR_WIDTH),
     .AXI_DATA_WIDTH(AXI_LITE_DATA_WIDTH)
   ) axi_lite_vif_t;
 
-  typedef virtual axi_lite_ctrl_if axi_lite_ctrl_vif_t;
+  typedef virtual axi_lite_ctrl_if #(
+    .REG_NUM_BYTES(AXI_LITE_REG_NUM_BYTES),
+    .DATA_WIDTH(AXI_LITE_DATA_WIDTH)
+  ) axi_lite_ctrl_vif_t;
 
   typedef enum bit {
     AXI_LITE_READ,
@@ -43,6 +53,9 @@ package axi_lite_pkg;
   `include "axi_lite_backpressure_seq.sv"
   `include "axi_lite_invalid_addr_seq.sv"
   `include "axi_lite_read_only_seq.sv"
+  `include "axi_lite_direct_load_seq.sv"
+  `include "axi_lite_load_conflict_seq.sv"
+  `include "axi_lite_prot_seq.sv"
   `include "axi_lite_random_seq.sv"
   `include "axi_lite_full_cov_seq.sv"
   `include "axi_lite_seq.sv"
@@ -57,6 +70,9 @@ package axi_lite_pkg;
   `include "axi_lite_smoke_test.sv"
   `include "axi_lite_full_cov_test.sv"
   `include "axi_lite_read_only_test.sv"
+  `include "axi_lite_direct_load_test.sv"
+  `include "axi_lite_load_conflict_test.sv"
+  `include "axi_lite_prot_test.sv"
   `include "axi_lite_random_test.sv"
   `include "axi_lite_test.sv"
 

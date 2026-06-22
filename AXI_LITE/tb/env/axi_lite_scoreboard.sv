@@ -9,6 +9,7 @@ class axi_lite_scoreboard extends uvm_component;
     bit [7:0] reg_model [AXI_LITE_REG_NUM_BYTES];
     int unsigned pass_count;
     int unsigned error_count;
+    int unsigned direct_load_count;
 
     function new(string name = "axi_lite_scoreboard", uvm_component parent);
         super.new(name, parent);
@@ -26,6 +27,7 @@ class axi_lite_scoreboard extends uvm_component;
         clear_model();
         pass_count  = 0;
         error_count = 0;
+        direct_load_count = 0;
     endfunction
 
     virtual function void clear_model();
@@ -35,12 +37,34 @@ class axi_lite_scoreboard extends uvm_component;
     endfunction
 
     virtual task run_phase(uvm_phase phase);
-        forever begin
-            @(negedge ctrl_vif.rst_n);
-            clear_model();
-            `uvm_info("AXI_LITE_SCB", "Reset detected, model cleared", UVM_LOW)
-        end
+        fork
+            forever begin
+                @(negedge ctrl_vif.rst_n);
+                clear_model();
+                `uvm_info("AXI_LITE_SCB", "Reset detected, model cleared", UVM_LOW)
+            end
+
+            forever begin
+                @(posedge ctrl_vif.clk);
+                if (ctrl_vif.rst_n) begin
+                    sample_direct_load();
+                end
+            end
+        join
     endtask
+
+    virtual function void sample_direct_load();
+        for (int unsigned i = 0; i < AXI_LITE_REG_NUM_BYTES; i++) begin
+            if (ctrl_vif.reg_load[i]) begin
+                reg_model[i] = ctrl_vif.reg_d[i];
+                direct_load_count++;
+                `uvm_info("AXI_LITE_SCB",
+                    $sformatf("Model direct load: byte=%0d data=0x%02h",
+                        i, ctrl_vif.reg_d[i]),
+                    UVM_MEDIUM)
+            end
+        end
+    endfunction
 
     virtual function bit [AXI_LITE_REG_ADDR_WIDTH-1:0] effective_addr(
         bit [AXI_LITE_ADDR_WIDTH-1:0] addr
@@ -54,6 +78,11 @@ class axi_lite_scoreboard extends uvm_component;
 
     virtual function bit access_in_range(bit [AXI_LITE_ADDR_WIDTH-1:0] addr);
         return (effective_addr(addr) < AXI_LITE_REG_NUM_BYTES);
+    endfunction
+
+    virtual function bit prot_allowed(bit [2:0] prot);
+        return (AXI_LITE_PRIV_PROT_ONLY ? prot[0] : 1'b1) &&
+               (AXI_LITE_SECU_PROT_ONLY ? prot[1] : 1'b1);
     endfunction
 
     virtual function bit byte_is_read_only(bit [AXI_LITE_REG_ADDR_WIDTH-1:0] addr);
@@ -91,6 +120,21 @@ class axi_lite_scoreboard extends uvm_component;
                 `uvm_info("AXI_LITE_SCB",
                     $sformatf("Invalid write returned SLVERR as expected: addr=0x%08h",
                         tr.addr),
+                    UVM_MEDIUM)
+            end
+            return;
+        end
+
+        if (!prot_allowed(tr.prot)) begin
+            if (tr.resp !== AXI_LITE_RESP_SLVERR) begin
+                error_count++;
+                `uvm_error("AXI_LITE_SCB",
+                    $sformatf("Protection write response mismatch: addr=0x%08h prot=0x%0h actual=0x%0h expected=SLVERR",
+                        tr.addr, tr.prot, tr.resp))
+            end else begin
+                `uvm_info("AXI_LITE_SCB",
+                    $sformatf("Protection write returned SLVERR as expected: addr=0x%08h prot=0x%0h",
+                        tr.addr, tr.prot),
                     UVM_MEDIUM)
             end
             return;
@@ -182,6 +226,27 @@ class axi_lite_scoreboard extends uvm_component;
             return;
         end
 
+        if (!prot_allowed(tr.prot)) begin
+            if (tr.resp !== AXI_LITE_RESP_SLVERR) begin
+                error_count++;
+                `uvm_error("AXI_LITE_SCB",
+                    $sformatf("Protection read response mismatch: addr=0x%08h prot=0x%0h actual=0x%0h expected=SLVERR",
+                        tr.addr, tr.prot, tr.resp))
+            end else if (tr.rdata !== AXI_LITE_ERR_RDATA) begin
+                error_count++;
+                `uvm_error("AXI_LITE_SCB",
+                    $sformatf("Protection read data mismatch: addr=0x%08h prot=0x%0h actual=0x%08h expected=0x%08h",
+                        tr.addr, tr.prot, tr.rdata, AXI_LITE_ERR_RDATA))
+            end else begin
+                pass_count++;
+                `uvm_info("AXI_LITE_SCB",
+                    $sformatf("Protection read returned SLVERR/data as expected: addr=0x%08h prot=0x%0h",
+                        tr.addr, tr.prot),
+                    UVM_MEDIUM)
+            end
+            return;
+        end
+
         if (tr.resp !== AXI_LITE_RESP_OKAY) begin
             error_count++;
             `uvm_error("AXI_LITE_SCB",
@@ -225,10 +290,13 @@ class axi_lite_scoreboard extends uvm_component;
             `uvm_info("AXI_LITE_SCB",
                 $sformatf("Scoreboard passed: read_checks=%0d", pass_count),
                 UVM_LOW)
+            `uvm_info("AXI_LITE_SCB",
+                $sformatf("Direct load checks observed: direct_load_count=%0d", direct_load_count),
+                UVM_LOW)
         end else begin
             `uvm_error("AXI_LITE_SCB",
-                $sformatf("Scoreboard failed: errors=%0d read_checks=%0d",
-                    error_count, pass_count))
+                $sformatf("Scoreboard failed: errors=%0d read_checks=%0d direct_load_count=%0d",
+                    error_count, pass_count, direct_load_count))
         end
     endfunction
 

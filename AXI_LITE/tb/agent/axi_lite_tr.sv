@@ -4,6 +4,7 @@ class axi_lite_tr extends uvm_sequence_item;
     rand bit [31:0] addr;
     rand bit [31:0] data;
     rand bit [3:0] strb;
+    rand bit [2:0] prot;
     rand int unsigned aw_delay;
     rand int unsigned w_delay;
     rand int unsigned b_ready_delay;
@@ -37,6 +38,7 @@ class axi_lite_tr extends uvm_sequence_item;
         `uvm_field_int(addr,  UVM_DEFAULT)
         `uvm_field_int(data,  UVM_DEFAULT)
         `uvm_field_int(strb,  UVM_DEFAULT)
+        `uvm_field_int(prot,  UVM_DEFAULT)
         `uvm_field_int(aw_delay,      UVM_DEFAULT)
         `uvm_field_int(w_delay,       UVM_DEFAULT)
         `uvm_field_int(b_ready_delay, UVM_DEFAULT)

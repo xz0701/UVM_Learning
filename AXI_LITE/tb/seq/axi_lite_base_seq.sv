@@ -31,7 +31,8 @@ class axi_lite_base_seq extends uvm_sequence #(axi_lite_tr);
         input bit [AXI_LITE_STRB_WIDTH-1:0] strb,
         input int unsigned aw_delay = 0,
         input int unsigned w_delay = 0,
-        input int unsigned b_ready_delay = 0
+        input int unsigned b_ready_delay = 0,
+        input bit [2:0] prot = 3'b000
     );
         axi_lite_tr req;
 
@@ -41,6 +42,7 @@ class axi_lite_base_seq extends uvm_sequence #(axi_lite_tr);
         req.addr          = addr;
         req.data          = data;
         req.strb          = strb;
+        req.prot          = prot;
         req.aw_delay      = aw_delay;
         req.w_delay       = w_delay;
         req.b_ready_delay = b_ready_delay;
@@ -50,7 +52,8 @@ class axi_lite_base_seq extends uvm_sequence #(axi_lite_tr);
     virtual task send_read(
         input bit [AXI_LITE_ADDR_WIDTH-1:0] addr,
         input int unsigned ar_delay = 0,
-        input int unsigned r_ready_delay = 0
+        input int unsigned r_ready_delay = 0,
+        input bit [2:0] prot = 3'b000
     );
         axi_lite_tr req;
 
@@ -60,6 +63,7 @@ class axi_lite_base_seq extends uvm_sequence #(axi_lite_tr);
         req.addr          = addr;
         req.data          = '0;
         req.strb          = '0;
+        req.prot          = prot;
         req.ar_delay      = ar_delay;
         req.r_ready_delay = r_ready_delay;
         finish_item(req);
@@ -75,6 +79,7 @@ class axi_lite_base_seq extends uvm_sequence #(axi_lite_tr);
             cmd dist {AXI_LITE_WRITE := 3, AXI_LITE_READ := 2};
             addr inside {[0:AXI_LITE_REG_NUM_BYTES-AXI_LITE_STRB_WIDTH]};
             addr[1:0] == 2'b00;
+            prot == 3'b000;
         }) begin
             `uvm_error("AXI_LITE_BASE_SEQ", "Random AXI-Lite transaction randomization failed")
         end

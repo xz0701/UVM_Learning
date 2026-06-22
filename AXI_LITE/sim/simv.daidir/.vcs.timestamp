@@ -1,4 +1,4 @@
-609      
+681      
 0 uvm_macros.svh
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/uvm_macros.svh
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/uvm_macros.svh
@@ -473,6 +473,34 @@
 0 ../third_party/axi/include/axi_lite_invalid_addr_seq.sv
 0 ../third_party/common_cells/include/axi_lite_invalid_addr_seq.sv
 0 ../tb/pkg/axi_lite_invalid_addr_seq.sv
+0 axi_lite_read_only_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_read_only_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_read_only_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/axi_lite_read_only_seq.sv
+0 ../third_party/axi/include/axi_lite_read_only_seq.sv
+0 ../third_party/common_cells/include/axi_lite_read_only_seq.sv
+0 ../tb/pkg/axi_lite_read_only_seq.sv
+0 axi_lite_direct_load_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_direct_load_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_direct_load_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/axi_lite_direct_load_seq.sv
+0 ../third_party/axi/include/axi_lite_direct_load_seq.sv
+0 ../third_party/common_cells/include/axi_lite_direct_load_seq.sv
+0 ../tb/pkg/axi_lite_direct_load_seq.sv
+0 axi_lite_load_conflict_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_load_conflict_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_load_conflict_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/axi_lite_load_conflict_seq.sv
+0 ../third_party/axi/include/axi_lite_load_conflict_seq.sv
+0 ../third_party/common_cells/include/axi_lite_load_conflict_seq.sv
+0 ../tb/pkg/axi_lite_load_conflict_seq.sv
+0 axi_lite_prot_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_prot_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_prot_seq.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/axi_lite_prot_seq.sv
+0 ../third_party/axi/include/axi_lite_prot_seq.sv
+0 ../third_party/common_cells/include/axi_lite_prot_seq.sv
+0 ../tb/pkg/axi_lite_prot_seq.sv
 0 axi_lite_random_seq.sv
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_random_seq.sv
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_random_seq.sv
@@ -586,6 +614,50 @@
 0 ../tb/agent/axi_lite_full_cov_test.sv
 0 ../tb/env/axi_lite_full_cov_test.sv
 0 ../tb/interface/axi_lite_full_cov_test.sv
+0 axi_lite_read_only_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_read_only_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_read_only_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/axi_lite_read_only_test.sv
+0 ../third_party/axi/include/axi_lite_read_only_test.sv
+0 ../third_party/common_cells/include/axi_lite_read_only_test.sv
+0 ../tb/pkg/axi_lite_read_only_test.sv
+0 ../tb/seq/axi_lite_read_only_test.sv
+0 ../tb/agent/axi_lite_read_only_test.sv
+0 ../tb/env/axi_lite_read_only_test.sv
+0 ../tb/interface/axi_lite_read_only_test.sv
+0 axi_lite_direct_load_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_direct_load_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_direct_load_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/axi_lite_direct_load_test.sv
+0 ../third_party/axi/include/axi_lite_direct_load_test.sv
+0 ../third_party/common_cells/include/axi_lite_direct_load_test.sv
+0 ../tb/pkg/axi_lite_direct_load_test.sv
+0 ../tb/seq/axi_lite_direct_load_test.sv
+0 ../tb/agent/axi_lite_direct_load_test.sv
+0 ../tb/env/axi_lite_direct_load_test.sv
+0 ../tb/interface/axi_lite_direct_load_test.sv
+0 axi_lite_load_conflict_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_load_conflict_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_load_conflict_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/axi_lite_load_conflict_test.sv
+0 ../third_party/axi/include/axi_lite_load_conflict_test.sv
+0 ../third_party/common_cells/include/axi_lite_load_conflict_test.sv
+0 ../tb/pkg/axi_lite_load_conflict_test.sv
+0 ../tb/seq/axi_lite_load_conflict_test.sv
+0 ../tb/agent/axi_lite_load_conflict_test.sv
+0 ../tb/env/axi_lite_load_conflict_test.sv
+0 ../tb/interface/axi_lite_load_conflict_test.sv
+0 axi_lite_prot_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_prot_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_prot_test.sv
+0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/axi_lite_prot_test.sv
+0 ../third_party/axi/include/axi_lite_prot_test.sv
+0 ../third_party/common_cells/include/axi_lite_prot_test.sv
+0 ../tb/pkg/axi_lite_prot_test.sv
+0 ../tb/seq/axi_lite_prot_test.sv
+0 ../tb/agent/axi_lite_prot_test.sv
+0 ../tb/env/axi_lite_prot_test.sv
+0 ../tb/interface/axi_lite_prot_test.sv
 0 axi_lite_random_test.sv
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/systemverilog/axi_lite_random_test.sv
 0 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/vcs/axi_lite_random_test.sv
@@ -608,7 +680,8 @@
 0 ../tb/agent/axi_lite_test.sv
 0 ../tb/env/axi_lite_test.sv
 0 ../tb/interface/axi_lite_test.sv
-47
+48
++define+AXI_LITE_PROT_TEST
 +define+DEPTH=16
 +define+RD_CLK_PERIOD=16
 +define+UVM_DIRECTC_OPTS
@@ -656,15 +729,15 @@ uvm
 tb_top
 simv
 ../script/filelist.f
-71
+73
 which_declare=declare -f
 _LMFILES__modshare=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs:1
 _LMFILES_=/usr/share/Modules/modulefiles/synopsys/synopsys-vcs
-XDG_SESSION_ID=1
+XDG_SESSION_ID=4
 XDG_RUNTIME_DIR=/run/user/1775996
 XDG_DATA_DIRS=/home/xz974/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share
 VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
-VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-e1ce76b7-be3f-436e-8959-33eea9b1d154.sock
+VSCODE_IPC_HOOK_CLI=/run/user/1775996/vscode-ipc-d12c2a82-ba47-4667-9b63-4d59f5f07667.sock
 VSCODE_GIT_IPC_HANDLE=/run/user/1775996/vscode-git-c1abf4066f.sock
 VSCODE_GIT_ASKPASS_NODE=/home/xz974/.vscode-server/cli/servers/Stable-6928394f91b684055b873eecb8bc281365131f1c/server/node
 VSCODE_GIT_ASKPASS_MAIN=/home/xz974/.vscode-server/cli/servers/Stable-6928394f91b684055b873eecb8bc281365131f1c/server/extensions/git/dist/askpass-main.js
@@ -684,12 +757,13 @@ VCS_ARG_ADDED_FOR_TMP=1
 VCS_ARCH=linux64
 UNAME=/bin/uname
 TOOL_HOME=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64
+TEST=/bin/test
 TERM_PROGRAM_VERSION=1.124.2
 TERM_PROGRAM=vscode
 SYNOPSYS_DIR=/opt/synopsys/vcs/V-2023.12-SP2-1
 SYNOPSYS=/opt/synopsys/vcs/V-2023.12-SP2-1
-SSH_CONNECTION=128.84.192.196 58126 128.84.192.152 22
-SSH_CLIENT=128.84.192.196 58126 22
+SSH_CONNECTION=128.84.192.196 46108 128.84.192.153 22
+SSH_CLIENT=128.84.192.196 46108 22
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 SNPS_VCS_PYTHON3=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/bin/Python-3.6.1/bin/python3
 SNPS_VCS_CLANG_PATH=/opt/synopsys/vcs/V-2023.12-SP2-1/linux64/clang
@@ -709,8 +783,9 @@ MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/s
 MFLAGS=
 MAKE_TERMOUT=/dev/pts/0
 MAKE_TERMERR=/dev/pts/0
+MAKEOVERRIDES=${-*-command-variables-*-}
 MAKELEVEL=1
-MAKEFLAGS=
+MAKEFLAGS= -- TEST=axi_lite_prot_test
 LOADEDMODULES_modshare=synopsys/synopsys-vcs:1
 LOADEDMODULES=synopsys/synopsys-vcs
 LESSOPEN=||/usr/bin/lesspipe.sh %s
@@ -730,28 +805,36 @@ BASH_FUNC_ml%%=() {  module ml "$@"_}
 BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then_ case "$-" in _ *v*x*)_ set +vx;_ _mlshdbg='vx'_ ;;_ *v*)_ set +v;_ _mlshdbg='v'_ ;;_ *x*)_ set +x;_ _mlshdbg='x'_ ;;_ *)_ _mlshdbg=''_ ;;_ esac;_ fi;_ unset _mlre _mlIFS;_ if [ -n "${IFS+x}" ]; then_ _mlIFS=$IFS;_ fi;_ IFS=' ';_ for _mlv in ${MODULES_RUN_QUARANTINE:-};_ do_ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then_ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then_ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";_ fi;_ _mlrv="MODULES_RUNENV_${_mlv}";_ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";_ fi;_ done;_ if [ -n "${_mlre:-}" ]; then_ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;_ else_ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;_ fi;_ _mlstatus=$?;_ if [ -n "${_mlIFS+x}" ]; then_ IFS=$_mlIFS;_ else_ unset IFS;_ fi;_ unset _mlre _mlv _mlrv _mlIFS;_ if [ -n "${_mlshdbg:-}" ]; then_ set -$_mlshdbg;_ fi;_ unset _mlshdbg;_ return $_mlstatus_}
 0
 0
-181
+189
 1781934540 ../tb/tests/axi_lite_test.sv
 1781934539 ../tb/tests/axi_lite_random_test.sv
+1782106801 ../tb/tests/axi_lite_prot_test.sv
+1782106167 ../tb/tests/axi_lite_load_conflict_test.sv
+1782105695 ../tb/tests/axi_lite_direct_load_test.sv
+1782019379 ../tb/tests/axi_lite_read_only_test.sv
 1781934539 ../tb/tests/axi_lite_full_cov_test.sv
 1781934539 ../tb/tests/axi_lite_smoke_test.sv
 1781934538 ../tb/tests/axi_lite_base_test.sv
 1781587399 ../tb/env/axi_lite_env.sv
-1781933853 ../tb/env/axi_lite_cov.sv
-1781934140 ../tb/env/axi_lite_scoreboard.sv
+1782106780 ../tb/env/axi_lite_cov.sv
+1782106990 ../tb/env/axi_lite_scoreboard.sv
 1781502441 ../tb/agent/axi_lite_agent.sv
-1781762376 ../tb/agent/axi_lite_monitor.sv
-1781933818 ../tb/agent/axi_lite_driver.sv
+1782106736 ../tb/agent/axi_lite_monitor.sv
+1782106736 ../tb/agent/axi_lite_driver.sv
 1781415802 ../tb/agent/axi_lite_sequencer.sv
 1781934510 ../tb/seq/axi_lite_seq.sv
 1781934510 ../tb/seq/axi_lite_full_cov_seq.sv
 1781934509 ../tb/seq/axi_lite_random_seq.sv
+1782106801 ../tb/seq/axi_lite_prot_seq.sv
+1782106190 ../tb/seq/axi_lite_load_conflict_seq.sv
+1782105792 ../tb/seq/axi_lite_direct_load_seq.sv
+1782019378 ../tb/seq/axi_lite_read_only_seq.sv
 1781934509 ../tb/seq/axi_lite_invalid_addr_seq.sv
 1781934509 ../tb/seq/axi_lite_backpressure_seq.sv
 1781934508 ../tb/seq/axi_lite_strobe_seq.sv
 1781934508 ../tb/seq/axi_lite_smoke_seq.sv
-1781934538 ../tb/seq/axi_lite_base_seq.sv
-1781934420 ../tb/agent/axi_lite_tr.sv
+1782106735 ../tb/seq/axi_lite_base_seq.sv
+1782106735 ../tb/agent/axi_lite_tr.sv
 1780984272 ../third_party/axi/include/axi/assign.svh
 1780984301 ../third_party/common_cells/include/common_cells/registers.svh
 1780984272 ../third_party/axi/include/axi/typedef.svh
@@ -896,10 +979,10 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1721621732 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/macros/uvm_version_defines.svh
 1721621732 /opt/synopsys/vcs/V-2023.12-SP2-1/etc/uvm/uvm_macros.svh
 1781156906 ../tb/tb_axi_lite_regs.sv
-1781933895 ../tb/top/tb_top.sv
+1782106751 ../tb/top/tb_top.sv
 1781933893 ../tb/assertions/axi_lite_assertions.sv
-1781934551 ../tb/pkg/axi_lite_pkg.sv
-1781416080 ../tb/interface/axi_lite_ctrl_if.sv
+1782106751 ../tb/pkg/axi_lite_pkg.sv
+1782105693 ../tb/interface/axi_lite_ctrl_if.sv
 1780984272 ../third_party/axi/src/axi_lite_regs.sv
 1780984272 ../third_party/axi/src/axi_intf.sv
 1780984272 ../third_party/axi/src/axi_pkg.sv
@@ -918,5 +1001,5 @@ BASH_FUNC__module_raw%%=() {  unset _mlshdbg;_ if [ "${MODULES_SILENT_SHELL_DEBU
 1721618558 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/liberrorinf.so
 1721618482 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libsnpsmalloc.so
 1721618554 /opt/synopsys/vcs/V-2023.12-SP2-1/linux64/lib/libvfs.so
-1781934624 simv.daidir
+1782107044 simv.daidir
 -1 partitionlib

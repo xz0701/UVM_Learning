@@ -12,25 +12,9 @@ module tb_top;
 
     typedef logic [7:0] byte_t;
 
-    logic [AXI_LITE_REG_NUM_BYTES-1:0] wr_active;
-    logic [AXI_LITE_REG_NUM_BYTES-1:0] rd_active;
-
-    byte_t [AXI_LITE_REG_NUM_BYTES-1:0] reg_d;
-    logic [AXI_LITE_REG_NUM_BYTES-1:0] reg_load;
-    byte_t [AXI_LITE_REG_NUM_BYTES-1:0] reg_q;
-
     initial begin
         clk = 1'b0;
         forever #5 clk = ~clk;
-    end
-
-    initial begin
-        rst_n    = 1'b0;
-        reg_d    = '{default: 8'h00};
-        reg_load = '0;
-
-        repeat (5) @(posedge clk);
-        rst_n = 1'b1;
     end
 
     AXI_LITE #(
@@ -38,26 +22,40 @@ module tb_top;
         .AXI_DATA_WIDTH(AXI_LITE_DATA_WIDTH)
     ) axi_if ();
 
-    axi_lite_ctrl_if ctrl_if (
+    axi_lite_ctrl_if #(
+        .REG_NUM_BYTES(AXI_LITE_REG_NUM_BYTES),
+        .DATA_WIDTH(AXI_LITE_DATA_WIDTH)
+    ) ctrl_if (
         .clk   (clk),
         .rst_n (rst_n)
     );
+
+    initial begin
+        rst_n            = 1'b0;
+        ctrl_if.reg_d    = '{default: 8'h00};
+        ctrl_if.reg_load = '0;
+
+        repeat (5) @(posedge clk);
+        rst_n = 1'b1;
+    end
 
     axi_lite_regs_intf #(
         .byte_t         (byte_t),
         .REG_NUM_BYTES  (AXI_LITE_REG_NUM_BYTES),
         .AXI_ADDR_WIDTH (AXI_LITE_ADDR_WIDTH),
         .AXI_DATA_WIDTH (AXI_LITE_DATA_WIDTH),
+        .PRIV_PROT_ONLY (AXI_LITE_PRIV_PROT_ONLY),
+        .SECU_PROT_ONLY (AXI_LITE_SECU_PROT_ONLY),
         .AXI_READ_ONLY  (AXI_LITE_READ_ONLY_MASK)
     ) dut (
         .clk_i       (clk),
         .rst_ni      (rst_n),
         .slv         (axi_if),
-        .wr_active_o (wr_active),
-        .rd_active_o (rd_active),
-        .reg_d_i     (reg_d),
-        .reg_load_i  (reg_load),
-        .reg_q_o     (reg_q)
+        .wr_active_o (ctrl_if.wr_active),
+        .rd_active_o (ctrl_if.rd_active),
+        .reg_d_i     (ctrl_if.reg_d),
+        .reg_load_i  (ctrl_if.reg_load),
+        .reg_q_o     (ctrl_if.reg_q)
     );
 
     axi_lite_assertions #(

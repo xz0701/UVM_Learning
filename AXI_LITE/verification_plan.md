@@ -74,9 +74,9 @@ Direct register-side interface:
 
 | Signal | Direction | Current v1 Usage |
 | ------ | --------- | ---------------- |
-| `reg_d_i` | input | Tied/driven by top-level testbench support logic |
-| `reg_load_i` | input | Kept inactive in current v1 AXI-only tests |
-| `reg_q_o` | output | Available for future direct-load checks |
+| `reg_d_i` | input | Driven by `axi_lite_ctrl_if` in direct-load tests |
+| `reg_load_i` | input | Driven by `axi_lite_ctrl_if` in direct-load tests |
+| `reg_q_o` | output | Connected through `axi_lite_ctrl_if` for direct-side observation |
 | `wr_active_o` | output | Connected, not yet covered directly |
 | `rd_active_o` | output | Connected, not yet covered directly |
 
@@ -93,6 +93,9 @@ Direct register-side interface:
 * Valid aligned word address coverage from `0x00` through `0x1c`
 * Invalid low address access at offsets above the configured register byte range
 * Read-only byte behavior under `AXI_LITE_READ_ONLY_TEST`
+* Direct logic load through `reg_d_i` and `reg_load_i`
+* AXI write stall behavior during direct-load conflict
+* Protection checking through `aw_prot` and `ar_prot`
 * High address alias behavior caused by the DUT's internal address slicing
 * AW and W channel ordering:
   * AW and W accepted together
@@ -106,10 +109,7 @@ Direct register-side interface:
 
 ### 3.2 Planned for v2
 
-* Direct logic load through `reg_load_i`
-* AXI write versus direct load conflict behavior
 * `wr_active_o` and `rd_active_o` checking
-* Protection checking through `aw_prot` and `ar_prot`
 * Reset-value variations beyond the current default configuration
 * Larger parameter sweeps for data width and register count
 
@@ -292,6 +292,9 @@ send_random_access()
 | `axi_lite_invalid_addr_seq` | Invalid low offsets and high address alias check |
 | `axi_lite_random_seq` | Constrained-random valid read/write tail |
 | `axi_lite_read_only_seq` | Read-only chunk, mixed read-only/writable chunk, and normal writable chunk accesses |
+| `axi_lite_direct_load_seq` | Direct byte/word loads through `reg_d_i/reg_load_i` followed by AXI readback |
+| `axi_lite_load_conflict_seq` | AXI write stall during direct-load conflict and no false stall for non-selected byte load |
+| `axi_lite_prot_seq` | Privileged/secure protection allow and deny cases |
 | `axi_lite_full_cov_seq` | Runs smoke, strobe, backpressure, invalid address, and random sequences |
 | `axi_lite_seq` | Compatibility alias for full coverage behavior |
 
@@ -306,6 +309,9 @@ send_random_access()
 | `axi_lite_smoke_test` | `axi_lite_smoke_seq` | Fast bring-up and basic read/write sanity |
 | `axi_lite_full_cov_test` | `axi_lite_full_cov_seq` | Main coverage-closure test |
 | `axi_lite_read_only_test` | `axi_lite_read_only_seq` | Read-only byte behavior |
+| `axi_lite_direct_load_test` | `axi_lite_direct_load_seq` | Direct logic load behavior |
+| `axi_lite_load_conflict_test` | `axi_lite_load_conflict_seq` | AXI write versus direct load conflict behavior |
+| `axi_lite_prot_test` | `axi_lite_prot_seq` | Protection behavior with `PrivProtOnly` and `SecuProtOnly` enabled |
 | `axi_lite_random_test` | `axi_lite_random_seq` | Longer random valid-access test |
 | `axi_lite_test` | `axi_lite_full_cov_seq` | Default compatibility test |
 
@@ -323,6 +329,9 @@ Specific tests:
 make TEST=axi_lite_smoke_test run
 make TEST=axi_lite_full_cov_test run
 make TEST=axi_lite_read_only_test run
+make TEST=axi_lite_direct_load_test run
+make TEST=axi_lite_load_conflict_test run
+make TEST=axi_lite_prot_test run
 make TEST=axi_lite_random_test run
 ```
 
@@ -338,6 +347,9 @@ make TEST=axi_lite_random_test run
 | BREADY/RREADY backpressure | `axi_lite_backpressure_seq`, strobe/random delay fields |
 | Invalid low address response | `axi_lite_invalid_addr_seq` |
 | Read-only byte behavior | `axi_lite_read_only_seq` |
+| Direct logic load through `reg_load_i` | `axi_lite_direct_load_seq` |
+| AXI write versus direct load conflict | `axi_lite_load_conflict_seq` |
+| Protection checking | `axi_lite_prot_seq` |
 | High address alias behavior | `axi_lite_invalid_addr_seq` |
 | Random valid accesses | `axi_lite_random_seq` |
 
@@ -498,9 +510,9 @@ UVM_FATAL: 0
 | `axi_lite_random_test` | Implemented | Longer constrained-random valid access test |
 | `axi_lite_test` | Implemented | Default alias for full coverage behavior |
 | `axi_lite_read_only_test` | Implemented | Read-only byte configuration |
-| `axi_lite_direct_load_test` | Planned | Direct logic load through `reg_load_i` |
-| `axi_lite_load_conflict_test` | Planned | AXI write versus direct load conflict |
-| `axi_lite_prot_test` | Planned | Privileged/secure protection behavior |
+| `axi_lite_direct_load_test` | Implemented | Direct logic load through `reg_load_i` |
+| `axi_lite_load_conflict_test` | Implemented | AXI write versus direct load conflict |
+| `axi_lite_prot_test` | Implemented | Privileged/secure protection behavior |
 | `axi_lite_param_sweep_test` | Planned | Wider data/register parameter variations |
 
 ---
@@ -536,12 +548,9 @@ Current deliverables:
 Recommended next steps:
 
 1. Expand read-only tests to cover more masks and reset values.
-2. Add direct-load tests for `reg_d_i` and `reg_load_i`.
-3. Add conflict testing between AXI writes and direct logic loads.
-4. Add protection-mode tests for `PrivProtOnly` and `SecuProtOnly`.
-5. Add a small regression script that runs smoke, full coverage, read-only, and random tests.
-6. Add parameter sweeps for register byte count and data width.
-7. Reuse the AXI-Lite master agent on a second DUT, such as an AXI-Lite xbar, decoder, or small control/status register block.
+2. Add a small regression script that runs smoke, full coverage, read-only, direct-load, load-conflict, protection, and random tests.
+3. Add parameter sweeps for register byte count and data width.
+4. Reuse the AXI-Lite master agent on a second DUT, such as an AXI-Lite xbar, decoder, or small control/status register block.
 
 Longer-term subsystem direction:
 

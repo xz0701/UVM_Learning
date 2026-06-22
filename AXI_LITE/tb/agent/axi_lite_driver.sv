@@ -46,7 +46,7 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
         repeat (tr.aw_delay) @(posedge ctrl_vif.clk);
 
         axi_vif.aw_addr  <= tr.addr;
-        axi_vif.aw_prot  <= 3'b000;
+        axi_vif.aw_prot  <= tr.prot;
         axi_vif.aw_valid <= 1'b1;
 
         wait_cycles = 0;
@@ -130,7 +130,7 @@ class axi_lite_driver extends uvm_driver #(axi_lite_tr);
 
         repeat (tr.ar_delay) @(posedge ctrl_vif.clk);
         axi_vif.ar_addr  <= tr.addr;
-        axi_vif.ar_prot  <= 3'b000;
+        axi_vif.ar_prot  <= tr.prot;
         axi_vif.ar_valid <= 1'b1;
 
         wait_cycles = 0;
