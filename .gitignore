@@ -1,0 +1,12 @@
+# AXI_LITE VCS build and simulation outputs
+/AXI_LITE/sim/csrc/
+/AXI_LITE/sim/simv
+/AXI_LITE/sim/simv.daidir/
+/AXI_LITE/sim/simv.vdb/
+/AXI_LITE/sim/*.log
+/AXI_LITE/sim/*.vpd
+/AXI_LITE/sim/*.fsdb
+/AXI_LITE/sim/ucli.key
+/AXI_LITE/sim/DVEfiles/
+/AXI_LITE/sim/inter.vpd
+/AXI_LITE/sim/regression_logs/

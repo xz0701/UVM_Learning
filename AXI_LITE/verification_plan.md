@@ -335,6 +335,18 @@ make TEST=axi_lite_prot_test run
 make TEST=axi_lite_random_test run
 ```
 
+Full local regression:
+
+```bash
+make regression
+```
+
+The regression script saves per-test console, compile, and run logs under:
+
+```text
+sim/regression_logs/
+```
+
 ### 7.3 Directed Scenario Mapping
 
 | Scenario | Implemented By |
@@ -515,6 +527,12 @@ UVM_FATAL: 0
 | `axi_lite_prot_test` | Implemented | Privileged/secure protection behavior |
 | `axi_lite_param_sweep_test` | Planned | Wider data/register parameter variations |
 
+Regression command:
+
+```bash
+make regression
+```
+
 ---
 
 ## 13. Current Status
@@ -540,6 +558,7 @@ Current deliverables:
 * Functional coverage collector
 * AXI-Lite protocol assertion module
 * VCS Makefile flow
+* Local regression script with per-test logs
 
 ---
 
@@ -547,8 +566,8 @@ Current deliverables:
 
 Recommended next steps:
 
-1. Expand read-only tests to cover more masks and reset values.
-2. Add a small regression script that runs smoke, full coverage, read-only, direct-load, load-conflict, protection, and random tests.
+1. Run the local regression before each commit.
+2. Expand read-only tests to cover more masks and reset values.
 3. Add parameter sweeps for register byte count and data width.
 4. Reuse the AXI-Lite master agent on a second DUT, such as an AXI-Lite xbar, decoder, or small control/status register block.
 

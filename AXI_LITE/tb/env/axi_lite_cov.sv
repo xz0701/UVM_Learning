@@ -43,17 +43,25 @@ class axi_lite_cov extends uvm_component;
         prot_cp: coverpoint cov_tr.prot {
             option.weight = 0;
             bins user_nonsecure = {3'b000};
+`ifdef AXI_LITE_PROT_TEST
             bins priv_only      = {3'b001};
             bins secure_only    = {3'b010};
             bins priv_secure    = {3'b011};
             bins bit2_set[]     = {[3'b100:3'b111]};
+`else
+            ignore_bins disabled_prot_bins = {[3'b001:3'b111]};
+`endif
         }
 
         ro_kind_cp: coverpoint cov_ro_kind iff (cov_tr.cmd == AXI_LITE_WRITE) {
             option.weight = 0;
             bins no_read_only = {2'd0};
+`ifdef AXI_LITE_READ_ONLY_TEST
             bins read_only_only = {2'd1};
             bins mixed = {2'd2};
+`else
+            ignore_bins disabled_ro_bins = {2'd1, 2'd2};
+`endif
         }
 
         wdata_cp: coverpoint cov_tr.data iff (cov_tr.cmd == AXI_LITE_WRITE) {
@@ -168,6 +176,14 @@ class axi_lite_cov extends uvm_component;
 
         `uvm_info("AXI_LITE_COV",
             $sformatf("cmd_resp_cross = %.2f%%", cg.cmd_resp_cross.get_coverage()),
+            UVM_LOW)
+
+        `uvm_info("AXI_LITE_COV",
+            $sformatf("wdata_cp = %.2f%%", cg.wdata_cp.get_coverage()),
+            UVM_LOW)
+
+        `uvm_info("AXI_LITE_COV",
+            $sformatf("rdata_cp = %.2f%%", cg.rdata_cp.get_coverage()),
             UVM_LOW)
 
         `uvm_info("AXI_LITE_COV",

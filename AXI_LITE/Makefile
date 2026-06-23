@@ -47,6 +47,9 @@ compile: $(SIM_DIR)
 run: compile
 	$(LOAD_ENV); cd $(SIM_DIR) && ./simv $(SIM_OPTS)
 
+regression:
+	./script/run_regression.sh
+
 clean:
 	rm -rf $(SIM_DIR)/simv \
 	       $(SIM_DIR)/simv.daidir \
@@ -59,4 +62,4 @@ clean:
 	       $(SIM_DIR)/inter.vpd \
 		   $(SIM_DIR)/regression_logs
 
-.PHONY: all compile run clean
+.PHONY: all compile run regression clean
