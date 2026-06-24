@@ -333,6 +333,7 @@ make TEST=axi_lite_direct_load_test run
 make TEST=axi_lite_load_conflict_test run
 make TEST=axi_lite_prot_test run
 make TEST=axi_lite_random_test run
+make TEST=axi_lite_demux_smoke_test run
 ```
 
 Full local regression:
@@ -525,6 +526,7 @@ UVM_FATAL: 0
 | `axi_lite_direct_load_test` | Implemented | Direct logic load through `reg_load_i` |
 | `axi_lite_load_conflict_test` | Implemented | AXI write versus direct load conflict |
 | `axi_lite_prot_test` | Implemented | Privileged/secure protection behavior |
+| `axi_lite_demux_smoke_test` | Implemented | First AXI-Lite demux routing smoke test |
 | `axi_lite_param_sweep_test` | Planned | Wider data/register parameter variations |
 
 Regression command:
@@ -567,9 +569,52 @@ Current deliverables:
 Recommended next steps:
 
 1. Run the local regression before each commit.
-2. Expand read-only tests to cover more masks and reset values.
-3. Add parameter sweeps for register byte count and data width.
-4. Reuse the AXI-Lite master agent on a second DUT, such as an AXI-Lite xbar, decoder, or small control/status register block.
+2. Expand the `axi_lite_demux` tests beyond smoke routing.
+3. Expand read-only tests to cover more masks and reset values.
+4. Add parameter sweeps for register byte count and data width.
+5. Reuse the AXI-Lite master agent on larger interconnect DUTs such as `axi_lite_mux` and `axi_lite_xbar`.
+
+### 14.1 AXI-Lite Demux Bring-Up
+
+The first second-DUT test targets:
+
+```text
+third_party/axi/src/axi_lite_demux.sv
+```
+
+Current demux configuration:
+
+| Name | Value |
+| ---- | ----- |
+| `AXI_LITE_DEMUX_NUM_MST` | 2 |
+| `AXI_LITE_DEMUX_SELECT_ADDR_BIT` | 4 |
+| `AXI_LITE_DEMUX_MAX_TRANS` | 4 |
+| `AXI_LITE_DEMUX_MEM_WORDS` | 16 |
+
+Environment shape:
+
+```text
+active AXI-Lite master agent
+        |
+        v
+axi_lite_demux_intf
+        |
+        +-- passive monitor + simple memory slave, port 0
+        |
+        +-- passive monitor + simple memory slave, port 1
+```
+
+Demux-specific coverage reports:
+
+* upstream command x expected selected port
+* downstream command x observed port
+* route match x observed port
+
+Run command:
+
+```bash
+make TEST=axi_lite_demux_smoke_test run
+```
 
 Longer-term subsystem direction:
 

@@ -9,6 +9,11 @@ package axi_lite_pkg;
   localparam int unsigned AXI_LITE_REG_NUM_BYTES = 32;
   localparam int unsigned AXI_LITE_REG_ADDR_WIDTH = $clog2(AXI_LITE_REG_NUM_BYTES) + 1;
   localparam int unsigned AXI_LITE_TIMEOUT_CYCLES = 100;
+  localparam int unsigned AXI_LITE_DEMUX_NUM_MST = 2;
+  localparam int unsigned AXI_LITE_DEMUX_SEL_WIDTH = $clog2(AXI_LITE_DEMUX_NUM_MST);
+  localparam int unsigned AXI_LITE_DEMUX_SELECT_ADDR_BIT = 4;
+  localparam int unsigned AXI_LITE_DEMUX_MAX_TRANS = 4;
+  localparam int unsigned AXI_LITE_DEMUX_MEM_WORDS = 16;
   localparam bit [1:0] AXI_LITE_RESP_OKAY = 2'b00;
   localparam bit [1:0] AXI_LITE_RESP_SLVERR = 2'b10;
   localparam bit [AXI_LITE_DATA_WIDTH-1:0] AXI_LITE_ERR_RDATA = 32'hBA5E_1E55;
@@ -56,6 +61,7 @@ package axi_lite_pkg;
   `include "axi_lite_direct_load_seq.sv"
   `include "axi_lite_load_conflict_seq.sv"
   `include "axi_lite_prot_seq.sv"
+  `include "axi_lite_demux_smoke_seq.sv"
   `include "axi_lite_random_seq.sv"
   `include "axi_lite_full_cov_seq.sv"
   `include "axi_lite_seq.sv"
@@ -64,8 +70,11 @@ package axi_lite_pkg;
   `include "axi_lite_monitor.sv"
   `include "axi_lite_agent.sv"
   `include "axi_lite_scoreboard.sv"
+  `include "axi_lite_demux_scoreboard.sv"
   `include "axi_lite_cov.sv"
+  `include "axi_lite_demux_cov.sv"
   `include "axi_lite_env.sv"
+  `include "axi_lite_demux_env.sv"
   `include "axi_lite_base_test.sv"
   `include "axi_lite_smoke_test.sv"
   `include "axi_lite_full_cov_test.sv"
@@ -73,6 +82,7 @@ package axi_lite_pkg;
   `include "axi_lite_direct_load_test.sv"
   `include "axi_lite_load_conflict_test.sv"
   `include "axi_lite_prot_test.sv"
+  `include "axi_lite_demux_smoke_test.sv"
   `include "axi_lite_random_test.sv"
   `include "axi_lite_test.sv"
 

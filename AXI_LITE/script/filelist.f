@@ -6,6 +6,7 @@
 +incdir+../tb/agent
 +incdir+../tb/env
 +incdir+../tb/interface
++incdir+../tb/models
 +incdir+../tb/tests
 +incdir+../tb/assertions
 
@@ -14,14 +15,18 @@
 ../third_party/common_cells/src/addr_decode.sv
 ../third_party/common_cells/src/spill_register_flushable.sv
 ../third_party/common_cells/src/spill_register.sv
+../third_party/common_cells/src/fifo_v3.sv
 
 ../third_party/axi/src/axi_pkg.sv
 ../third_party/axi/src/axi_intf.sv
 ../third_party/axi/src/axi_lite_regs.sv
+../third_party/axi/src/axi_lite_demux.sv
 
 ../tb/interface/axi_lite_ctrl_if.sv
+../tb/models/axi_lite_mem_slave.sv
 ../tb/pkg/axi_lite_pkg.sv
 ../tb/assertions/axi_lite_assertions.sv
 
 ../tb/top/tb_top.sv
+../tb/top/tb_demux_top.sv
 ../tb/tb_axi_lite_regs.sv
