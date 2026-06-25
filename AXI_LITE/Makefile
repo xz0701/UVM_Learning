@@ -14,6 +14,10 @@ ifeq ($(TEST),axi_lite_demux_smoke_test)
 TOP = tb_demux_top
 endif
 
+ifeq ($(TEST),axi_lite_demux_stress_test)
+TOP = tb_demux_top
+endif
+
 ifeq ($(TEST),axi_lite_read_only_test)
 VCS_TEST_DEFINES = +define+AXI_LITE_READ_ONLY_TEST
 endif

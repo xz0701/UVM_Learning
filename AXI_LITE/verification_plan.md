@@ -334,6 +334,7 @@ make TEST=axi_lite_load_conflict_test run
 make TEST=axi_lite_prot_test run
 make TEST=axi_lite_random_test run
 make TEST=axi_lite_demux_smoke_test run
+make TEST=axi_lite_demux_stress_test run
 ```
 
 Full local regression:
@@ -527,6 +528,7 @@ UVM_FATAL: 0
 | `axi_lite_load_conflict_test` | Implemented | AXI write versus direct load conflict |
 | `axi_lite_prot_test` | Implemented | Privileged/secure protection behavior |
 | `axi_lite_demux_smoke_test` | Implemented | First AXI-Lite demux routing smoke test |
+| `axi_lite_demux_stress_test` | Implemented | Demux routing under interleaved ports, strobes, and channel backpressure |
 | `axi_lite_param_sweep_test` | Planned | Wider data/register parameter variations |
 
 Regression command:
@@ -614,6 +616,7 @@ Run command:
 
 ```bash
 make TEST=axi_lite_demux_smoke_test run
+make TEST=axi_lite_demux_stress_test run
 ```
 
 Longer-term subsystem direction:

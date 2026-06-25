@@ -13,6 +13,7 @@ DEFAULT_TESTS=(
   axi_lite_load_conflict_test
   axi_lite_prot_test
   axi_lite_demux_smoke_test
+  axi_lite_demux_stress_test
   axi_lite_random_test
 )
 
