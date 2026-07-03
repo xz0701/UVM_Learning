@@ -335,6 +335,7 @@ make TEST=axi_lite_prot_test run
 make TEST=axi_lite_random_test run
 make TEST=axi_lite_demux_smoke_test run
 make TEST=axi_lite_demux_stress_test run
+make TEST=axi_lite_mux_smoke_test run
 ```
 
 Full local regression:
@@ -529,6 +530,7 @@ UVM_FATAL: 0
 | `axi_lite_prot_test` | Implemented | Privileged/secure protection behavior |
 | `axi_lite_demux_smoke_test` | Implemented | First AXI-Lite demux routing smoke test |
 | `axi_lite_demux_stress_test` | Implemented | Demux routing under interleaved ports, strobes, and channel backpressure |
+| `axi_lite_mux_smoke_test` | Implemented | First AXI-Lite mux test with two active upstream masters |
 | `axi_lite_param_sweep_test` | Planned | Wider data/register parameter variations |
 
 Regression command:
@@ -571,10 +573,10 @@ Current deliverables:
 Recommended next steps:
 
 1. Run the local regression before each commit.
-2. Expand the `axi_lite_demux` tests beyond smoke routing.
+2. Expand the `axi_lite_mux` tests beyond smoke arbitration.
 3. Expand read-only tests to cover more masks and reset values.
 4. Add parameter sweeps for register byte count and data width.
-5. Reuse the AXI-Lite master agent on larger interconnect DUTs such as `axi_lite_mux` and `axi_lite_xbar`.
+5. Reuse the AXI-Lite master agent on larger interconnect DUTs such as `axi_lite_xbar`.
 
 ### 14.1 AXI-Lite Demux Bring-Up
 
@@ -617,6 +619,43 @@ Run command:
 ```bash
 make TEST=axi_lite_demux_smoke_test run
 make TEST=axi_lite_demux_stress_test run
+```
+
+### 14.2 AXI-Lite Mux Bring-Up
+
+The third DUT test targets:
+
+```text
+third_party/axi/src/axi_lite_mux.sv
+```
+
+Current mux configuration:
+
+| Name | Value |
+| ---- | ----- |
+| `AXI_LITE_MUX_NUM_SLV` | 2 |
+| `AXI_LITE_MUX_MAX_TRANS` | 4 |
+| `AXI_LITE_MUX_MEM_WORDS` | 32 |
+
+Environment shape:
+
+```text
+active AXI-Lite master agent, input 0
+        |
+        +--> axi_lite_mux_intf --> passive monitor + simple memory slave
+        |
+active AXI-Lite master agent, input 1
+```
+
+Mux-specific coverage reports:
+
+* upstream command x master id
+* downstream command observed
+
+Run command:
+
+```bash
+make TEST=axi_lite_mux_smoke_test run
 ```
 
 Longer-term subsystem direction:

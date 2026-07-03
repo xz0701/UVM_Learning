@@ -14,6 +14,7 @@ DEFAULT_TESTS=(
   axi_lite_prot_test
   axi_lite_demux_smoke_test
   axi_lite_demux_stress_test
+  axi_lite_mux_smoke_test
   axi_lite_random_test
 )
 
@@ -88,7 +89,7 @@ for test_name in "${TESTS[@]}"; do
   fi
 
   if check_run_log "${test_name}" "${run_log_copy}"; then
-    cov_line=$(grep -m 1 "AXI-Lite functional coverage" "${run_log_copy}" || true)
+    cov_line=$(grep -m 1 "functional coverage" "${run_log_copy}" || true)
     if [[ -n "${cov_line}" ]]; then
       echo "[PASS] ${test_name}: ${cov_line}"
     else
