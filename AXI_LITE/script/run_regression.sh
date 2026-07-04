@@ -15,6 +15,7 @@ DEFAULT_TESTS=(
   axi_lite_demux_smoke_test
   axi_lite_demux_stress_test
   axi_lite_mux_smoke_test
+  axi_lite_mux_stress_test
   axi_lite_random_test
 )
 

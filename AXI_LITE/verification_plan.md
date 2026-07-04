@@ -336,6 +336,7 @@ make TEST=axi_lite_random_test run
 make TEST=axi_lite_demux_smoke_test run
 make TEST=axi_lite_demux_stress_test run
 make TEST=axi_lite_mux_smoke_test run
+make TEST=axi_lite_mux_stress_test run
 ```
 
 Full local regression:
@@ -531,6 +532,7 @@ UVM_FATAL: 0
 | `axi_lite_demux_smoke_test` | Implemented | First AXI-Lite demux routing smoke test |
 | `axi_lite_demux_stress_test` | Implemented | Demux routing under interleaved ports, strobes, and channel backpressure |
 | `axi_lite_mux_smoke_test` | Implemented | First AXI-Lite mux test with two active upstream masters |
+| `axi_lite_mux_stress_test` | Implemented | Mux arbitration with simultaneous masters, strobes, and channel backpressure |
 | `axi_lite_param_sweep_test` | Planned | Wider data/register parameter variations |
 
 Regression command:
@@ -656,6 +658,7 @@ Run command:
 
 ```bash
 make TEST=axi_lite_mux_smoke_test run
+make TEST=axi_lite_mux_stress_test run
 ```
 
 Longer-term subsystem direction:

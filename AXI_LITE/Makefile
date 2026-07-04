@@ -22,6 +22,10 @@ ifeq ($(TEST),axi_lite_mux_smoke_test)
 TOP = tb_mux_top
 endif
 
+ifeq ($(TEST),axi_lite_mux_stress_test)
+TOP = tb_mux_top
+endif
+
 ifeq ($(TEST),axi_lite_read_only_test)
 VCS_TEST_DEFINES = +define+AXI_LITE_READ_ONLY_TEST
 endif

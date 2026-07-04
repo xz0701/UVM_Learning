@@ -67,6 +67,7 @@ package axi_lite_pkg;
   `include "axi_lite_demux_smoke_seq.sv"
   `include "axi_lite_demux_stress_seq.sv"
   `include "axi_lite_mux_smoke_seq.sv"
+  `include "axi_lite_mux_stress_seq.sv"
   `include "axi_lite_random_seq.sv"
   `include "axi_lite_full_cov_seq.sv"
   `include "axi_lite_seq.sv"
@@ -93,6 +94,7 @@ package axi_lite_pkg;
   `include "axi_lite_demux_smoke_test.sv"
   `include "axi_lite_demux_stress_test.sv"
   `include "axi_lite_mux_smoke_test.sv"
+  `include "axi_lite_mux_stress_test.sv"
   `include "axi_lite_random_test.sv"
   `include "axi_lite_test.sv"
 
