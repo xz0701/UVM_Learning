@@ -17,6 +17,15 @@ package axi_lite_pkg;
   localparam int unsigned AXI_LITE_MUX_NUM_SLV = 2;
   localparam int unsigned AXI_LITE_MUX_MAX_TRANS = 4;
   localparam int unsigned AXI_LITE_MUX_MEM_WORDS = 32;
+  localparam int unsigned AXI_LITE_XBAR_NUM_SLV = 2;
+  localparam int unsigned AXI_LITE_XBAR_NUM_MST = 2;
+  localparam int unsigned AXI_LITE_XBAR_MAX_SLV_TRANS = 4;
+  localparam int unsigned AXI_LITE_XBAR_MAX_MST_TRANS = 4;
+  localparam int unsigned AXI_LITE_XBAR_NUM_ADDR_RULES = 2;
+  localparam int unsigned AXI_LITE_XBAR_MEM_WORDS = 32;
+  localparam bit [AXI_LITE_ADDR_WIDTH-1:0] AXI_LITE_XBAR_MST0_BASE = 32'h0000_0000;
+  localparam bit [AXI_LITE_ADDR_WIDTH-1:0] AXI_LITE_XBAR_MST1_BASE = 32'h0001_0000;
+  localparam bit [AXI_LITE_ADDR_WIDTH-1:0] AXI_LITE_XBAR_REGION_SIZE = 32'h0000_0100;
   localparam bit [1:0] AXI_LITE_RESP_OKAY = 2'b00;
   localparam bit [1:0] AXI_LITE_RESP_SLVERR = 2'b10;
   localparam bit [AXI_LITE_DATA_WIDTH-1:0] AXI_LITE_ERR_RDATA = 32'hBA5E_1E55;
@@ -68,6 +77,8 @@ package axi_lite_pkg;
   `include "axi_lite_demux_stress_seq.sv"
   `include "axi_lite_mux_smoke_seq.sv"
   `include "axi_lite_mux_stress_seq.sv"
+  `include "axi_lite_xbar_smoke_seq.sv"
+  `include "axi_lite_xbar_stress_seq.sv"
   `include "axi_lite_random_seq.sv"
   `include "axi_lite_full_cov_seq.sv"
   `include "axi_lite_seq.sv"
@@ -78,12 +89,15 @@ package axi_lite_pkg;
   `include "axi_lite_scoreboard.sv"
   `include "axi_lite_demux_scoreboard.sv"
   `include "axi_lite_mux_scoreboard.sv"
+  `include "axi_lite_xbar_scoreboard.sv"
   `include "axi_lite_cov.sv"
   `include "axi_lite_demux_cov.sv"
   `include "axi_lite_mux_cov.sv"
+  `include "axi_lite_xbar_cov.sv"
   `include "axi_lite_env.sv"
   `include "axi_lite_demux_env.sv"
   `include "axi_lite_mux_env.sv"
+  `include "axi_lite_xbar_env.sv"
   `include "axi_lite_base_test.sv"
   `include "axi_lite_smoke_test.sv"
   `include "axi_lite_full_cov_test.sv"
@@ -95,6 +109,8 @@ package axi_lite_pkg;
   `include "axi_lite_demux_stress_test.sv"
   `include "axi_lite_mux_smoke_test.sv"
   `include "axi_lite_mux_stress_test.sv"
+  `include "axi_lite_xbar_smoke_test.sv"
+  `include "axi_lite_xbar_stress_test.sv"
   `include "axi_lite_random_test.sv"
   `include "axi_lite_test.sv"
 

@@ -15,15 +15,23 @@
 ../third_party/common_cells/src/addr_decode.sv
 ../third_party/common_cells/src/spill_register_flushable.sv
 ../third_party/common_cells/src/spill_register.sv
+../third_party/common_cells/src/fall_through_register.sv
+../third_party/common_cells/src/stream_register.sv
 ../third_party/common_cells/src/fifo_v3.sv
+../third_party/common_cells/src/delta_counter.sv
+../third_party/common_cells/src/counter.sv
 ../third_party/common_cells/src/lzc.sv
 ../third_party/common_cells/src/rr_arb_tree.sv
 
 ../third_party/axi/src/axi_pkg.sv
 ../third_party/axi/src/axi_intf.sv
+../third_party/axi/src/axi_atop_filter.sv
+../third_party/axi/src/axi_lite_to_axi.sv
+../third_party/axi/src/axi_err_slv.sv
 ../third_party/axi/src/axi_lite_regs.sv
 ../third_party/axi/src/axi_lite_demux.sv
 ../third_party/axi/src/axi_lite_mux.sv
+../third_party/axi/src/axi_lite_xbar.sv
 
 ../tb/interface/axi_lite_ctrl_if.sv
 ../tb/models/axi_lite_mem_slave.sv
@@ -33,4 +41,5 @@
 ../tb/top/tb_top.sv
 ../tb/top/tb_demux_top.sv
 ../tb/top/tb_mux_top.sv
+../tb/top/tb_xbar_top.sv
 ../tb/tb_axi_lite_regs.sv

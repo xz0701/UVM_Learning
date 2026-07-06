@@ -661,6 +661,50 @@ make TEST=axi_lite_mux_smoke_test run
 make TEST=axi_lite_mux_stress_test run
 ```
 
+### 14.3 AXI-Lite Xbar Bring-Up
+
+The fourth DUT test targets:
+
+```text
+third_party/axi/src/axi_lite_xbar.sv
+```
+
+Current xbar configuration:
+
+| Name | Value |
+| ---- | ----- |
+| `AXI_LITE_XBAR_NUM_SLV` | 2 |
+| `AXI_LITE_XBAR_NUM_MST` | 2 |
+| `AXI_LITE_XBAR_NUM_ADDR_RULES` | 2 |
+| `AXI_LITE_XBAR_MST0_BASE` | `32'h0000_0000` |
+| `AXI_LITE_XBAR_MST1_BASE` | `32'h0001_0000` |
+| `AXI_LITE_XBAR_REGION_SIZE` | `32'h0000_0100` |
+
+Environment shape:
+
+```text
+active AXI-Lite master agent, slave port 0
+        |
+        +--> axi_lite_xbar_intf --> passive monitor + memory slave, master port 0
+        |
+active AXI-Lite master agent, slave port 1
+        |
+        +--> axi_lite_xbar_intf --> passive monitor + memory slave, master port 1
+```
+
+Xbar-specific coverage reports:
+
+* upstream command x slave port x expected master port
+* downstream command x observed master port
+* route match x observed master port
+
+Run command:
+
+```bash
+make TEST=axi_lite_xbar_smoke_test run
+make TEST=axi_lite_xbar_stress_test run
+```
+
 Longer-term subsystem direction:
 
 ```text
